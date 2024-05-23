@@ -1,0 +1,1013 @@
+/*=============================================== *
+ * Jcink.com Forum Hosting Stylesheet
+ * ==============================================
+ * #Version:	1.0.2
+ *=============================================== */
+
+html {
+	overflow-x: auto;
+}
+form {
+	display: inline;
+}
+
+/****************************************
+  Default Colors, Fonts, and Styles
+ *****************************************/
+
+:root {
+	--bodyFontColor: #222;
+	--bodyFontFamily: Arial, sans-serif;
+	--bodyFontSize: 12px;
+	--bodyBGColor: #e1e1e1;
+
+	--tableFontColor: #222;
+	--tableFontFamily: Arial, sans-serif;
+	--tableFontSize: 12px;
+
+	--wrapperBGColor: #fbfbfb;
+	--wrapperBoxShadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+	--linkColor: #800000;
+	--linkHoverColor: gray;
+
+	--profileNameFontSize: 28px;
+	--photoTitleFontSize: 24px;
+	--photoTitleBorderColor: #000;
+
+	--ucpMenuBGColor: #efefef;
+	--ucpMenuBorderColor: #555;
+	--ucpContentBGColor: #efefef;
+	--ucpContentBorderColor: #545454;
+
+	--logoLinkFontSize: 36px;
+	--logoLinkColor: #800000;
+
+	--searchBarBGColor: #ffffff;
+	--searchBarBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
+	--searchBarBorderColor: #d8d8d8;
+	--searchInputFontSize: 12px;
+	--searchInputColor: #808080;
+	--searchInputFocusColor: #000000;
+	--searchButtonBGColor: #800000;
+	--searchButtonImage: url(//files.jcink.net/themes/default/magnifying-glass.png);
+
+	--subMenuBorderColor: #555;
+	--submenuBGColor: #800000;
+	--submenuBGImage: url(//files.jcink.net/themes/default/red-gradient-glass.png);
+	--submenuLinkColor: #fff;
+
+	--calendarDateFontSize: 11px;
+	--calendarDateColor: #555;
+	--calendarDateBGColor: #f2f2f2;
+	--calendarNameFontSize: 22px;
+
+	--userLinksBGColor: #f2f2f2;
+	--userLinksBGImage: url(//files.jcink.net/themes/default/white-gradient.png);
+	--userLinksBorderColor: #545454;
+	--userLinksTDColor: #333;
+
+	--activeUserStripBGColor: #d6d6d6;
+
+	--normalNameColor: #003;
+	--normalNameFontSize: 12px;
+	--unregColor: #900;
+	--unregNameFontSize: 11px;
+	--post1BGColor: #f2f2f2;
+	--post2BGColor: #f2f2f2;
+	--postDetailsFontSize: 10px;
+	--postColorFontSize: 12px;
+
+	--postLinksBarBGColor: #cccccc;
+	--postLinksBarBGImage: url(//files.jcink.net/themes/default/thin-gray-gradient.png);
+	--postLinksBarFontSize: 10px;
+	--signatureColor: #339;
+	--signatureFontSize: 10px;
+
+	--paginationBorderColor: #800000;
+	--paginationLinkColor: #ffffff;
+	--paginationLinkBGColor: #740300;
+	--paginationLinkHoverBGColor: #efeeee;
+	--paginationLinkHoverColor: #000000;
+	--paginationCurrentBGColor: #ffffff;
+	--paginationCurrentBorderColor: #545454;
+	--paginationFirstLastBGColor: #740300;
+	--paginationBoxShadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
+	--paginationBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
+
+	--rowBGColor: #efefef;
+	--darkRowBGColor: #d6d6d6;
+	--darkRowColor: #000;
+	--hlightBGColor: #efefef;
+	--dlightBGColor: #efefef;
+
+	--maintitleBGColor: #800000;
+	--maintitleBGImage: url(//files.jcink.net/themes/default/red-gradient-glass.png);
+	--maintitleLinkColor: #fff;
+
+	--titlemediumColor: #222;
+	--titlemediumBGColor: #d8d8d8;
+	--titlemediumBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
+	--titlemediumLinkColor: #222;
+
+	--tableborderBGColor: #c0c0c0;
+	--tableborderBorderColor: #555;
+	--tablefillBGColor: #efefef;
+	--tablepadBGColor: #efefef;
+	--tablebasicBorderColor: #555;
+
+	--quoteFontFamily: Arial, sans-serif;
+	--quoteFontSize: 11px;
+	--quoteColor: #333;
+	--quoteBGColor: #efefef;
+	--quoteBorderColor: #555;
+
+	--codeFontFamily: Courier, Courier New, Verdana, Arial;
+	--codeFontSize: 11px;
+	--codeColor: #333;
+	--codeBGColor: #efefef;
+	--codeBorderColor: #555;
+
+	--buttonLargeBGColor: #800000;
+	--buttonLargeBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
+	--buttonLargeColor: #660000;
+	--buttonLargeBorderColor: #d8d8d8;
+	--buttonLargeLinkColor: #ffffff;
+	--buttonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	--buttonSmallBGColor: #800000;
+	--buttonSmallLinkColor: #ffffff;
+	--buttonSmallFontSize: 11px;
+
+	--formInputBorderColor: #545454;
+	--formInputColor: #000;
+	--formInputBGColor: #fff;
+	--formInputFontFamily: Arial, sans-serif;
+	--formInputFontSize: 12px;
+	--formInputBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
+
+	--submitButtonBGColor: #800000;
+	--submitButtonImage: url(//files.jcink.net/themes/default/red-gradient.png);
+	--submitButtonLinkColor: #ffffff;
+	--submitButtonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	--submitButtonFontSize: 11px;
+
+	--codeButtonsFontSize: 10px;
+
+	--pformStripBGColor: #d6d6d6;
+	--pformStripBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
+	--pformStripColor: #000;
+	--pformLeftBGColor: #efefef;
+	--pformLeftBorderColor: #545454;
+	--pformLeftwBGColor: #efefef;
+	--pformLeftwBorderColor: #232323;
+	--pformRightBGColor: #efefef;
+	--pformRightBorderColor: #232323;
+
+	--opentabColor: #fff;
+	--opentabBGColor: #800000;
+	--opentabBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
+	--openTabFontSize: 11px;
+	--openTabBorderColor: #545454;
+	--closedtabColor: #fff;
+	--closedtabBGColor: #800000;
+	--closedtabBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
+	--closedTabFontSize: 11px;
+	--closedTabBorderColor: #545454;
+
+	--delCookiesRowBGColor: #efefef;
+	--delCookiesRowBorderColor: #545454;
+	--delCookiesRowFontSize: 10px;
+
+	--topLinksColor: #ffffff;
+	--topLinksFontSize: 11px;
+
+	--postBitBorderColor: #c0c0c0;
+	--postBitBGColor: #efefef;
+	--postBitColor: #000;
+	--postBitFontSize: 11px;
+
+	--imgAttachBorderColor: #555;
+
+	--descFontSize: 11px;
+	--descColor: #000;
+
+	--editSize: 9px;
+
+	--thinBorderColor: #545454;
+
+	--newstextBGColor: #efefef;
+	--newstextBorderColor: #555;
+
+	--searchliteColor: #f00;
+	--searchliteBGColor: #ff0;
+
+	--mobileBGColor: #fbfbfb;
+
+	--copyrightFontSize: 10px;
+}
+
+/****************************************
+  Body Background & Text Style
+ *****************************************/
+
+body {
+	font-family: var(--bodyFontFamily);
+	font-size: var(--bodyFontSize);
+	color: var(--bodyFontColor);
+	margin: 0px;
+	padding: 0px;
+	background: var(--bodyBGColor);
+	text-align: center;
+}
+
+/****************************************
+    Table Styles
+ *****************************************/
+
+table,
+tr,
+td {
+	font-family: var(--tableFontFamily);
+	font-size: var(--tableFontSize);
+	color: var(--tableFontColor);
+}
+
+/****************************************
+    Board Width
+ *****************************************/
+
+#wrapper {
+	text-align: left;
+	width: 980px;
+	margin: 20px auto 30px;
+	background: var(--wrapperBGColor);
+	box-shadow: var(--wrapperBoxShadow);
+	padding-bottom: 5px;
+}
+
+#innerwrapper {
+	padding: 0 10px;
+}
+
+/****************************************
+    Link colors
+ *****************************************/
+
+a:link,
+a:visited,
+a:active {
+	text-decoration: none;
+	color: var(--linkColor);
+}
+a:hover {
+	color: var(--linkHoverColor);
+	text-decoration: none;
+}
+
+/****************************************
+    Profile styles 
+ *****************************************/
+
+#profilename {
+	font-size: var(--profileNameFontSize);
+	font-weight: bold;
+}
+
+#photowrap {
+	padding: 6px;
+}
+
+#phototitle {
+	font-size: var(--photoTitleFontSize);
+	border-bottom: 1px solid var(--photoTitleBorderColor);
+}
+
+#photoimg {
+	text-align: center;
+	margin-top: 15px;
+}
+
+/****************************************
+    UserCP/My Controls styles
+ *****************************************/
+
+#ucpmenu {
+	line-height: 150%;
+	width: 22%;
+	border: 1px solid var(--ucpMenuBorderColor);
+	background: var(--ucpMenuBGColor);
+}
+
+#ucpmenu p {
+	padding: 2px 5px 6px 9px;
+	margin: 0px;
+}
+
+#ucpcontent {
+	background: var(--ucpContentBGColor);
+	border: 1px solid var(--ucpContentBorderColor);
+	line-height: 150%;
+	width: auto;
+}
+
+#ucpcontent p {
+	padding: 10px;
+	margin: 0px;
+}
+
+/****************************************
+   Logo Strip
+ *****************************************/
+
+#logostrip {
+	display: none;
+}
+
+#logo {
+	min-height: 60px;
+	text-align: left;
+	margin-top: 5px;
+	padding: 20px 20px 5px;
+}
+
+#logo a,
+#logo a:hover {
+	font-size: var(--logoLinkFontSize);
+	text-decoration: none;
+	font-weight: bold;
+	color: var(--logoLinkColor);
+}
+
+/****************************************
+   Search Bar 
+ *****************************************/
+
+#searchbar {
+	display: block;
+	float: right;
+	position: relative;
+	right: 10px;
+	top: 8px;
+}
+
+#searchbar .search-container {
+	background: var(--searchBarBGColor);
+	box-shadow: var(--searchBarBoxShadow);
+	border: 1px solid var(--searchBarBorderColor);
+	display: block;
+	height: 26px;
+	position: relative;
+	width: 200px;
+}
+
+#searchbar .search-input {
+	background: none repeat scroll 0 0 transparent;
+	border: 0;
+	color: var(--searchInputColor);
+	font-size: var(--searchInputFontSize);
+	width: 192px;
+	height: 26px;
+	font-family: Arial, sans-serif;
+	padding: 1px 0 0 8px;
+}
+
+#searchbar .search-input:focus {
+	color: var(--searchInputFocusColor);
+}
+
+#searchbar .search-button {
+	background: var(--searchButtonBGColor) var(--searchButtonImage);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border: 0;
+	bottom: 0;
+	margin: 0;
+	border-radius: 0;
+	display: block;
+	height: 26px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	text-indent: -3000em;
+	top: 0;
+	width: 26px;
+	cursor: pointer;
+	box-shadow: none;
+}
+
+/****************************************
+   Navigation Bar / Submenu
+ *****************************************/
+
+#submenu {
+	font-size: 13px;
+	border: 1px 0 solid var(--subMenuBorderColor);
+	background: var(--submenuBGColor) var(--submenuBGImage);
+	background-position: center center;
+	margin-bottom: 3px;
+}
+
+#submenu img {
+	display: none;
+}
+
+#submenu a:link,
+#submenu a:visited,
+#submenu a:active {
+	text-decoration: none;
+	color: var(--submenuLinkColor) !important;
+	padding: 7px 7px;
+	font-weight: bold;
+}
+
+#submenu a:hover {
+	color: var(--submenuLinkColor) !important;
+	text-decoration: underline;
+}
+
+#navi br {
+	display: none;
+}
+
+#navstrip {
+	font-weight: bold;
+	padding: 6px 0px 16px 0px;
+}
+
+/****************************************
+    Calendar styling
+ *****************************************/
+
+.caldate {
+	text-align: right;
+	font-weight: bold;
+	font-size: var(--calendarDateFontSize);
+	color: var(--calendarDateColor);
+	background-color: var(--calendarDateBGColor);
+	padding: 4px;
+	margin: 0px;
+}
+
+#calendarname {
+	font-size: var(--calendarNameFontSize);
+	font-weight: bold;
+}
+
+#padandcenter {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding: 14px 0px 14px 0px;
+}
+
+/**************************************************
+  User Links Menu (Messages / View new posts / etc )
+ ***************************************************/
+
+#userlinks {
+	border: 1px solid var(--userLinksBorderColor);
+	background: var(--userLinksBGColor) var(--userLinksBGImage);
+	list-style: none;
+	width: 960px;
+	margin: 0 auto;
+}
+
+#userlinks td {
+	color: var(--userLinksTDColor);
+}
+
+#userlinks a {
+	text-decoration: underline;
+	padding: 1px;
+}
+
+#userlinks a:hover {
+	text-decoration: none;
+}
+
+/****************************************
+    Topic View styles
+ *****************************************/
+
+.activeuserstrip {
+	background: var(--activeUserStripBGColor);
+	padding: 6px;
+}
+
+.normalname {
+	font-size: var(--normalNameFontSize);
+	font-weight: bold;
+	color: var(--normalNameColor);
+}
+
+.unreg {
+	font-size: var(--unregNameFontSize);
+	font-weight: bold;
+	color: var(--unregColor);
+}
+
+.post1 {
+	background: var(--post1BGColor);
+}
+
+.post2 {
+	background: var(--post2BGColor);
+}
+
+.postdetails {
+	font-size: var(--postDetailsFontSize);
+}
+
+.postcolor {
+	font-size: var(--postColorFontSize);
+	line-height: 160%;
+}
+
+.postlinksbar {
+	padding: 1px 5px;
+	background: var(--postLinksBarBGColor) var(--postLinksBarBGImage);
+	padding: 1px;
+	margin-top: 1px;
+	font-size: var(--postLinksBarFontSize);
+}
+
+.signature {
+	font-size: var(--signatureFontSize);
+	color: var(--signatureColor);
+	line-height: 150%;
+}
+
+/*******************************
+  Pagination e.g. [1],2,3 ...
+ *******************************/
+
+.pagination .pagination_current,
+.pagination a {
+	padding: 2px 5px;
+}
+
+.pagination a:link,
+.pagination a:visited,
+.pagination a:active {
+	border: 1px solid var(--paginationBorderColor);
+	border-radius: 3px;
+	background: var(--paginationLinkBGColor);
+	padding-left: 6px;
+	padding-right: 6px;
+	color: var(--paginationLinkColor);
+	text-decoration: none;
+	box-shadow: var(--paginationBoxShadow);
+}
+
+.pagination a:hover {
+	background: var(--paginationLinkHoverBGColor);
+	text-decoration: none;
+	color: var(--paginationLinkHoverColor);
+	box-shadow: var(--paginationBoxShadow);
+	background: var(--paginationBGImage);
+}
+
+.pagination .pagination_current {
+	background: none repeat scroll 0% 0% var(--paginationCurrentBGColor)
+		var(--paginationBGImage);
+	border: 1px solid var(--paginationCurrentBorderColor);
+	border-radius: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.pagination_first,
+.pagination_last,
+.pagination_page {
+	background: none repeat scroll 0% 0% var(--paginationFirstLastBGColor);
+	border: 1px solid var(--paginationBorderColor);
+}
+
+.pagination_pagetxt {
+	display: none;
+}
+
+/****************************************
+    Global general table/div row styles
+ *****************************************/
+
+.row1,
+.row3,
+.row4,
+.row2 {
+	background: var(--rowBGColor);
+	padding: 5px;
+}
+
+#boardstats .row2 {
+	text-align: center;
+}
+
+.darkrow1,
+.darkrow2,
+.darkrow3 {
+	background: var(--darkRowBGColor);
+	color: var(--darkRowColor);
+}
+
+td.darkrow2 {
+	display: none;
+}
+
+.darkrow3 {
+	padding: 3px;
+}
+
+.hlight {
+	background: var(--hlightBGColor);
+}
+.dlight {
+	background: var(--dlightBGColor);
+}
+
+/****************************************
+    Top table bars / gradient holders 
+ *****************************************/
+
+.maintitle {
+	background: var(--maintitleBGColor) var(--maintitleBGImage);
+	font-weight: bold;
+	padding: 8px;
+	color: var(--maintitleLinkColor);
+}
+
+.maintitle a:link,
+.maintitle a:visited,
+.maintitle a:active {
+	text-decoration: none;
+	color: var(--maintitleLinkColor);
+}
+
+.maintitle a:hover {
+	text-decoration: underline;
+}
+
+/****************************************
+   Bar directly below the maintitles 
+ *****************************************/
+
+.titlemedium {
+	font-weight: bold;
+	color: var(--titlemediumColor);
+	padding: 2px 6px;
+	margin: 0px;
+	background: var(--titlemediumBGColor) var(--titlemediumBGImage);
+}
+
+.titlemedium a:link,
+.titlemedium a:visited,
+.titlemedium a:active {
+	text-decoration: none;
+	color: var(--titlemediumLinkColor);
+}
+
+/****************************************
+   Table & Div Borders 
+ *****************************************/
+
+.tableborder {
+	background: var(--tableborderBGColor);
+	border: 1px solid var(--tableborderBorderColor);
+	padding: 0px;
+	margin: 0;
+}
+
+.tablefill {
+	background: var(--tablefillBGColor);
+	border: 1px solid var(--tableborderBorderColor);
+	padding: 6px;
+}
+
+.tablepad {
+	background: var(--tablepadBGColor);
+	padding: 6px;
+}
+
+.tablebasic {
+	width: 100%;
+	padding: 0;
+	margin: 0px;
+	border: 0px;
+}
+
+.plainborder {
+	border: 1px solid var(--tableborderBorderColor);
+	background: var(--tablefillBGColor);
+}
+
+/****************************************
+   QUOTE and CODE BBCode boxes
+ *****************************************/
+
+#QUOTE {
+	white-space: normal;
+	font-family: var(--quoteFontFamily);
+	font-size: var(--quoteFontSize);
+	color: var(--quoteColor);
+	background: var(--quoteBGColor);
+	padding: 2px;
+	border: 1px solid var(--quoteBorderColor);
+	margin-top: 2px;
+}
+
+#CODE {
+	white-space: normal;
+	font-family: var(--codeFontFamily);
+	font-size: var(--codeFontSize);
+	color: var(--codeColor);
+	background: var(--codeBGColor);
+	padding: 2px;
+	border: 1px solid var(--codeBorderColor);
+	margin-top: 2px;
+}
+
+/**********************************************
+   Input buttons, e.g. submit, text input, etc
+ ***********************************************/
+
+.button-large {
+	background: var(--buttonLargeBGColor);
+	border-radius: 3px;
+	padding: 5px 12px;
+	text-align: center;
+	margin: 0px 5px 0px 5px;
+	box-shadow: var(--buttonBoxShadow);
+	color: var(--buttonLargeLinkColor);
+	font-weight: bold;
+	min-width: 75px;
+	display: inline-block;
+}
+
+.button-small {
+	background: var(--buttonSmallBGColor);
+	border-radius: 3px;
+	color: var(--buttonSmallLinkColor);
+	font-weight: bold;
+	font-size: var(--buttonSmallFontSize);
+	margin: 3px;
+	padding: 4px 7px;
+	box-shadow: var(--buttonBoxShadow);
+	text-decoration: none;
+	min-width: 50px;
+	max-width: 80px;
+}
+
+.post-buttons-top {
+	margin-top: 3px;
+}
+
+.button-large.closed {
+	background: var(--buttonLargeBGColor);
+	padding: 7px 12px;
+	text-align: center;
+	margin: 0px 5px 0px 5px;
+	border: 1px solid var(--buttonLargeBorderColor);
+	color: var(--buttonLargeColor);
+	font-weight: bold;
+}
+
+.forminput,
+.codebuttons,
+.textinput,
+.radiobutton,
+.checkbox {
+	border-radius: 2px;
+	background: var(--formInputBGColor);
+	border: 1px solid var(--formInputBorderColor);
+	color: var(--formInputColor);
+	font-family: var(--formInputFontFamily);
+	font-size: var(--formInputFontSize);
+	padding: 2px;
+	vertical-align: middle;
+	box-shadow: var(--formInputBoxShadow);
+}
+
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
+	background: #800000 url(//files.jcink.net/themes/default/red-gradient.png);
+	border-radius: 3px;
+	box-shadow: var(--submitButtonBoxShadow);
+	color: var(--submitButtonLinkColor);
+	font-size: var(--submitButtonFontSize);
+	font-weight: bold;
+	margin: 3px;
+	padding: 2px 6px;
+	text-decoration: none;
+	border: none;
+}
+
+.codebuttons {
+	font-size: var(--codeButtonsFontSize);
+}
+
+/****************************************
+   Form table cell styles, left/right/top
+ *****************************************/
+
+.pformstrip {
+	background: var(--pformStripBGColor) var(--pformStripBGImage);
+	color: var(--pformStripColor);
+	font-weight: bold;
+	padding: 2px 5px;
+	margin-top: 1px;
+}
+
+.pformleft {
+	background-color: var(--pformLeftBGColor);
+	padding: 6px;
+	margin-top: 1px;
+	width: 25%;
+	border-top: 1px solid var(--pformLeftBorderColor);
+	border-right: 1px solid var(--pformLeftBorderColor);
+}
+
+.pformleftw {
+	background-color: var(--pformLeftwBGColor);
+	padding: 6px;
+	margin-top: 1px;
+	width: 40%;
+	border-top: 1px solid var(--pformLeftwBorderColor);
+	border-right: 1px solid var(--pformLeftwBorderColor);
+}
+
+.pformright {
+	background-color: var(--pformRightBGColor);
+	padding: 6px;
+	margin-top: 1px;
+	border-top: 1px solid var(--pformRightBorderColor);
+}
+
+/****************************************
+  Tabs on the portal profiles + sections
+ *****************************************/
+
+.opentab {
+	color: var(--opentabColor);
+	padding: 8px;
+	float: left;
+	width: auto;
+	background: var(--opentabBGColor) var(--opentabBGImage);
+	margin-top: 3px;
+	margin-right: 2px;
+	font-size: var(--openTabFontSize);
+	border: 1px solid var(--openTabBorderColor);
+}
+
+.closedtab {
+	color: var(--closedtabColor);
+	padding: 7px;
+	float: left;
+	width: auto;
+	background: var(--closedtabBGColor) var(--closedtabBGImage);
+	margin-top: 6px;
+	margin-right: 2px;
+	font-size: var(--closedTabFontSize);
+	border-top: 1px solid var(--closedTabBorderColor);
+	border-right: 1px solid var(--closedTabBorderColor);
+	border-left: 1px solid var(--closedTabBorderColor);
+}
+
+.positiontab {
+	height: 34px;
+	margin-left: 2px;
+}
+
+/****************************************
+    Delete all cookies / mark read
+ *****************************************/
+
+#delcookiesrow,
+#mark-as-read-subto {
+	background: var(--delCookiesRowBGColor);
+	border: 1px solid var(--delCookiesRowBorderColor);
+	font-size: var(--delCookiesRowFontSize);
+	padding: 5px;
+	width: 260px;
+	float: right;
+	margin-top: -3px;
+	padding-left: 1px;
+}
+
+#mark-as-read-subto {
+	float: none;
+	padding-top: 3px;
+}
+
+/*******************************
+       Board Statistics Links
+  *******************************/
+
+.toplinks a {
+	color: var(--topLinksColor);
+	font-size: var(--topLinksFontSize);
+	text-decoration: none;
+}
+
+.toplinks {
+	margin: 0 11px -37px 0;
+	text-align: right;
+	color: transparent;
+}
+
+/*******************************
+   Mini Profile Seperators
+  *******************************/
+
+.postbit {
+	border-bottom: 1px solid var(--postBitBorderColor);
+	color: var(--postBitColor);
+	background: var(--postBitBGColor);
+	font-size: var(--postBitFontSize);
+	padding: 6px 7px;
+}
+
+/********************************
+      Miscellaneous
+  ********************************/
+
+/* image tag styles */
+img {
+	vertical-align: middle;
+	border: 0px;
+}
+img.attach {
+	border: 2px outset var(--imgAttachBorderColor);
+	padding: 2px;
+}
+
+/* Forum Descriptions */
+.desc {
+	font-size: var(--descFontSize);
+	color: var(--descColor);
+}
+
+/* Edited by text */
+.edit {
+	font-size: var(--editSize);
+}
+
+/* Topic Macros */
+
+.wrapmini {
+	float: left;
+}
+
+/* Warning CSS */
+.warngood {
+	color: green;
+}
+.warnbad {
+	color: red;
+}
+
+/* Skin selector dropdown */
+#skin_selector {
+	margin: 10px 0;
+}
+
+/* Online users list row */
+.thin {
+	padding: 6px 0px 6px 0px;
+	line-height: 140%;
+	margin: 2px 0px 2px 0px;
+	border-top: 1px solid var(--thinBorderColor);
+	border-bottom: 1px solid var(--thinBorderColor);
+}
+
+/* Latest news area */
+.newstext {
+	background: var(--newstextBGColor);
+	border: 1px solid var(--newstextBorderColor);
+	padding: 6px 6px 2px 6px;
+	margin-bottom: 10px;
+}
+
+/* Highlighted text in search */
+.searchlite {
+	color: var(--searchliteColor);
+	font-weight: bold;
+	background: var(--searchliteBGColor);
+}
+
+/****************************************
+   Mobile-specific Styles
+  *****************************************/
+
+#mobile {
+	background: var(--mobileBGColor);
+}
+
+/***********************************
+   Copyright: Removal is against Terms
+  ************************************/
+
+.copyright {
+	font-size: var(--copyrightFontSize);
+	line-height: 12px;
+}
