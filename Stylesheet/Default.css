@@ -16,14 +16,6 @@ form {
  *****************************************/
 
 :root {
-	--bodyFontFamily: Arial, sans-serif;
-	--tableFontFamily: Arial, sans-serif;
-	--searchBarFontFamily: Arial, sans-serif;
-	--quoteFontFamily: Arial, sans-serif;
-	--formInputFontFamily: Arial, sans-serif;
-
-	--codeFontFamily: Courier, Courier New, Verdana, Arial;
-
 	--editSize: 9px;
 
 	--postDetailsFontSize: 10px;
@@ -59,128 +51,6 @@ form {
 	--profileNameFontSize: 28px;
 	--logoLinkFontSize: 36px;
 
-	--photoTitleBorderColor: #000;
-	--searchInputFocusColor: #000;
-	--paginationLinkHoverColor: #000;
-	--darkRowColor: #000;
-	--formInputColor: #000;
-	--pformStripColor: #000;
-	--postBitColor: #000;
-	--descColor: #000;
-
-	--bodyFontColor: #222;
-	--tableFontColor: #222;
-	--titlemediumColor: #222;
-	--titlemediumLinkColor: #222;
-
-	--pformLeftwBorderColor: #232323;
-	--pformRightBorderColor: #232323;
-
-	--userLinksTDColor: #333;
-	--quoteColor: #333;
-	--codeColor: #333;
-
-	--ucpContentBorderColor: #545454;
-	--userLinksBorderColor: #545454;
-	--paginationCurrentBorderColor: #545454;
-	--formInputBorderColor: #545454;
-	--pformLeftBorderColor: #545454;
-	--openTabBorderColor: #545454;
-	--closedTabBorderColor: #545454;
-	--delCookiesRowBorderColor: #545454;
-	--thinBorderColor: #545454;
-
-	--ucpMenuBorderColor: #555;
-	--subMenuBorderColor: #555;
-	--calendarDateColor: #555;
-	--tableborderBorderColor: #555;
-	--tablebasicBorderColor: #555;
-	--quoteBorderColor: #555;
-	--codeBorderColor: #555;
-	--imgAttachBorderColor: #555;
-	--newstextBorderColor: #555;
-
-	--linkHoverColor: #808080;
-	--searchInputColor: #808080;
-
-	--tableborderBGColor: #c0c0c0;
-	--postBitBorderColor: #c0c0c0;
-
-	--postLinksBarBGColor: #cccccc;
-
-	--activeUserStripBGColor: #d6d6d6;
-	--darkRowBGColor: #d6d6d6;
-	--pformStripBGColor: #d6d6d6;
-
-	--searchBarBorderColor: #d8d8d8;
-	--titlemediumBGColor: #d8d8d8;
-	--buttonLargeBorderColor: #d8d8d8;
-
-	--bodyBGColor: #e1e1e1;
-
-	--paginationLinkHoverBGColor: #efeeee;
-
-	--ucpMenuBGColor: #efefef;
-	--ucpContentBGColor: #efefef;
-	--rowBGColor: #efefef;
-	--hlightBGColor: #efefef;
-	--dlightBGColor: #efefef;
-	--tablefillBGColor: #efefef;
-	--tablepadBGColor: #efefef;
-	--quoteBGColor: #efefef;
-	--codeBGColor: #efefef;
-	--pformLeftBGColor: #efefef;
-	--pformLeftwBGColor: #efefef;
-	--pformRightBGColor: #efefef;
-	--delCookiesRowBGColor: #efefef;
-	--postBitBGColor: #efefef;
-	--newstextBGColor: #efefef;
-
-	--calendarDateBGColor: #f2f2f2;
-	--userLinksBGColor: #f2f2f2;
-	--post1BGColor: #f2f2f2;
-	--post2BGColor: #f2f2f2;
-
-	--wrapperBGColor: #fbfbfb;
-	--mobileBGColor: #fbfbfb;
-
-	--searchBarBGColor: #fff;
-	--submenuLinkColor: #fff;
-	--paginationLinkColor: #fff;
-	--paginationCurrentBGColor: #fff;
-	--maintitleLinkColor: #fff;
-	--buttonLargeLinkColor: #fff;
-	--buttonSmallLinkColor: #fff;
-	--formInputBGColor: #fff;
-	--submitButtonLinkColor: #fff;
-	--opentabColor: #fff;
-	--closedtabColor: #fff;
-	--topLinksColor: #fff;
-
-	--buttonLargeColor: #660000;
-
-	--paginationLinkBGColor: #740300;
-	--paginationFirstLastBGColor: #740300;
-
-	--linkColor: #800000;
-	--logoLinkColor: #800000;
-	--searchButtonBGColor: #800000;
-	--submenuBGColor: #800000;
-	--paginationBorderColor: #800000;
-	--maintitleBGColor: #800000;
-	--buttonLargeBGColor: #800000;
-	--buttonSmallBGColor: #800000;
-	--submitButtonBGColor: #800000;
-	--opentabBGColor: #800000;
-	--closedtabBGColor: #800000;
-
-	--unregColor: #900;
-
-	--normalNameColor: #003;
-	--signatureColor: #339;
-	--searchliteColor: #f00;
-	--searchliteBGColor: #ff0;
-
 	--searchBarBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
 	--formInputBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
 
@@ -190,37 +60,80 @@ form {
 
 	--submitButtonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 	--buttonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-
-	--searchButtonImage: url(//files.jcink.net/themes/default/magnifying-glass.png);
-
-	--userLinksBGImage: url(//files.jcink.net/themes/default/white-gradient.png);
-
-	--postLinksBarBGImage: url(//files.jcink.net/themes/default/thin-gray-gradient.png);
-
-	--paginationBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
-	--titlemediumBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
-	--pformStripBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
-
-	--buttonLargeBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
-	--submitButtonImage: url(//files.jcink.net/themes/default/red-gradient.png);
-	--opentabBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
-	--closedtabBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
-
-	--submenuBGImage: url(//files.jcink.net/themes/default/red-gradient-glass.png);
-	--maintitleBGImage: url(//files.jcink.net/themes/default/red-gradient-glass.png);
 }
+
+:root {
+	/* Colors List */
+	--black: #000000;
+	--eerie-black: #222222;
+	--jet: #333333;
+	--davys-grey: #545454;
+	--grey: #808080;
+	--silver: #c0c0c0;
+	--timber-wolf: #d6d6d6;
+	--platinum: #e1e1e1;
+	--anti-flash-white: #efefef;
+	--white-smoke: #f2f2f2;
+	--barn-red: #740300;
+	--maroon: #800000;
+	--penn-red: #990000;
+	--penn-blue: #000033;
+	--red: #ff0000;
+	--egyptian-blue: #333399;
+	--yellow: #ffff00;
+
+	--border-solid1-1: 1px solid var(--eerie-black);
+	--border-solid1-2: 1px solid var(--davys-grey);
+	--border-solid1-3: 1px solid var(--timber-wolf);
+	--border-solid1-4: 1px solid var(--maroon);
+	--border-outset2-1: 2px outset var(--davys-grey);
+
+	--text-color-1: var(--black);
+	--text-color-2: var(--eerie-black);
+	--text-color-3: var(--jet);
+	--text-color-4: var(--grey);
+	--text-color-5: var(--white-smoke);
+	--text-color-6: var(--penn-red);
+	--text-color-7: var(--penn-blue);
+	--text-color-8: var(--red);
+	--text-color-9: var(--egyptian-blue);
+
+	--link-color-1: var(--eerie-black);
+	--link-color-2: var(--white-smoke);
+	--link-color-3: var(--maroon);
+
+	--bg-color-1: var(--silver);
+	--bg-color-2: var(--timber-wolf);
+	--bg-color-3: var(--platinum);
+	--bg-color-4: var(--anti-flash-white);
+	--bg-color-5: var(--white-smoke);
+	--bg-color-6: var(--barn-red);
+	--bg-color-7: var(--maroon);
+	--bg-color-8: var(--yellow);
+
+	/* Font List */
+	--arial: 'Arial', sans-serif;
+	--courier: 'Courier', monospace;
+
+	--font-family-1: var(--arial);
+	--font-family-2: var(--courier);
+
+	/* Font Sizes */
+}
+
+/* Border Styles */
 
 /****************************************
   Body Background & Text Style
  *****************************************/
 
 body {
-	font-family: var(--bodyFontFamily);
+	font-family: var(--font-family-1);
 	font-size: var(--bodyFontSize);
-	color: var(--bodyFontColor);
+	color: var(--text-color-2);
 	margin: 0px;
 	padding: 0px;
-	background: var(--bodyBGColor);
+	background: var(--bg-color-3);
 	text-align: center;
 }
 
@@ -231,9 +144,9 @@ body {
 table,
 tr,
 td {
-	font-family: var(--tableFontFamily);
+	font-family: var(--font-family-1);
 	font-size: var(--tableFontSize);
-	color: var(--tableFontColor);
+	color: var(--text-color-2);
 }
 
 /****************************************
@@ -242,9 +155,9 @@ td {
 
 #wrapper {
 	text-align: left;
-	width: 980px;
+	width: 1200px;
 	margin: 20px auto 30px;
-	background: var(--wrapperBGColor);
+	background: var(--bg-color-5);
 	box-shadow: var(--wrapperBoxShadow);
 	padding-bottom: 5px;
 }
@@ -261,10 +174,10 @@ a:link,
 a:visited,
 a:active {
 	text-decoration: none;
-	color: var(--linkColor);
+	color: var(--link-color-3);
 }
 a:hover {
-	color: var(--linkHoverColor);
+	color: var(--text-color-4);
 	text-decoration: none;
 }
 
@@ -277,20 +190,6 @@ a:hover {
 	font-weight: bold;
 }
 
-#photowrap {
-	padding: 6px;
-}
-
-#phototitle {
-	font-size: var(--photoTitleFontSize);
-	border-bottom: 1px solid var(--photoTitleBorderColor);
-}
-
-#photoimg {
-	text-align: center;
-	margin-top: 15px;
-}
-
 /****************************************
     UserCP/My Controls styles
  *****************************************/
@@ -298,8 +197,8 @@ a:hover {
 #ucpmenu {
 	line-height: 150%;
 	width: 22%;
-	border: 1px solid var(--ucpMenuBorderColor);
-	background: var(--ucpMenuBGColor);
+	border: var(--border-solid1-2);
+	background: var(--bg-color-4);
 }
 
 #ucpmenu p {
@@ -308,8 +207,8 @@ a:hover {
 }
 
 #ucpcontent {
-	background: var(--ucpContentBGColor);
-	border: 1px solid var(--ucpContentBorderColor);
+	background: var(--bg-color-4);
+	border: var(--border-solid1-2);
 	line-height: 150%;
 	width: auto;
 }
@@ -339,7 +238,7 @@ a:hover {
 	font-size: var(--logoLinkFontSize);
 	text-decoration: none;
 	font-weight: bold;
-	color: var(--logoLinkColor);
+	color: var(--link-color-3);
 }
 
 /****************************************
@@ -355,9 +254,9 @@ a:hover {
 }
 
 #searchbar .search-container {
-	background: var(--searchBarBGColor);
+	background: var(--bg-color-5);
 	box-shadow: var(--searchBarBoxShadow);
-	border: 1px solid var(--searchBarBorderColor);
+	border: var(--border-solid1-3);
 	display: block;
 	height: 26px;
 	position: relative;
@@ -367,20 +266,20 @@ a:hover {
 #searchbar .search-input {
 	background: none repeat scroll 0 0 transparent;
 	border: 0;
-	color: var(--searchInputColor);
+	color: var(--text-color-4);
 	font-size: var(--searchInputFontSize);
 	width: 192px;
 	height: 26px;
-	font-family: var(--searchBarFontFamily);
+	font-family: var(--font-family-1);
 	padding: 1px 0 0 8px;
 }
 
 #searchbar .search-input:focus {
-	color: var(--searchInputFocusColor);
+	color: var(--text-color-1);
 }
 
 #searchbar .search-button {
-	background: var(--searchButtonBGColor) var(--searchButtonImage);
+	background: var(--bg-color-7);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	border: 0;
@@ -405,8 +304,8 @@ a:hover {
 
 #submenu {
 	font-size: var(--subMenuFontSize);
-	border: 1px 0 solid var(--subMenuBorderColor);
-	background: var(--submenuBGColor) var(--submenuBGImage);
+	border: var(--border-solid1-2);
+	background: var(--bg-color-7);
 	background-position: center center;
 	margin-bottom: 3px;
 }
@@ -419,13 +318,13 @@ a:hover {
 #submenu a:visited,
 #submenu a:active {
 	text-decoration: none;
-	color: var(--submenuLinkColor) !important;
+	color: var(--link-color-2) !important;
 	padding: 7px 7px;
 	font-weight: bold;
 }
 
 #submenu a:hover {
-	color: var(--submenuLinkColor) !important;
+	color: var(--link-color-2) !important;
 	text-decoration: underline;
 }
 
@@ -438,46 +337,20 @@ a:hover {
 	padding: 6px 0px 16px 0px;
 }
 
-/****************************************
-    Calendar styling
- *****************************************/
-
-.caldate {
-	text-align: right;
-	font-weight: bold;
-	font-size: var(--calendarDateFontSize);
-	color: var(--calendarDateColor);
-	background: var(--calendarDateBGColor);
-	padding: 4px;
-	margin: 0px;
-}
-
-#calendarname {
-	font-size: var(--calendarNameFontSize);
-	font-weight: bold;
-}
-
-#padandcenter {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	padding: 14px 0px 14px 0px;
-}
-
 /**************************************************
   User Links Menu (Messages / View new posts / etc )
  ***************************************************/
 
 #userlinks {
-	border: 1px solid var(--userLinksBorderColor);
-	background: var(--userLinksBGColor) var(--userLinksBGImage);
+	border: var(--border-solid1-2);
+	background: var(--bg-color-5);
 	list-style: none;
 	width: 960px;
 	margin: 0 auto;
 }
 
 #userlinks td {
-	color: var(--userLinksTDColor);
+	color: var(--text-color-3);
 }
 
 #userlinks a {
@@ -494,28 +367,25 @@ a:hover {
  *****************************************/
 
 .activeuserstrip {
-	background: var(--activeUserStripBGColor);
+	background: var(--bg-color-2);
 	padding: 6px;
 }
 
 .normalname {
 	font-size: var(--normalNameFontSize);
 	font-weight: bold;
-	color: var(--normalNameColor);
+	color: var(--text-color-7);
 }
 
 .unreg {
 	font-size: var(--unregNameFontSize);
 	font-weight: bold;
-	color: var(--unregColor);
+	color: var(--text-color-6);
 }
 
-.post1 {
-	background: var(--post1BGColor);
-}
-
+.post1,
 .post2 {
-	background: var(--post2BGColor);
+	background: var(--bg-color-5);
 }
 
 .postdetails {
@@ -529,7 +399,7 @@ a:hover {
 
 .postlinksbar {
 	padding: 1px 5px;
-	background: var(--postLinksBarBGColor) var(--postLinksBarBGImage);
+	background: var(--bg-color-1);
 	padding: 1px;
 	margin-top: 1px;
 	font-size: var(--postLinksBarFontSize);
@@ -537,7 +407,7 @@ a:hover {
 
 .signature {
 	font-size: var(--signatureFontSize);
-	color: var(--signatureColor);
+	color: var(--text-color-9);
 	line-height: 150%;
 }
 
@@ -553,28 +423,26 @@ a:hover {
 .pagination a:link,
 .pagination a:visited,
 .pagination a:active {
-	border: 1px solid var(--paginationBorderColor);
+	border: var(--border-solid1-4);
 	border-radius: 3px;
-	background: var(--paginationLinkBGColor);
+	background: var(--bg-color-6);
 	padding-left: 6px;
 	padding-right: 6px;
-	color: var(--paginationLinkColor);
+	color: var(--link-color-2);
 	text-decoration: none;
 	box-shadow: var(--paginationBoxShadow);
 }
 
 .pagination a:hover {
-	background: var(--paginationLinkHoverBGColor);
+	background: var(--bg-color-4);
 	text-decoration: none;
-	color: var(--paginationLinkHoverColor);
+	color: var(--text-color-1);
 	box-shadow: var(--paginationBoxShadow);
-	background: var(--paginationBGImage);
 }
 
 .pagination .pagination_current {
-	background: none repeat scroll 0% 0% var(--paginationCurrentBGColor)
-		var(--paginationBGImage);
-	border: 1px solid var(--paginationCurrentBorderColor);
+	background: none repeat scroll 0% 0% var(--bg-color-5);
+	border: var(--border-solid1-2);
 	border-radius: 3px;
 	padding-left: 6px;
 	padding-right: 6px;
@@ -583,8 +451,8 @@ a:hover {
 .pagination_first,
 .pagination_last,
 .pagination_page {
-	background: none repeat scroll 0% 0% var(--paginationFirstLastBGColor);
-	border: 1px solid var(--paginationBorderColor);
+	background: none repeat scroll 0% 0% var(--bg-color-6);
+	border: var(--border-solid1-4);
 }
 
 .pagination_pagetxt {
@@ -599,7 +467,7 @@ a:hover {
 .row3,
 .row4,
 .row2 {
-	background: var(--rowBGColor);
+	background: var(--bg-color-4);
 	padding: 5px;
 }
 
@@ -610,8 +478,8 @@ a:hover {
 .darkrow1,
 .darkrow2,
 .darkrow3 {
-	background: var(--darkRowBGColor);
-	color: var(--darkRowColor);
+	background: var(--bg-color-2);
+	color: var(--text-color-1);
 }
 
 td.darkrow2 {
@@ -622,11 +490,9 @@ td.darkrow2 {
 	padding: 3px;
 }
 
-.hlight {
-	background: var(--hlightBGColor);
-}
+.hlight,
 .dlight {
-	background: var(--dlightBGColor);
+	background: var(--bg-color-4);
 }
 
 /****************************************
@@ -634,17 +500,17 @@ td.darkrow2 {
  *****************************************/
 
 .maintitle {
-	background: var(--maintitleBGColor) var(--maintitleBGImage);
+	background: var(--bg-color-7);
 	font-weight: bold;
 	padding: 8px;
-	color: var(--maintitleLinkColor);
+	color: var(--link-color-2);
 }
 
 .maintitle a:link,
 .maintitle a:visited,
 .maintitle a:active {
 	text-decoration: none;
-	color: var(--maintitleLinkColor);
+	color: var(--link-color-2);
 }
 
 .maintitle a:hover {
@@ -657,17 +523,17 @@ td.darkrow2 {
 
 .titlemedium {
 	font-weight: bold;
-	color: var(--titlemediumColor);
+	color: var(--text-color-2);
 	padding: 2px 6px;
 	margin: 0px;
-	background: var(--titlemediumBGColor) var(--titlemediumBGImage);
+	background: var(--bg-color-2);
 }
 
 .titlemedium a:link,
 .titlemedium a:visited,
 .titlemedium a:active {
 	text-decoration: none;
-	color: var(--titlemediumLinkColor);
+	color: var(--link-color-1);
 }
 
 /****************************************
@@ -675,20 +541,20 @@ td.darkrow2 {
  *****************************************/
 
 .tableborder {
-	background: var(--tableborderBGColor);
-	border: 1px solid var(--tableborderBorderColor);
+	background: var(--bg-color-1);
+	border: var(--border-solid1-2);
 	padding: 0px;
 	margin: 0;
 }
 
 .tablefill {
-	background: var(--tablefillBGColor);
-	border: 1px solid var(--tableborderBorderColor);
+	background: var(--bg-color-4);
+	border: var(--border-solid1-2);
 	padding: 6px;
 }
 
 .tablepad {
-	background: var(--tablepadBGColor);
+	background: var(--bg-color-4);
 	padding: 6px;
 }
 
@@ -700,7 +566,7 @@ td.darkrow2 {
 }
 
 .plainborder {
-	border: 1px solid var(--tableborderBorderColor);
+	border: var(--border-solid1-2);
 	background: var(--tablefillBGColor);
 }
 
@@ -708,26 +574,20 @@ td.darkrow2 {
    QUOTE and CODE BBCode boxes
  *****************************************/
 
-#QUOTE {
+#QUOTE,
+#CODE {
 	white-space: normal;
-	font-family: var(--quoteFontFamily);
+	font-family: var(--font-family-1);
 	font-size: var(--quoteFontSize);
-	color: var(--quoteColor);
-	background: var(--quoteBGColor);
+	color: var(--text-color-3);
+	background: var(--bg-color-4);
 	padding: 2px;
-	border: 1px solid var(--quoteBorderColor);
+	border: var(--border-solid1-2);
 	margin-top: 2px;
 }
 
 #CODE {
-	white-space: normal;
-	font-family: var(--codeFontFamily);
-	font-size: var(--codeFontSize);
-	color: var(--codeColor);
-	background: var(--codeBGColor);
-	padding: 2px;
-	border: 1px solid var(--codeBorderColor);
-	margin-top: 2px;
+	font-family: var(--font-family-2);
 }
 
 /**********************************************
@@ -735,22 +595,22 @@ td.darkrow2 {
  ***********************************************/
 
 .button-large {
-	background: var(--buttonLargeBGColor);
+	background: var(--bg-color-7);
 	border-radius: 3px;
 	padding: 5px 12px;
 	text-align: center;
 	margin: 0px 5px 0px 5px;
 	box-shadow: var(--buttonBoxShadow);
-	color: var(--buttonLargeLinkColor);
+	color: var(--link-color-2);
 	font-weight: bold;
 	min-width: 75px;
 	display: inline-block;
 }
 
 .button-small {
-	background: var(--buttonSmallBGColor);
+	background: var(--bg-color-7);
 	border-radius: 3px;
-	color: var(--buttonSmallLinkColor);
+	color: var(--link-color-2);
 	font-weight: bold;
 	font-size: var(--buttonSmallFontSize);
 	margin: 3px;
@@ -766,12 +626,12 @@ td.darkrow2 {
 }
 
 .button-large.closed {
-	background: var(--buttonLargeBGColor);
+	background: var(--bg-color-7);
 	padding: 7px 12px;
 	text-align: center;
 	margin: 0px 5px 0px 5px;
-	border: 1px solid var(--buttonLargeBorderColor);
-	color: var(--buttonLargeColor);
+	border: var(--border-solid1-3);
+	color: var(--link-color-2);
 	font-weight: bold;
 }
 
@@ -781,10 +641,10 @@ td.darkrow2 {
 .radiobutton,
 .checkbox {
 	border-radius: 2px;
-	background: var(--formInputBGColor);
-	border: 1px solid var(--formInputBorderColor);
-	color: var(--formInputColor);
-	font-family: var(--formInputFontFamily);
+	background: var(--bg-color-5);
+	border: var(--border-solid1-2);
+	color: var(--text-color-1);
+	font-family: var(--font-family-1);
 	font-size: var(--formInputFontSize);
 	padding: 2px;
 	vertical-align: middle;
@@ -794,10 +654,10 @@ td.darkrow2 {
 input[type='submit'],
 input[type='button'],
 input[type='reset'] {
-	background: #800000 url(//files.jcink.net/themes/default/red-gradient.png);
+	background: var(--bg-color-7);
 	border-radius: 3px;
 	box-shadow: var(--submitButtonBoxShadow);
-	color: var(--submitButtonLinkColor);
+	color: var(--link-color-2);
 	font-size: var(--submitButtonFontSize);
 	font-weight: bold;
 	margin: 3px;
@@ -815,36 +675,36 @@ input[type='reset'] {
  *****************************************/
 
 .pformstrip {
-	background: var(--pformStripBGColor) var(--pformStripBGImage);
-	color: var(--pformStripColor);
+	background: var(--bg-color-2);
+	color: var(--text-color-1);
 	font-weight: bold;
 	padding: 2px 5px;
 	margin-top: 1px;
 }
 
 .pformleft {
-	background: var(--pformLeftBGColor);
+	background: var(--bg-color-4);
 	padding: 6px;
 	margin-top: 1px;
 	width: 25%;
-	border-top: 1px solid var(--pformLeftBorderColor);
-	border-right: 1px solid var(--pformLeftBorderColor);
+	border-top: var(--border-solid1-2);
+	border-right: var(--border-solid1-2);
 }
 
 .pformleftw {
-	background: var(--pformLeftwBGColor);
+	background: var(--bg-color-4);
 	padding: 6px;
 	margin-top: 1px;
 	width: 40%;
-	border-top: 1px solid var(--pformLeftwBorderColor);
-	border-right: 1px solid var(--pformLeftwBorderColor);
+	border-top: var(--border-solid1-1);
+	border-right: var(--border-solid1-1);
 }
 
 .pformright {
-	background: var(--pformRightBGColor);
+	background: var(--bg-color-4);
 	padding: 6px;
 	margin-top: 1px;
-	border-top: 1px solid var(--pformRightBorderColor);
+	border-top: var(--border-solid1-1);
 }
 
 /****************************************
@@ -852,29 +712,29 @@ input[type='reset'] {
  *****************************************/
 
 .opentab {
-	color: var(--opentabColor);
+	color: var(--text-color-5);
 	padding: 8px;
 	float: left;
 	width: auto;
-	background: var(--opentabBGColor) var(--opentabBGImage);
+	background: var(--bg-color-7);
 	margin-top: 3px;
 	margin-right: 2px;
 	font-size: var(--openTabFontSize);
-	border: 1px solid var(--openTabBorderColor);
+	border: var(--border-solid1-2);
 }
 
 .closedtab {
-	color: var(--closedtabColor);
+	color: var(--text-color-5);
 	padding: 7px;
 	float: left;
 	width: auto;
-	background: var(--closedtabBGColor) var(--closedtabBGImage);
+	background: var(--bg-color-7);
 	margin-top: 6px;
 	margin-right: 2px;
 	font-size: var(--closedTabFontSize);
-	border-top: 1px solid var(--closedTabBorderColor);
-	border-right: 1px solid var(--closedTabBorderColor);
-	border-left: 1px solid var(--closedTabBorderColor);
+	border-top: var(--border-solid1-2);
+	border-right: var(--border-solid1-2);
+	border-left: var(--border-solid1-2);
 }
 
 .positiontab {
@@ -888,8 +748,8 @@ input[type='reset'] {
 
 #delcookiesrow,
 #mark-as-read-subto {
-	background: var(--delCookiesRowBGColor);
-	border: 1px solid var(--delCookiesRowBorderColor);
+	background: var(--bg-color-4);
+	border: var(--border-solid1-2);
 	font-size: var(--delCookiesRowFontSize);
 	padding: 5px;
 	width: 260px;
@@ -908,7 +768,7 @@ input[type='reset'] {
   *******************************/
 
 .toplinks a {
-	color: var(--topLinksColor);
+	color: var(--link-color-2);
 	font-size: var(--topLinksFontSize);
 	text-decoration: none;
 }
@@ -924,9 +784,9 @@ input[type='reset'] {
   *******************************/
 
 .postbit {
-	border-bottom: 1px solid var(--postBitBorderColor);
-	color: var(--postBitColor);
-	background: var(--postBitBGColor);
+	border-bottom: var(--border-solid1-2);
+	color: var(--text-color-1);
+	background: var(--bg-color-4);
 	font-size: var(--postBitFontSize);
 	padding: 6px 7px;
 }
@@ -941,14 +801,14 @@ img {
 	border: 0px;
 }
 img.attach {
-	border: 2px outset var(--imgAttachBorderColor);
+	border: var(--border-outset2-1);
 	padding: 2px;
 }
 
 /* Forum Descriptions */
 .desc {
 	font-size: var(--descFontSize);
-	color: var(--descColor);
+	color: var(--text-color-1);
 }
 
 /* Edited by text */
@@ -980,31 +840,23 @@ img.attach {
 	padding: 6px 0px 6px 0px;
 	line-height: 140%;
 	margin: 2px 0px 2px 0px;
-	border-top: 1px solid var(--thinBorderColor);
-	border-bottom: 1px solid var(--thinBorderColor);
+	border-top: var(--border-solid1-2);
+	border-bottom: var(--border-solid1-2);
 }
 
 /* Latest news area */
 .newstext {
-	background: var(--newstextBGColor);
-	border: 1px solid var(--newstextBorderColor);
+	background: var(--bg-color-4);
+	border: var(--border-solid1-2);
 	padding: 6px 6px 2px 6px;
 	margin-bottom: 10px;
 }
 
 /* Highlighted text in search */
 .searchlite {
-	color: var(--searchliteColor);
+	color: var(--text-color-8);
 	font-weight: bold;
-	background: var(--searchliteBGColor);
-}
-
-/****************************************
-   Mobile-specific Styles
-  *****************************************/
-
-#mobile {
-	background: var(--mobileBGColor);
+	background: var(--bg-color-8);
 }
 
 /***********************************
