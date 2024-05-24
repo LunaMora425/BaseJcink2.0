@@ -16,194 +16,198 @@ form {
  *****************************************/
 
 :root {
-	--bodyFontColor: #222;
 	--bodyFontFamily: Arial, sans-serif;
-	--bodyFontSize: 12px;
-	--bodyBGColor: #e1e1e1;
-
-	--tableFontColor: #222;
 	--tableFontFamily: Arial, sans-serif;
-	--tableFontSize: 12px;
-
-	--wrapperBGColor: #fbfbfb;
-	--wrapperBoxShadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-
-	--linkColor: #800000;
-	--linkHoverColor: gray;
-
-	--profileNameFontSize: 28px;
-	--photoTitleFontSize: 24px;
-	--photoTitleBorderColor: #000;
-
-	--ucpMenuBGColor: #efefef;
-	--ucpMenuBorderColor: #555;
-	--ucpContentBGColor: #efefef;
-	--ucpContentBorderColor: #545454;
-
-	--logoLinkFontSize: 36px;
-	--logoLinkColor: #800000;
-
-	--searchBarBGColor: #ffffff;
-	--searchBarBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
-	--searchBarBorderColor: #d8d8d8;
-	--searchInputFontSize: 12px;
-	--searchInputColor: #808080;
-	--searchInputFocusColor: #000000;
-	--searchButtonBGColor: #800000;
-	--searchButtonImage: url(//files.jcink.net/themes/default/magnifying-glass.png);
-
-	--subMenuBorderColor: #555;
-	--submenuBGColor: #800000;
-	--submenuBGImage: url(//files.jcink.net/themes/default/red-gradient-glass.png);
-	--submenuLinkColor: #fff;
-
-	--calendarDateFontSize: 11px;
-	--calendarDateColor: #555;
-	--calendarDateBGColor: #f2f2f2;
-	--calendarNameFontSize: 22px;
-
-	--userLinksBGColor: #f2f2f2;
-	--userLinksBGImage: url(//files.jcink.net/themes/default/white-gradient.png);
-	--userLinksBorderColor: #545454;
-	--userLinksTDColor: #333;
-
-	--activeUserStripBGColor: #d6d6d6;
-
-	--normalNameColor: #003;
-	--normalNameFontSize: 12px;
-	--unregColor: #900;
-	--unregNameFontSize: 11px;
-	--post1BGColor: #f2f2f2;
-	--post2BGColor: #f2f2f2;
-	--postDetailsFontSize: 10px;
-	--postColorFontSize: 12px;
-
-	--postLinksBarBGColor: #cccccc;
-	--postLinksBarBGImage: url(//files.jcink.net/themes/default/thin-gray-gradient.png);
-	--postLinksBarFontSize: 10px;
-	--signatureColor: #339;
-	--signatureFontSize: 10px;
-
-	--paginationBorderColor: #800000;
-	--paginationLinkColor: #ffffff;
-	--paginationLinkBGColor: #740300;
-	--paginationLinkHoverBGColor: #efeeee;
-	--paginationLinkHoverColor: #000000;
-	--paginationCurrentBGColor: #ffffff;
-	--paginationCurrentBorderColor: #545454;
-	--paginationFirstLastBGColor: #740300;
-	--paginationBoxShadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
-	--paginationBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
-
-	--rowBGColor: #efefef;
-	--darkRowBGColor: #d6d6d6;
-	--darkRowColor: #000;
-	--hlightBGColor: #efefef;
-	--dlightBGColor: #efefef;
-
-	--maintitleBGColor: #800000;
-	--maintitleBGImage: url(//files.jcink.net/themes/default/red-gradient-glass.png);
-	--maintitleLinkColor: #fff;
-
-	--titlemediumColor: #222;
-	--titlemediumBGColor: #d8d8d8;
-	--titlemediumBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
-	--titlemediumLinkColor: #222;
-
-	--tableborderBGColor: #c0c0c0;
-	--tableborderBorderColor: #555;
-	--tablefillBGColor: #efefef;
-	--tablepadBGColor: #efefef;
-	--tablebasicBorderColor: #555;
-
+	--searchBarFontFamily: Arial, sans-serif;
 	--quoteFontFamily: Arial, sans-serif;
-	--quoteFontSize: 11px;
-	--quoteColor: #333;
-	--quoteBGColor: #efefef;
-	--quoteBorderColor: #555;
+	--formInputFontFamily: Arial, sans-serif;
 
 	--codeFontFamily: Courier, Courier New, Verdana, Arial;
-	--codeFontSize: 11px;
-	--codeColor: #333;
-	--codeBGColor: #efefef;
-	--codeBorderColor: #555;
-
-	--buttonLargeBGColor: #800000;
-	--buttonLargeBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
-	--buttonLargeColor: #660000;
-	--buttonLargeBorderColor: #d8d8d8;
-	--buttonLargeLinkColor: #ffffff;
-	--buttonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-	--buttonSmallBGColor: #800000;
-	--buttonSmallLinkColor: #ffffff;
-	--buttonSmallFontSize: 11px;
-
-	--formInputBorderColor: #545454;
-	--formInputColor: #000;
-	--formInputBGColor: #fff;
-	--formInputFontFamily: Arial, sans-serif;
-	--formInputFontSize: 12px;
-	--formInputBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
-
-	--submitButtonBGColor: #800000;
-	--submitButtonImage: url(//files.jcink.net/themes/default/red-gradient.png);
-	--submitButtonLinkColor: #ffffff;
-	--submitButtonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-	--submitButtonFontSize: 11px;
-
-	--codeButtonsFontSize: 10px;
-
-	--pformStripBGColor: #d6d6d6;
-	--pformStripBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
-	--pformStripColor: #000;
-	--pformLeftBGColor: #efefef;
-	--pformLeftBorderColor: #545454;
-	--pformLeftwBGColor: #efefef;
-	--pformLeftwBorderColor: #232323;
-	--pformRightBGColor: #efefef;
-	--pformRightBorderColor: #232323;
-
-	--opentabColor: #fff;
-	--opentabBGColor: #800000;
-	--opentabBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
-	--openTabFontSize: 11px;
-	--openTabBorderColor: #545454;
-	--closedtabColor: #fff;
-	--closedtabBGColor: #800000;
-	--closedtabBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
-	--closedTabFontSize: 11px;
-	--closedTabBorderColor: #545454;
-
-	--delCookiesRowBGColor: #efefef;
-	--delCookiesRowBorderColor: #545454;
-	--delCookiesRowFontSize: 10px;
-
-	--topLinksColor: #ffffff;
-	--topLinksFontSize: 11px;
-
-	--postBitBorderColor: #c0c0c0;
-	--postBitBGColor: #efefef;
-	--postBitColor: #000;
-	--postBitFontSize: 11px;
-
-	--imgAttachBorderColor: #555;
-
-	--descFontSize: 11px;
-	--descColor: #000;
 
 	--editSize: 9px;
 
+	--postDetailsFontSize: 10px;
+	--postLinksBarFontSize: 10px;
+	--signatureFontSize: 10px;
+	--codeButtonsFontSize: 10px;
+	--delCookiesRowFontSize: 10px;
+	--copyrightFontSize: 10px;
+
+	--calendarDateFontSize: 11px;
+	--unregNameFontSize: 11px;
+	--quoteFontSize: 11px;
+	--codeFontSize: 11px;
+	--buttonSmallFontSize: 11px;
+	--submitButtonFontSize: 11px;
+	--openTabFontSize: 11px;
+	--closedTabFontSize: 11px;
+	--topLinksFontSize: 11px;
+	--postBitFontSize: 11px;
+	--descFontSize: 11px;
+
+	--bodyFontSize: 12px;
+	--tableFontSize: 12px;
+	--searchInputFontSize: 12px;
+	--normalNameFontSize: 12px;
+	--postColorFontSize: 12px;
+	--formInputFontSize: 12px;
+
+	--subMenuFontSize: 13px;
+
+	--calendarNameFontSize: 22px;
+	--photoTitleFontSize: 24px;
+	--profileNameFontSize: 28px;
+	--logoLinkFontSize: 36px;
+
+	--photoTitleBorderColor: #000;
+	--searchInputFocusColor: #000;
+	--paginationLinkHoverColor: #000;
+	--darkRowColor: #000;
+	--formInputColor: #000;
+	--pformStripColor: #000;
+	--postBitColor: #000;
+	--descColor: #000;
+
+	--bodyFontColor: #222;
+	--tableFontColor: #222;
+	--titlemediumColor: #222;
+	--titlemediumLinkColor: #222;
+
+	--pformLeftwBorderColor: #232323;
+	--pformRightBorderColor: #232323;
+
+	--userLinksTDColor: #333;
+	--quoteColor: #333;
+	--codeColor: #333;
+
+	--ucpContentBorderColor: #545454;
+	--userLinksBorderColor: #545454;
+	--paginationCurrentBorderColor: #545454;
+	--formInputBorderColor: #545454;
+	--pformLeftBorderColor: #545454;
+	--openTabBorderColor: #545454;
+	--closedTabBorderColor: #545454;
+	--delCookiesRowBorderColor: #545454;
 	--thinBorderColor: #545454;
 
-	--newstextBGColor: #efefef;
+	--ucpMenuBorderColor: #555;
+	--subMenuBorderColor: #555;
+	--calendarDateColor: #555;
+	--tableborderBorderColor: #555;
+	--tablebasicBorderColor: #555;
+	--quoteBorderColor: #555;
+	--codeBorderColor: #555;
+	--imgAttachBorderColor: #555;
 	--newstextBorderColor: #555;
 
+	--linkHoverColor: #808080;
+	--searchInputColor: #808080;
+
+	--tableborderBGColor: #c0c0c0;
+	--postBitBorderColor: #c0c0c0;
+
+	--postLinksBarBGColor: #cccccc;
+
+	--activeUserStripBGColor: #d6d6d6;
+	--darkRowBGColor: #d6d6d6;
+	--pformStripBGColor: #d6d6d6;
+
+	--searchBarBorderColor: #d8d8d8;
+	--titlemediumBGColor: #d8d8d8;
+	--buttonLargeBorderColor: #d8d8d8;
+
+	--bodyBGColor: #e1e1e1;
+
+	--paginationLinkHoverBGColor: #efeeee;
+
+	--ucpMenuBGColor: #efefef;
+	--ucpContentBGColor: #efefef;
+	--rowBGColor: #efefef;
+	--hlightBGColor: #efefef;
+	--dlightBGColor: #efefef;
+	--tablefillBGColor: #efefef;
+	--tablepadBGColor: #efefef;
+	--quoteBGColor: #efefef;
+	--codeBGColor: #efefef;
+	--pformLeftBGColor: #efefef;
+	--pformLeftwBGColor: #efefef;
+	--pformRightBGColor: #efefef;
+	--delCookiesRowBGColor: #efefef;
+	--postBitBGColor: #efefef;
+	--newstextBGColor: #efefef;
+
+	--calendarDateBGColor: #f2f2f2;
+	--userLinksBGColor: #f2f2f2;
+	--post1BGColor: #f2f2f2;
+	--post2BGColor: #f2f2f2;
+
+	--wrapperBGColor: #fbfbfb;
+	--mobileBGColor: #fbfbfb;
+
+	--searchBarBGColor: #fff;
+	--submenuLinkColor: #fff;
+	--paginationLinkColor: #fff;
+	--paginationCurrentBGColor: #fff;
+	--maintitleLinkColor: #fff;
+	--buttonLargeLinkColor: #fff;
+	--buttonSmallLinkColor: #fff;
+	--formInputBGColor: #fff;
+	--submitButtonLinkColor: #fff;
+	--opentabColor: #fff;
+	--closedtabColor: #fff;
+	--topLinksColor: #fff;
+
+	--buttonLargeColor: #660000;
+
+	--paginationLinkBGColor: #740300;
+	--paginationFirstLastBGColor: #740300;
+
+	--linkColor: #800000;
+	--logoLinkColor: #800000;
+	--searchButtonBGColor: #800000;
+	--submenuBGColor: #800000;
+	--paginationBorderColor: #800000;
+	--maintitleBGColor: #800000;
+	--buttonLargeBGColor: #800000;
+	--buttonSmallBGColor: #800000;
+	--submitButtonBGColor: #800000;
+	--opentabBGColor: #800000;
+	--closedtabBGColor: #800000;
+
+	--unregColor: #900;
+
+	--normalNameColor: #003;
+	--signatureColor: #339;
 	--searchliteColor: #f00;
 	--searchliteBGColor: #ff0;
 
-	--mobileBGColor: #fbfbfb;
+	--searchBarBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
+	--formInputBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
 
-	--copyrightFontSize: 10px;
+	--wrapperBoxShadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+	--paginationBoxShadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
+
+	--submitButtonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	--buttonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+
+	--searchButtonImage: url(//files.jcink.net/themes/default/magnifying-glass.png);
+
+	--userLinksBGImage: url(//files.jcink.net/themes/default/white-gradient.png);
+
+	--postLinksBarBGImage: url(//files.jcink.net/themes/default/thin-gray-gradient.png);
+
+	--paginationBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
+	--titlemediumBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
+	--pformStripBGImage: url(//files.jcink.net/themes/default/gray-gradient.png);
+
+	--buttonLargeBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
+	--submitButtonImage: url(//files.jcink.net/themes/default/red-gradient.png);
+	--opentabBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
+	--closedtabBGImage: url(//files.jcink.net/themes/default/red-gradient.png);
+
+	--submenuBGImage: url(//files.jcink.net/themes/default/red-gradient-glass.png);
+	--maintitleBGImage: url(//files.jcink.net/themes/default/red-gradient-glass.png);
 }
 
 /****************************************
@@ -367,7 +371,7 @@ a:hover {
 	font-size: var(--searchInputFontSize);
 	width: 192px;
 	height: 26px;
-	font-family: Arial, sans-serif;
+	font-family: var(--searchBarFontFamily);
 	padding: 1px 0 0 8px;
 }
 
@@ -400,7 +404,7 @@ a:hover {
  *****************************************/
 
 #submenu {
-	font-size: 13px;
+	font-size: var(--subMenuFontSize);
 	border: 1px 0 solid var(--subMenuBorderColor);
 	background: var(--submenuBGColor) var(--submenuBGImage);
 	background-position: center center;
@@ -443,7 +447,7 @@ a:hover {
 	font-weight: bold;
 	font-size: var(--calendarDateFontSize);
 	color: var(--calendarDateColor);
-	background-color: var(--calendarDateBGColor);
+	background: var(--calendarDateBGColor);
 	padding: 4px;
 	margin: 0px;
 }
@@ -819,7 +823,7 @@ input[type='reset'] {
 }
 
 .pformleft {
-	background-color: var(--pformLeftBGColor);
+	background: var(--pformLeftBGColor);
 	padding: 6px;
 	margin-top: 1px;
 	width: 25%;
@@ -828,7 +832,7 @@ input[type='reset'] {
 }
 
 .pformleftw {
-	background-color: var(--pformLeftwBGColor);
+	background: var(--pformLeftwBGColor);
 	padding: 6px;
 	margin-top: 1px;
 	width: 40%;
@@ -837,7 +841,7 @@ input[type='reset'] {
 }
 
 .pformright {
-	background-color: var(--pformRightBGColor);
+	background: var(--pformRightBGColor);
 	padding: 6px;
 	margin-top: 1px;
 	border-top: 1px solid var(--pformRightBorderColor);
