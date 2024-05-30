@@ -1,2 +1,4 @@
 # ignore minified files
 min/
+# ignore misc files
+misc/

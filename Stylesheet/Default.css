@@ -6,7 +6,9 @@
 
 html {
 	overflow-x: auto;
+	font-size: 62.5%;
 }
+
 form {
 	display: inline;
 }
@@ -16,42 +18,6 @@ form {
  *****************************************/
 
 :root {
-	--editSize: 9px;
-
-	--postDetailsFontSize: 10px;
-	--postLinksBarFontSize: 10px;
-	--signatureFontSize: 10px;
-	--codeButtonsFontSize: 10px;
-	--delCookiesRowFontSize: 10px;
-	--copyrightFontSize: 10px;
-
-	--calendarDateFontSize: 11px;
-	--unregNameFontSize: 11px;
-	--quoteFontSize: 11px;
-	--codeFontSize: 11px;
-	--buttonSmallFontSize: 11px;
-	--submitButtonFontSize: 11px;
-	--openTabFontSize: 11px;
-	--closedTabFontSize: 11px;
-	--topLinksFontSize: 11px;
-	--postBitFontSize: 11px;
-	--descFontSize: 11px;
-
-	--bodyFontSize: 12px;
-	--tableFontSize: 12px;
-	--searchInputFontSize: 12px;
-	--normalNameFontSize: 12px;
-	--postColorFontSize: 12px;
-	--formInputFontSize: 12px;
-
-	--subMenuFontSize: 13px;
-
-	--calendarNameFontSize: 22px;
-	--photoTitleFontSize: 24px;
-	--profileNameFontSize: 28px;
-	--logoLinkFontSize: 36px;
-
-	--searchBarBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
 	--formInputBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
 
 	--wrapperBoxShadow: 0 5px 10px rgba(0, 0, 0, 0.5);
@@ -64,60 +30,55 @@ form {
 
 :root {
 	/* Colors List */
-	--black: #000000;
 	--eerie-black: #222222;
-	--jet: #333333;
-	--davys-grey: #545454;
-	--grey: #808080;
-	--silver: #c0c0c0;
-	--timber-wolf: #d6d6d6;
-	--platinum: #e1e1e1;
 	--anti-flash-white: #efefef;
-	--white-smoke: #f2f2f2;
-	--barn-red: #740300;
+	--timberwolf: #d6d1cd;
+	--battleship-grey: #969a97;
 	--maroon: #800000;
-	--penn-red: #990000;
-	--penn-blue: #000033;
-	--red: #ff0000;
-	--egyptian-blue: #333399;
-	--yellow: #ffff00;
 
-	--border-solid1-1: 1px solid var(--eerie-black);
-	--border-solid1-2: 1px solid var(--davys-grey);
-	--border-solid1-3: 1px solid var(--timber-wolf);
-	--border-solid1-4: 1px solid var(--maroon);
-	--border-outset2-1: 2px outset var(--davys-grey);
+	--background__primary: var(--maroon);
+	--background__secondary: var(--battleship-grey);
+	--background__accent: var(--timberwolf);
+	--background__low-contrast: var(--anti-flash-white);
+	--background__high-contrast: var(--eerie-black);
 
-	--text-color-1: var(--black);
-	--text-color-2: var(--eerie-black);
-	--text-color-3: var(--jet);
-	--text-color-4: var(--grey);
-	--text-color-5: var(--penn-red);
-	--text-color-6: var(--penn-blue);
-	--text-color-7: var(--red);
-	--text-color-8: var(--egyptian-blue);
+	--border__primary: var(--maroon);
+	--border__secondary: var(--battleship-grey);
+	--border__accent: var(--timberwolf);
+	--border__low-contrast: var(--anti-flash-white);
+	--border__high-contrast: var(--eerie-black);
 
-	--link-color-1: var(--eerie-black);
-	--link-color-2: var(--white-smoke);
-	--link-color-3: var(--maroon);
+	--link__primary: var(--maroon);
+	--link__secondary: var(--battleship-grey);
+	--link__accent: var(--timberwolf);
+	--link__low-contrast: var(--anti-flash-white);
+	--link__high-contrast: var(--eerie-black);
 
-	--bg-color-1: var(--silver);
-	--bg-color-2: var(--timber-wolf);
-	--bg-color-3: var(--platinum);
-	--bg-color-4: var(--anti-flash-white);
-	--bg-color-5: var(--white-smoke);
-	--bg-color-6: var(--barn-red);
-	--bg-color-7: var(--maroon);
-	--bg-color-8: var(--yellow);
+	--text__primary: var(--maroon);
+	--text__secondary: var(--battleship-grey);
+	--text__accent: var(--timberwolf);
+	--text__low-contrast: var(--anti-flash-white);
+	--text__high-contrast: var(--eerie-black);
 
 	/* Font List */
 	--arial: 'Arial', sans-serif;
 	--courier: 'Courier', monospace;
 
-	--font-family-1: var(--arial);
-	--font-family-2: var(--courier);
+	--font__title: var(--arial);
+	--font__subheading: var(--arial);
+	--font__body: var(--arial);
+	--font__accent: var(--courier);
 
 	/* Font Sizes */
+	--size14px: 1.4rem;
+	--size16px: 1.6rem;
+	--size24px: 2.4rem;
+	--size35px: 3.5rem;
+
+	--textsize__title: var(--size35px);
+	--textsize__subheading: var(--size24px);
+	--textsize-body__primary: var(--size16px);
+	--textsize-body__secondary: var(--size14px);
 }
 
 /****************************************
@@ -167,7 +128,6 @@ form {
 	border-bottom: var(--border-solid1-2);
 }
 
-#searchbar .search-container,
 .button-large.closed {
 	border: var(--border-solid1-3);
 }
@@ -189,7 +149,6 @@ img.attach {
   Text Colors
  *****************************************/
 
-#searchbar .search-input:focus,
 .pagination a:hover,
 .darkrow1,
 .darkrow2,
@@ -219,8 +178,7 @@ td,
 	color: var(--text-color-3);
 }
 
-a:hover,
-#searchbar .search-input {
+a:hover {
 	color: var(--text-color-4);
 }
 
@@ -246,10 +204,6 @@ a:hover,
 	color: var(--link-color-1);
 }
 
-#submenu a:link,
-#submenu a:visited,
-#submenu a:active,
-#submenu a:hover,
 .pagination a:link,
 .pagination a:visited,
 .pagination a:active,
@@ -322,7 +276,6 @@ body {
 }
 
 #wrapper,
-#searchbar .search-container,
 #userlinks,
 .post1,
 .post2,
@@ -344,7 +297,6 @@ body {
 	background: var(--bg-color-6);
 }
 
-#searchbar .search-button,
 #submenu,
 .maintitle,
 .button-large,
@@ -361,26 +313,87 @@ input[type='reset'] {
 }
 
 /****************************************
+  Font Family Styles
+ *****************************************/
+
+body,
+table,
+tr,
+td,
+#QUOTE,
+.forminput,
+.codebuttons,
+.textinput,
+.radiobutton,
+.checkbox {
+	font-family: var(--font-family-1);
+}
+
+#CODE {
+	font-family: var(--font-family-2);
+}
+
+/****************************************
+  Text Sizes
+ *****************************************/
+.edit {
+	font-size: var(--text-size-13);
+}
+
+.postdetails,
+.postlinksbar,
+.signature,
+.codebuttons,
+#delcookiesrow,
+#mark-as-read-subto,
+.copyright {
+	font-size: var(--text-size-14);
+}
+
+.desc,
+.unreg,
+#QUOTE,
+#CODE,
+.button-small,
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+.toplinks a,
+.postbit {
+	font-size: var(--text-size-15);
+}
+
+body,
+table,
+tr,
+td,
+.normalname,
+.postcolor,
+.forminput,
+.codebuttons,
+.textinput,
+.radiobutton,
+.checkbox {
+	font-size: var(--text-size-16);
+}
+
+#profilename {
+	font-size: var(--text-size-32);
+}
+
+#logo a,
+#logo a:hover {
+	font-size: var(--text-size-40);
+}
+
+/****************************************
   Body Background & Text Style
  *****************************************/
 
 body {
-	font-family: var(--font-family-1);
-	font-size: var(--bodyFontSize);
 	margin: 0px;
 	padding: 0px;
 	text-align: center;
-}
-
-/****************************************
-    Table Styles
- *****************************************/
-
-table,
-tr,
-td {
-	font-family: var(--font-family-1);
-	font-size: var(--tableFontSize);
 }
 
 /****************************************
@@ -417,7 +430,6 @@ a:hover {
  *****************************************/
 
 #profilename {
-	font-size: var(--profileNameFontSize);
 	font-weight: bold;
 }
 
@@ -462,58 +474,8 @@ a:hover {
 
 #logo a,
 #logo a:hover {
-	font-size: var(--logoLinkFontSize);
 	text-decoration: none;
 	font-weight: bold;
-}
-
-/****************************************
-   Search Bar 
- *****************************************/
-
-#searchbar {
-	display: block;
-	float: right;
-	position: relative;
-	right: 10px;
-	top: 8px;
-}
-
-#searchbar .search-container {
-	box-shadow: var(--searchBarBoxShadow);
-	display: block;
-	height: 26px;
-	position: relative;
-	width: 200px;
-}
-
-#searchbar .search-input {
-	background: none repeat scroll 0 0 transparent;
-	border: 0;
-	font-size: var(--searchInputFontSize);
-	width: 192px;
-	height: 26px;
-	font-family: var(--font-family-1);
-	padding: 1px 0 0 8px;
-}
-
-#searchbar .search-button {
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	border: 0;
-	bottom: 0;
-	margin: 0;
-	border-radius: 0;
-	display: block;
-	height: 26px;
-	padding: 0;
-	position: absolute;
-	right: 0;
-	text-indent: -3000em;
-	top: 0;
-	width: 26px;
-	cursor: pointer;
-	box-shadow: none;
 }
 
 /****************************************
@@ -521,25 +483,14 @@ a:hover {
  *****************************************/
 
 #submenu {
-	font-size: var(--subMenuFontSize);
-	background-position: center center;
-	margin-bottom: 3px;
+	height: 30px;
+	margin: 0 10px;
+	width: calc(100% - 20px);
+	box-sizing: border-box;
 }
 
-#submenu img {
+table#submenu > tbody {
 	display: none;
-}
-
-#submenu a:link,
-#submenu a:visited,
-#submenu a:active {
-	text-decoration: none;
-	padding: 7px 7px;
-	font-weight: bold;
-}
-
-#submenu a:hover {
-	text-decoration: underline;
 }
 
 #navi br {
@@ -556,10 +507,9 @@ a:hover {
  ***************************************************/
 
 #userlinks {
-	list-style: none;
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 10px;
+	margin: 0 10px;
+	width: calc(100% - 20px);
+	box-sizing: border-box;
 }
 
 #userlinks a {
@@ -580,21 +530,14 @@ a:hover {
 }
 
 .normalname {
-	font-size: var(--normalNameFontSize);
 	font-weight: bold;
 }
 
 .unreg {
-	font-size: var(--unregNameFontSize);
 	font-weight: bold;
 }
 
-.postdetails {
-	font-size: var(--postDetailsFontSize);
-}
-
 .postcolor {
-	font-size: var(--postColorFontSize);
 	line-height: 160%;
 }
 
@@ -602,11 +545,9 @@ a:hover {
 	padding: 1px 5px;
 	padding: 1px;
 	margin-top: 1px;
-	font-size: var(--postLinksBarFontSize);
 }
 
 .signature {
-	font-size: var(--signatureFontSize);
 	line-height: 150%;
 }
 
@@ -730,14 +671,8 @@ td.darkrow2 {
 #QUOTE,
 #CODE {
 	white-space: normal;
-	font-family: var(--font-family-1);
-	font-size: var(--quoteFontSize);
 	padding: 2px;
 	margin-top: 2px;
-}
-
-#CODE {
-	font-family: var(--font-family-2);
 }
 
 /**********************************************
@@ -758,7 +693,6 @@ td.darkrow2 {
 .button-small {
 	border-radius: 3px;
 	font-weight: bold;
-	font-size: var(--buttonSmallFontSize);
 	margin: 3px;
 	padding: 4px 7px;
 	box-shadow: var(--buttonBoxShadow);
@@ -784,8 +718,6 @@ td.darkrow2 {
 .radiobutton,
 .checkbox {
 	border-radius: 2px;
-	font-family: var(--font-family-1);
-	font-size: var(--formInputFontSize);
 	padding: 2px;
 	vertical-align: middle;
 	box-shadow: var(--formInputBoxShadow);
@@ -796,16 +728,11 @@ input[type='button'],
 input[type='reset'] {
 	border-radius: 3px;
 	box-shadow: var(--submitButtonBoxShadow);
-	font-size: var(--submitButtonFontSize);
 	font-weight: bold;
 	margin: 3px;
 	padding: 2px 6px;
 	text-decoration: none;
 	border: none;
-}
-
-.codebuttons {
-	font-size: var(--codeButtonsFontSize);
 }
 
 /****************************************
@@ -841,7 +768,6 @@ input[type='reset'] {
 
 #delcookiesrow,
 #mark-as-read-subto {
-	font-size: var(--delCookiesRowFontSize);
 	padding: 5px;
 	width: 260px;
 	float: right;
@@ -859,12 +785,10 @@ input[type='reset'] {
   *******************************/
 
 .toplinks a {
-	font-size: var(--topLinksFontSize);
 	text-decoration: none;
 }
 
 .toplinks {
-	margin: 0 11px -37px 0;
 	text-align: right;
 	color: transparent;
 }
@@ -874,7 +798,6 @@ input[type='reset'] {
   *******************************/
 
 .postbit {
-	font-size: var(--postBitFontSize);
 	padding: 6px 7px;
 }
 
@@ -889,16 +812,6 @@ img {
 }
 img.attach {
 	padding: 2px;
-}
-
-/* Forum Descriptions */
-.desc {
-	font-size: var(--descFontSize);
-}
-
-/* Edited by text */
-.edit {
-	font-size: var(--editSize);
 }
 
 /* Topic Macros */
@@ -943,6 +856,5 @@ img.attach {
   ************************************/
 
 .copyright {
-	font-size: var(--copyrightFontSize);
-	line-height: 12px;
+	line-height: var(--text-size-16);
 }
