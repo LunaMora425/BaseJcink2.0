@@ -82,318 +82,29 @@ form {
 }
 
 /****************************************
-  Border Styles
- *****************************************/
-.pformleftw,
-.pformright {
-	border-top: var(--border-solid1-1);
-}
-
-.pformleftw {
-	border-right: var(--border-solid1-1);
-}
-
-#ucpmenu,
-#ucpcontent,
-#submenu,
-#userlinks,
-#QUOTE,
-#CODE,
-#delcookiesrow,
-#mark-as-read-subto,
-.pagination .pagination_current,
-.tableborder,
-.tablefill,
-.plainborder,
-.forminput,
-.codebuttons,
-.textinput,
-.radiobutton,
-.checkbox,
-.newstext {
-	border: var(--border-solid1-2);
-}
-
-.pformleft,
-.thin {
-	border-top: var(--border-solid1-2);
-}
-
-.pformleft {
-	border-right: var(--border-solid1-2);
-}
-
-.postbit,
-.thin {
-	border-bottom: var(--border-solid1-2);
-}
-
-.button-large.closed {
-	border: var(--border-solid1-3);
-}
-
-.pagination a:link,
-.pagination a:visited,
-.pagination a:active,
-.pagination_first,
-.pagination_last,
-.pagination_page {
-	border: var(--border-solid1-4);
-}
-
-img.attach {
-	border: var(--border-outset2-1);
-}
-
-/****************************************
-  Text Colors
- *****************************************/
-
-.pagination a:hover,
-.darkrow1,
-.darkrow2,
-.darkrow3,
-.forminput,
-.codebuttons,
-.textinput,
-.radiobutton,
-.checkbox,
-.pformstrip,
-.postbit,
-.desc {
-	color: var(--text-color-1);
-}
-
-body,
-table,
-tr,
-td,
-.titlemedium {
-	color: var(--text-color-2);
-}
-
-#userlinks td,
-#QUOTE,
-#CODE {
-	color: var(--text-color-3);
-}
-
-a:hover {
-	color: var(--text-color-4);
-}
-
-.unreg {
-	color: var(--text-color-5);
-}
-
-.normalname {
-	color: var(--text-color-6);
-}
-
-.searchlite {
-	color: var(--text-color-7);
-}
-
-.signature {
-	color: var(--text-color-8);
-}
-
-.titlemedium a:link,
-.titlemedium a:visited,
-.titlemedium a:active {
-	color: var(--link-color-1);
-}
-
-.pagination a:link,
-.pagination a:visited,
-.pagination a:active,
-.maintitle,
-.maintitle a:link,
-.maintitle a:visited,
-.maintitle a:active,
-.button-large,
-.button-small,
-.button-large.closed,
-input[type='submit'],
-input[type='button'],
-input[type='reset'],
-.toplinks a {
-	color: var(--link-color-2);
-}
-
-a:link,
-a:visited,
-a:active,
-#logo a,
-#logo a:hover {
-	color: var(--link-color-3);
-}
-
-/****************************************
-  Background Colors
- *****************************************/
-
-.postlinksbar,
-.tableborder {
-	background: var(--bg-color-1);
-}
-
-.activeuserstrip,
-.darkrow1,
-.darkrow2,
-.darkrow3,
-.titlemedium,
-.pformstrip {
-	background: var(--bg-color-2);
-}
-
-body {
-	background: var(--bg-color-3);
-}
-
-#ucpmenu,
-#ucpcontent,
-.pagination a:hover,
-.row1,
-.row3,
-.row4,
-.row2,
-.hlight,
-.dlight,
-.tablefill,
-.tablepad,
-.plainborder,
-#QUOTE,
-#CODE,
-.pformleft,
-.pformleftw,
-.pformright,
-#delcookiesrow,
-#mark-as-read-subto,
-.postbit,
-.newstext {
-	background: var(--bg-color-4);
-}
-
-#wrapper,
-#userlinks,
-.post1,
-.post2,
-.pagination .pagination_current,
-.forminput,
-.codebuttons,
-.textinput,
-.radiobutton,
-.checkbox {
-	background: var(--bg-color-5);
-}
-
-.pagination a:link,
-.pagination a:visited,
-.pagination a:active,
-.pagination_first,
-.pagination_last,
-.pagination_page {
-	background: var(--bg-color-6);
-}
-
-#submenu,
-.maintitle,
-.button-large,
-.button-small,
-.button-large.closed,
-input[type='submit'],
-input[type='button'],
-input[type='reset'] {
-	background: var(--bg-color-7);
-}
-
-.searchlite {
-	background: var(--bg-color-8);
-}
-
-/****************************************
-  Font Family Styles
- *****************************************/
-
-body,
-table,
-tr,
-td,
-#QUOTE,
-.forminput,
-.codebuttons,
-.textinput,
-.radiobutton,
-.checkbox {
-	font-family: var(--font-family-1);
-}
-
-#CODE {
-	font-family: var(--font-family-2);
-}
-
-/****************************************
-  Text Sizes
- *****************************************/
-.edit {
-	font-size: var(--text-size-13);
-}
-
-.postdetails,
-.postlinksbar,
-.signature,
-.codebuttons,
-#delcookiesrow,
-#mark-as-read-subto,
-.copyright {
-	font-size: var(--text-size-14);
-}
-
-.desc,
-.unreg,
-#QUOTE,
-#CODE,
-.button-small,
-input[type='submit'],
-input[type='button'],
-input[type='reset'],
-.toplinks a,
-.postbit {
-	font-size: var(--text-size-15);
-}
-
-body,
-table,
-tr,
-td,
-.normalname,
-.postcolor,
-.forminput,
-.codebuttons,
-.textinput,
-.radiobutton,
-.checkbox {
-	font-size: var(--text-size-16);
-}
-
-#profilename {
-	font-size: var(--text-size-32);
-}
-
-#logo a,
-#logo a:hover {
-	font-size: var(--text-size-40);
-}
-
-/****************************************
   Body Background & Text Style
  *****************************************/
 
 body {
+	font-family: var(--bodyFontFamily);
+	font-size: var(--bodyFontSize);
+	color: var(--bodyFontColor);
 	margin: 0px;
 	padding: 0px;
+	background: var(--bodyBGColor);
 	text-align: center;
+}
+
+/****************************************
+    Table Styles
+ *****************************************/
+
+table,
+tr,
+td {
+	font-family: var(--tableFontFamily);
+	font-size: var(--tableFontSize);
+	color: var(--tableFontColor);
 }
 
 /****************************************
@@ -402,8 +113,9 @@ body {
 
 #wrapper {
 	text-align: left;
-	width: 1200px;
+	width: 980px;
 	margin: 20px auto 30px;
+	background: var(--wrapperBGColor);
 	box-shadow: var(--wrapperBoxShadow);
 	padding-bottom: 5px;
 }
@@ -420,8 +132,10 @@ a:link,
 a:visited,
 a:active {
 	text-decoration: none;
+	color: var(--linkColor);
 }
 a:hover {
+	color: var(--linkHoverColor);
 	text-decoration: none;
 }
 
@@ -430,7 +144,22 @@ a:hover {
  *****************************************/
 
 #profilename {
+	font-size: var(--profileNameFontSize);
 	font-weight: bold;
+}
+
+#photowrap {
+	padding: 6px;
+}
+
+#phototitle {
+	font-size: var(--photoTitleFontSize);
+	border-bottom: 1px solid var(--photoTitleBorderColor);
+}
+
+#photoimg {
+	text-align: center;
+	margin-top: 15px;
 }
 
 /****************************************
@@ -440,6 +169,8 @@ a:hover {
 #ucpmenu {
 	line-height: 150%;
 	width: 22%;
+	border: 1px solid var(--ucpMenuBorderColor);
+	background: var(--ucpMenuBGColor);
 }
 
 #ucpmenu p {
@@ -448,6 +179,8 @@ a:hover {
 }
 
 #ucpcontent {
+	background: var(--ucpContentBGColor);
+	border: 1px solid var(--ucpContentBorderColor);
 	line-height: 150%;
 	width: auto;
 }
@@ -474,8 +207,67 @@ a:hover {
 
 #logo a,
 #logo a:hover {
+	font-size: var(--logoLinkFontSize);
 	text-decoration: none;
 	font-weight: bold;
+	color: var(--logoLinkColor);
+}
+
+/****************************************
+   Search Bar 
+ *****************************************/
+
+#searchbar {
+	display: block;
+	float: right;
+	position: relative;
+	right: 10px;
+	top: 8px;
+}
+
+#searchbar .search-container {
+	background: var(--searchBarBGColor);
+	box-shadow: var(--searchBarBoxShadow);
+	border: 1px solid var(--searchBarBorderColor);
+	display: block;
+	height: 26px;
+	position: relative;
+	width: 200px;
+}
+
+#searchbar .search-input {
+	background: none repeat scroll 0 0 transparent;
+	border: 0;
+	color: var(--searchInputColor);
+	font-size: var(--searchInputFontSize);
+	width: 192px;
+	height: 26px;
+	font-family: Arial, sans-serif;
+	padding: 1px 0 0 8px;
+}
+
+#searchbar .search-input:focus {
+	color: var(--searchInputFocusColor);
+}
+
+#searchbar .search-button {
+	background: var(--searchButtonBGColor) var(--searchButtonImage);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border: 0;
+	bottom: 0;
+	margin: 0;
+	border-radius: 0;
+	display: block;
+	height: 26px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	text-indent: -3000em;
+	top: 0;
+	width: 26px;
+	cursor: pointer;
+	box-shadow: none;
 }
 
 /****************************************
@@ -483,14 +275,29 @@ a:hover {
  *****************************************/
 
 #submenu {
-	height: 30px;
-	margin: 0 10px;
-	width: calc(100% - 20px);
-	box-sizing: border-box;
+	font-size: 13px;
+	border: 1px 0 solid var(--subMenuBorderColor);
+	background: var(--submenuBGColor) var(--submenuBGImage);
+	background-position: center center;
+	margin-bottom: 3px;
 }
 
-table#submenu > tbody {
+#submenu img {
 	display: none;
+}
+
+#submenu a:link,
+#submenu a:visited,
+#submenu a:active {
+	text-decoration: none;
+	color: var(--submenuLinkColor) !important;
+	padding: 7px 7px;
+	font-weight: bold;
+}
+
+#submenu a:hover {
+	color: var(--submenuLinkColor) !important;
+	text-decoration: underline;
 }
 
 #navi br {
@@ -502,14 +309,46 @@ table#submenu > tbody {
 	padding: 6px 0px 16px 0px;
 }
 
+/****************************************
+    Calendar styling
+ *****************************************/
+
+.caldate {
+	text-align: right;
+	font-weight: bold;
+	font-size: var(--calendarDateFontSize);
+	color: var(--calendarDateColor);
+	background-color: var(--calendarDateBGColor);
+	padding: 4px;
+	margin: 0px;
+}
+
+#calendarname {
+	font-size: var(--calendarNameFontSize);
+	font-weight: bold;
+}
+
+#padandcenter {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding: 14px 0px 14px 0px;
+}
+
 /**************************************************
   User Links Menu (Messages / View new posts / etc )
  ***************************************************/
 
 #userlinks {
-	margin: 0 10px;
-	width: calc(100% - 20px);
-	box-sizing: border-box;
+	border: 1px solid var(--userLinksBorderColor);
+	background: var(--userLinksBGColor) var(--userLinksBGImage);
+	list-style: none;
+	width: 960px;
+	margin: 0 auto;
+}
+
+#userlinks td {
+	color: var(--userLinksTDColor);
 }
 
 #userlinks a {
@@ -526,28 +365,50 @@ table#submenu > tbody {
  *****************************************/
 
 .activeuserstrip {
+	background: var(--activeUserStripBGColor);
 	padding: 6px;
 }
 
 .normalname {
+	font-size: var(--normalNameFontSize);
 	font-weight: bold;
+	color: var(--normalNameColor);
 }
 
 .unreg {
+	font-size: var(--unregNameFontSize);
 	font-weight: bold;
+	color: var(--unregColor);
+}
+
+.post1 {
+	background: var(--post1BGColor);
+}
+
+.post2 {
+	background: var(--post2BGColor);
+}
+
+.postdetails {
+	font-size: var(--postDetailsFontSize);
 }
 
 .postcolor {
+	font-size: var(--postColorFontSize);
 	line-height: 160%;
 }
 
 .postlinksbar {
 	padding: 1px 5px;
+	background: var(--postLinksBarBGColor) var(--postLinksBarBGImage);
 	padding: 1px;
 	margin-top: 1px;
+	font-size: var(--postLinksBarFontSize);
 }
 
 .signature {
+	font-size: var(--signatureFontSize);
+	color: var(--signatureColor);
 	line-height: 150%;
 }
 
@@ -563,22 +424,38 @@ table#submenu > tbody {
 .pagination a:link,
 .pagination a:visited,
 .pagination a:active {
+	border: 1px solid var(--paginationBorderColor);
 	border-radius: 3px;
+	background: var(--paginationLinkBGColor);
 	padding-left: 6px;
 	padding-right: 6px;
+	color: var(--paginationLinkColor);
 	text-decoration: none;
 	box-shadow: var(--paginationBoxShadow);
 }
 
 .pagination a:hover {
+	background: var(--paginationLinkHoverBGColor);
 	text-decoration: none;
+	color: var(--paginationLinkHoverColor);
 	box-shadow: var(--paginationBoxShadow);
+	background: var(--paginationBGImage);
 }
 
 .pagination .pagination_current {
+	background: none repeat scroll 0% 0% var(--paginationCurrentBGColor)
+		var(--paginationBGImage);
+	border: 1px solid var(--paginationCurrentBorderColor);
 	border-radius: 3px;
 	padding-left: 6px;
 	padding-right: 6px;
+}
+
+.pagination_first,
+.pagination_last,
+.pagination_page {
+	background: none repeat scroll 0% 0% var(--paginationFirstLastBGColor);
+	border: 1px solid var(--paginationBorderColor);
 }
 
 .pagination_pagetxt {
@@ -593,11 +470,19 @@ table#submenu > tbody {
 .row3,
 .row4,
 .row2 {
+	background: var(--rowBGColor);
 	padding: 5px;
 }
 
 #boardstats .row2 {
 	text-align: center;
+}
+
+.darkrow1,
+.darkrow2,
+.darkrow3 {
+	background: var(--darkRowBGColor);
+	color: var(--darkRowColor);
 }
 
 td.darkrow2 {
@@ -608,19 +493,29 @@ td.darkrow2 {
 	padding: 3px;
 }
 
+.hlight {
+	background: var(--hlightBGColor);
+}
+.dlight {
+	background: var(--dlightBGColor);
+}
+
 /****************************************
     Top table bars / gradient holders 
  *****************************************/
 
 .maintitle {
+	background: var(--maintitleBGColor) var(--maintitleBGImage);
 	font-weight: bold;
 	padding: 8px;
+	color: var(--maintitleLinkColor);
 }
 
 .maintitle a:link,
 .maintitle a:visited,
 .maintitle a:active {
 	text-decoration: none;
+	color: var(--maintitleLinkColor);
 }
 
 .maintitle a:hover {
@@ -633,14 +528,17 @@ td.darkrow2 {
 
 .titlemedium {
 	font-weight: bold;
+	color: var(--titlemediumColor);
 	padding: 2px 6px;
 	margin: 0px;
+	background: var(--titlemediumBGColor) var(--titlemediumBGImage);
 }
 
 .titlemedium a:link,
 .titlemedium a:visited,
 .titlemedium a:active {
 	text-decoration: none;
+	color: var(--titlemediumLinkColor);
 }
 
 /****************************************
@@ -648,12 +546,20 @@ td.darkrow2 {
  *****************************************/
 
 .tableborder {
+	background: var(--tableborderBGColor);
+	border: 1px solid var(--tableborderBorderColor);
 	padding: 0px;
 	margin: 0;
 }
 
-.tablefill,
+.tablefill {
+	background: var(--tablefillBGColor);
+	border: 1px solid var(--tableborderBorderColor);
+	padding: 6px;
+}
+
 .tablepad {
+	background: var(--tablepadBGColor);
 	padding: 6px;
 }
 
@@ -664,14 +570,34 @@ td.darkrow2 {
 	border: 0px;
 }
 
+.plainborder {
+	border: 1px solid var(--tableborderBorderColor);
+	background: var(--tablefillBGColor);
+}
+
 /****************************************
    QUOTE and CODE BBCode boxes
  *****************************************/
 
-#QUOTE,
+#QUOTE {
+	white-space: normal;
+	font-family: var(--quoteFontFamily);
+	font-size: var(--quoteFontSize);
+	color: var(--quoteColor);
+	background: var(--quoteBGColor);
+	padding: 2px;
+	border: 1px solid var(--quoteBorderColor);
+	margin-top: 2px;
+}
+
 #CODE {
 	white-space: normal;
+	font-family: var(--codeFontFamily);
+	font-size: var(--codeFontSize);
+	color: var(--codeColor);
+	background: var(--codeBGColor);
 	padding: 2px;
+	border: 1px solid var(--codeBorderColor);
 	margin-top: 2px;
 }
 
@@ -680,19 +606,24 @@ td.darkrow2 {
  ***********************************************/
 
 .button-large {
+	background: var(--buttonLargeBGColor);
 	border-radius: 3px;
 	padding: 5px 12px;
 	text-align: center;
 	margin: 0px 5px 0px 5px;
 	box-shadow: var(--buttonBoxShadow);
+	color: var(--buttonLargeLinkColor);
 	font-weight: bold;
 	min-width: 75px;
 	display: inline-block;
 }
 
 .button-small {
+	background: var(--buttonSmallBGColor);
 	border-radius: 3px;
+	color: var(--buttonSmallLinkColor);
 	font-weight: bold;
+	font-size: var(--buttonSmallFontSize);
 	margin: 3px;
 	padding: 4px 7px;
 	box-shadow: var(--buttonBoxShadow);
@@ -706,9 +637,12 @@ td.darkrow2 {
 }
 
 .button-large.closed {
+	background: var(--buttonLargeBGColor);
 	padding: 7px 12px;
 	text-align: center;
 	margin: 0px 5px 0px 5px;
+	border: 1px solid var(--buttonLargeBorderColor);
+	color: var(--buttonLargeColor);
 	font-weight: bold;
 }
 
@@ -718,6 +652,11 @@ td.darkrow2 {
 .radiobutton,
 .checkbox {
 	border-radius: 2px;
+	background: var(--formInputBGColor);
+	border: 1px solid var(--formInputBorderColor);
+	color: var(--formInputColor);
+	font-family: var(--formInputFontFamily);
+	font-size: var(--formInputFontSize);
 	padding: 2px;
 	vertical-align: middle;
 	box-shadow: var(--formInputBoxShadow);
@@ -726,8 +665,11 @@ td.darkrow2 {
 input[type='submit'],
 input[type='button'],
 input[type='reset'] {
+	background: #800000 url(//files.jcink.net/themes/default/red-gradient.png);
 	border-radius: 3px;
 	box-shadow: var(--submitButtonBoxShadow);
+	color: var(--submitButtonLinkColor);
+	font-size: var(--submitButtonFontSize);
 	font-weight: bold;
 	margin: 3px;
 	padding: 2px 6px;
@@ -735,31 +677,80 @@ input[type='reset'] {
 	border: none;
 }
 
+.codebuttons {
+	font-size: var(--codeButtonsFontSize);
+}
+
 /****************************************
    Form table cell styles, left/right/top
  *****************************************/
 
 .pformstrip {
+	background: var(--pformStripBGColor) var(--pformStripBGImage);
+	color: var(--pformStripColor);
 	font-weight: bold;
 	padding: 2px 5px;
 	margin-top: 1px;
 }
 
 .pformleft {
+	background-color: var(--pformLeftBGColor);
 	padding: 6px;
 	margin-top: 1px;
 	width: 25%;
+	border-top: 1px solid var(--pformLeftBorderColor);
+	border-right: 1px solid var(--pformLeftBorderColor);
 }
 
 .pformleftw {
+	background-color: var(--pformLeftwBGColor);
 	padding: 6px;
 	margin-top: 1px;
 	width: 40%;
+	border-top: 1px solid var(--pformLeftwBorderColor);
+	border-right: 1px solid var(--pformLeftwBorderColor);
 }
 
 .pformright {
+	background-color: var(--pformRightBGColor);
 	padding: 6px;
 	margin-top: 1px;
+	border-top: 1px solid var(--pformRightBorderColor);
+}
+
+/****************************************
+  Tabs on the portal profiles + sections
+ *****************************************/
+
+.opentab {
+	color: var(--opentabColor);
+	padding: 8px;
+	float: left;
+	width: auto;
+	background: var(--opentabBGColor) var(--opentabBGImage);
+	margin-top: 3px;
+	margin-right: 2px;
+	font-size: var(--openTabFontSize);
+	border: 1px solid var(--openTabBorderColor);
+}
+
+.closedtab {
+	color: var(--closedtabColor);
+	padding: 7px;
+	float: left;
+	width: auto;
+	background: var(--closedtabBGColor) var(--closedtabBGImage);
+	margin-top: 6px;
+	margin-right: 2px;
+	font-size: var(--closedTabFontSize);
+	border-top: 1px solid var(--closedTabBorderColor);
+	border-right: 1px solid var(--closedTabBorderColor);
+	border-left: 1px solid var(--closedTabBorderColor);
+}
+
+.positiontab {
+	height: 34px;
+	margin-left: 2px;
 }
 
 /****************************************
@@ -768,6 +759,9 @@ input[type='reset'] {
 
 #delcookiesrow,
 #mark-as-read-subto {
+	background: var(--delCookiesRowBGColor);
+	border: 1px solid var(--delCookiesRowBorderColor);
+	font-size: var(--delCookiesRowFontSize);
 	padding: 5px;
 	width: 260px;
 	float: right;
@@ -785,10 +779,13 @@ input[type='reset'] {
   *******************************/
 
 .toplinks a {
+	color: var(--topLinksColor);
+	font-size: var(--topLinksFontSize);
 	text-decoration: none;
 }
 
 .toplinks {
+	margin: 0 11px -37px 0;
 	text-align: right;
 	color: transparent;
 }
@@ -798,6 +795,10 @@ input[type='reset'] {
   *******************************/
 
 .postbit {
+	border-bottom: 1px solid var(--postBitBorderColor);
+	color: var(--postBitColor);
+	background: var(--postBitBGColor);
+	font-size: var(--postBitFontSize);
 	padding: 6px 7px;
 }
 
@@ -811,7 +812,19 @@ img {
 	border: 0px;
 }
 img.attach {
+	border: 2px outset var(--imgAttachBorderColor);
 	padding: 2px;
+}
+
+/* Forum Descriptions */
+.desc {
+	font-size: var(--descFontSize);
+	color: var(--descColor);
+}
+
+/* Edited by text */
+.edit {
+	font-size: var(--editSize);
 }
 
 /* Topic Macros */
@@ -838,17 +851,31 @@ img.attach {
 	padding: 6px 0px 6px 0px;
 	line-height: 140%;
 	margin: 2px 0px 2px 0px;
+	border-top: 1px solid var(--thinBorderColor);
+	border-bottom: 1px solid var(--thinBorderColor);
 }
 
 /* Latest news area */
 .newstext {
+	background: var(--newstextBGColor);
+	border: 1px solid var(--newstextBorderColor);
 	padding: 6px 6px 2px 6px;
 	margin-bottom: 10px;
 }
 
 /* Highlighted text in search */
 .searchlite {
+	color: var(--searchliteColor);
 	font-weight: bold;
+	background: var(--searchliteBGColor);
+}
+
+/****************************************
+   Mobile-specific Styles
+  *****************************************/
+
+#mobile {
+	background: var(--mobileBGColor);
 }
 
 /***********************************
@@ -856,5 +883,6 @@ img.attach {
   ************************************/
 
 .copyright {
-	line-height: var(--text-size-16);
+	font-size: var(--copyrightFontSize);
+	line-height: 12px;
 }
