@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><% TITLE %></title>
-		<% CSS %>
-		<script src="https://files.jcink.net/html/jquery-3.7.1.min.js"></script>
-		<script src="https://files.jcink.net/html/catcollapse.js"></script>
-	</head>
-	<body>
-		<div id="wrapper">
-			<div id="logo">
-				<a href="index.php"><!-- |board_name| --></a>
-			</div>
-			<% BOARD HEADER %>
-			<div id="innerwrapper">
-				<div id="navi"><% NAVIGATION %></div>
-				<% BOARD %>
-				<div id="skin_selector"><% SKIN_SELECTOR %></div>
-				<% AFFS %> <% COPYRIGHT %>
-			</div>
-		</div>
-	</body>
+  <head>
+    <title><% TITLE %></title>
+    <% CSS %>
+    <script src="https://files.jcink.net/html/jquery-3.7.1.min.js"></script>
+    <script src="https://files.jcink.net/html/catcollapse.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <div id="logo">
+          <a href="index.php"><!-- |board_name| --></a>
+        </div>
+        <% BOARD HEADER %>
+        <div id="navi"><% NAVIGATION %></div>
+      </div>
+      <div id="innerwrapper"><% BOARD %></div>
+      <div id="footer">
+        <div id="skin_selector"><% SKIN_SELECTOR %></div>
+        <% AFFS %> <% COPYRIGHT %>
+      </div>
+    </div>
+  </body>
 </html>
