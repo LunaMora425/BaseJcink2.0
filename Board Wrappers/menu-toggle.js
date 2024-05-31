@@ -14,7 +14,7 @@ $('.fa-arrow-up').click(function (event) {
 
 $('.fa-arrow-down').click(function (event) {
   event.preventDefault();
-  $('#copyright').scrollIntoView({ behavior: 'smooth' });
+  $('#copyright').get(0).scrollIntoView({ behavior: 'smooth' });
 });
 
 /* Light Mode Toggle, from CodePen

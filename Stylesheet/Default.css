@@ -126,6 +126,287 @@ td {
 }
 
 /****************************************
+    Sticky Navbar Styling
+*****************************************/
+#navigation-wrapper {
+  position: sticky;
+  top: 0;
+  background-color: var(--background__secondary);
+  border-bottom: 1px solid var(--border__primary);
+  z-index: 9999;
+  width: 100%;
+  padding: 5px 0;
+}
+
+#navigation {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-areas:
+    'nav-icons-left mobile-menu nav-icons-right'
+    'breadcrumbs breadcrumbs breadcrumbs';
+  justify-items: stretch;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.nav__icons--left,
+.nav__icons--right {
+  display: flex;
+  color: var(--prmcolor);
+  cursor: pointer;
+}
+
+.nav__icons--left {
+  grid-area: nav-icons-left;
+}
+
+.nav__icons--right {
+  grid-area: nav-icons-right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.nav__icons--left .icons,
+.nav__icons--right .icons {
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+}
+
+.nav__menu {
+  grid-area: mobile-menu;
+  margin: auto;
+}
+
+.nav__menu button {
+  height: 30px;
+  padding-bottom: 2px;
+  border: none;
+  background: transparent;
+  color: var(--scdcolor);
+  font: 20px var(--headerFontFamily);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav__menu button > i {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+#navigation .rotate {
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+#navigation .rotate.down {
+  -moz-transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+#navi {
+  grid-area: breadcrumbs;
+  color: var(--textcolor__accent);
+  padding-top: 5px;
+}
+
+#navi > br {
+  display: none;
+}
+
+#navstrip {
+  text-align: center;
+}
+
+#nav__userlinks {
+  background: var(--background__secondary);
+  background-position: center top;
+  border-radius: 10px 10px 10px 10px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  grid-row-gap: 15px;
+  grid-column-gap: 5px;
+  grid-template-areas:
+    'guidebook search'
+    'discord members'
+    'bank store'
+    'user-info user-info'
+    'admin-cp mod-cp'
+    'view-profile my-controls'
+    'topics messages'
+    'view-new-posts alerts';
+  justify-items: start;
+}
+
+#nav__userlinks .mcp-0,
+#nav__userlinks .acp-0,
+#nav__userlinks .m-2 {
+  display: none;
+}
+
+#nav__userlinks .g-2 {
+  display: block !important;
+}
+
+#nav__userlinks .g-2.logging {
+  margin-top: 5px;
+}
+
+#nav__userlinks .g-2.logging a:first-child {
+  margin-right: 55px;
+}
+
+#nav__userlinks i {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.nav__userlinks--users {
+  grid-area: user-info;
+  display: inline-grid;
+  width: 100%;
+  word-break: break-word;
+  justify-items: center;
+}
+
+.nav__userlinks--users strong {
+  font: 25px var(--headerFontFamily);
+  text-transform: uppercase;
+  color: var(--userInfoColor);
+  text-shadow: var(--mainTextShadow);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.account-switcher {
+  margin-top: 10px;
+}
+
+/* #nav__userlinks .admin-cp > a,
+  #nav__userlinks .mod-cp > a,
+  #nav__userlinks .view-profile > a,
+  #nav__userlinks .my-controls > a,
+  #nav__userlinks .active-topics > a,
+  #nav__userlinks .my-messages > a,
+  #nav__userlinks .view-new-posts > a,
+  #nav__userlinks .mu-alerts > a {
+	font-size: 15px;
+  } */
+
+.admin-cp {
+  grid-area: admin-cp;
+}
+
+.mod-cp {
+  grid-area: mod-cp;
+}
+
+.view-profile {
+  grid-area: view-profile;
+}
+
+.my-controls {
+  grid-area: my-controls;
+}
+
+.active-topics {
+  grid-area: topics;
+}
+
+.my-messages {
+  grid-area: messages;
+}
+
+.view-new-posts {
+  grid-area: view-new-posts;
+}
+
+.mu-alerts {
+  grid-area: alerts;
+}
+
+.nav-guidebook {
+  grid-area: guidebook;
+}
+
+.nav-search {
+  grid-area: search;
+}
+
+.nav-discord {
+  grid-area: discord;
+}
+
+.nav-members {
+  grid-area: members;
+}
+
+.nav-bank {
+  grid-area: bank;
+}
+
+.nav-store {
+  grid-area: store;
+}
+
+.dropdown-menu {
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  left: calc(100% - 94%);
+  top: 80px;
+  margin: auto;
+  width: 85%;
+  max-height: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-transition: max-height, 0.5s ease-in-out;
+  transition: max-height, 0.5s ease-in-out;
+}
+
+.display-menu {
+  max-height: 350px;
+  padding: 10px 5px 15px;
+}
+
+@media only screen and (min-width: 750px) {
+  #nav__userlinks {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'user-info user-info user-info user-info'
+      'view-profile my-controls guidebook discord'
+      'topics messages search bank'
+      'view-new-posts alerts members store'
+      'admin-cp mod-cp . .';
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  #nav__userlinks {
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'user-info view-profile my-controls guidebook discord'
+      'user-info topics messages search bank'
+      'user-info view-new-posts alerts members store'
+      'user-info admin-cp mod-cp . .';
+  }
+
+  #nav__userlinks.dropdown-menu {
+    width: 1200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/****************************************
     Link colors
  *****************************************/
 
@@ -219,31 +500,12 @@ table#submenu > tbody {
   display: none;
 }
 
-#navi br {
-  display: none;
-}
-
-#navstrip {
-  font-weight: bold;
-  padding: 6px 0px 16px 0px;
-}
-
 /**************************************************
   User Links Menu (Messages / View new posts / etc )
  ***************************************************/
 
 #userlinks {
-  box-sizing: border-box;
-  border: 1px solid var(--border__secondary);
-}
-
-#userlinks a {
-  text-decoration: underline;
-  padding: 1px;
-}
-
-#userlinks a:hover {
-  text-decoration: none;
+  display: none;
 }
 
 /****************************************

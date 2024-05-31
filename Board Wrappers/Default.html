@@ -3,6 +3,9 @@
   <head>
     <title><% TITLE %></title>
     <% CSS %>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <script src="https://files.jcink.net/html/jquery-3.7.1.min.js"></script>
     <script src="https://files.jcink.net/html/catcollapse.js"></script>
   </head>
@@ -59,7 +62,7 @@
             <!-- end guest info -->
             <!-- start logged in user info -->
             <strong class="m-<!-- |g_id| -->">
-              LongUserName LongUserName
+              <!-- |name| -->
             </strong>
             <a
               href="?act=Login&CODE=03"
@@ -187,5 +190,48 @@
         </div>
       </div>
     </div>
+
+    <script>
+      $('.button-action').click(function () {
+        var navbarHeight = $('#navigation-wrapper').outerHeight();
+        var dropdownMenu = $('.dropdown-menu');
+        dropdownMenu.css('top', `${navbarHeight + 10}px`);
+
+        $('#nav__userlinks').toggleClass('display-menu');
+        $('.rotate').toggleClass('down');
+      });
+
+      $('.fa-arrow-up').click(function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      $('.fa-arrow-down').click(function (event) {
+        event.preventDefault();
+        $('#copyright').get(0).scrollIntoView({ behavior: 'smooth' });
+      });
+
+      /* Light Mode Toggle, from CodePen
+       * https://codepen.io/ananyaneogi/pen/zXZyMP
+       * heavily modified by Luna */
+      $(document).ready(function () {
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+          $('html').attr('data-theme', currentTheme);
+        } else {
+          $('html').attr('data-theme', 'dark');
+        }
+
+        $('a[title="Toggle Theme"]').click(function (e) {
+          e.preventDefault();
+          const theme =
+            $('html').attr('data-theme') === 'dark' ? 'light' : 'dark';
+
+          $('html').attr('data-theme', theme);
+          localStorage.theme = theme;
+        });
+      });
+    </script>
   </body>
 </html>
