@@ -33,32 +33,17 @@ form {
   --eerie-black: #222222;
   --anti-flash-white: #efefef;
   --timberwolf: #d6d1cd;
-  --battleship-grey: #969a97;
   --maroon: #800000;
+  --russian-violet: #290c3b;
+  --cordovan: #8b4d4c;
 
-  --background__primary: var(--maroon);
-  --background__secondary: var(--battleship-grey);
-  --background__accent: var(--timberwolf);
-  --background__low-contrast: var(--anti-flash-white);
-  --background__high-contrast: var(--eerie-black);
-
-  --border__primary: var(--maroon);
-  --border__secondary: var(--battleship-grey);
-  --border__accent: var(--timberwolf);
-  --border__low-contrast: var(--anti-flash-white);
-  --border__high-contrast: var(--eerie-black);
-
-  --link__primary: var(--maroon);
-  --link__secondary: var(--battleship-grey);
-  --link__accent: var(--timberwolf);
-  --link__low-contrast: var(--anti-flash-white);
-  --link__high-contrast: var(--eerie-black);
-
-  --textcolor__primary: var(--maroon);
-  --textcolor__secondary: var(--battleship-grey);
-  --textcolor__accent: var(--timberwolf);
-  --textcolor__low-contrast: var(--anti-flash-white);
-  --textcolor__high-contrast: var(--eerie-black);
+  --theme__background-main: var(--anti-flash-white);
+  --theme__background-contrast: var(--timberwolf);
+  --theme__color-primary: var(--maroon);
+  --theme__color-secondary: var(--russian-violet);
+  --theme__color-accent: var(--timberwolf);
+  --theme__text-main: var(--eerie-black);
+  --theme__text-contrast: var(--anti-flash-white);
 
   /* Font List */
   --arial: 'Arial', sans-serif;
@@ -88,24 +73,12 @@ form {
 body {
   font-family: var(--font-family__body);
   font-size: var(--textsize-body__primary);
-  color: var(--textcolor__high-contrast);
+  color: var(--theme__text-main);
   margin: 0px;
   padding: 0px;
-  background: var(--background__low-contrast);
+  background: var(--theme__background-main);
   text-align: center;
 }
-
-/****************************************
-    Table Styles
- *****************************************/
-
-/* table,
-tr,
-td {
-	font-family: var(--font-family__body);
-	font-size: var(--textsize-body__primary);
-	color: var(--textcolor__high-contrast);
-} */
 
 /****************************************
     Board Width
@@ -114,7 +87,7 @@ td {
 #wrapper {
   text-align: left;
   max-width: 1200px;
-  margin: 20px auto 30px;
+  margin: 0px auto 30px;
   box-shadow: var(--wrapperBoxShadow);
   padding-bottom: 5px;
 }
@@ -131,8 +104,8 @@ td {
 #navigation-wrapper {
   position: sticky;
   top: 0;
-  background-color: var(--background__secondary);
-  border-bottom: 1px solid var(--border__primary);
+  background-color: var(--theme__background-contrast);
+  border-bottom: 1px solid var(--theme__color-primary);
   z-index: 9999;
   width: 100%;
   padding: 5px 0;
@@ -153,7 +126,7 @@ td {
 .nav__icons--left,
 .nav__icons--right {
   display: flex;
-  color: var(--prmcolor);
+  color: var(--theme__color-primary);
   cursor: pointer;
 }
 
@@ -170,7 +143,7 @@ td {
 
 .nav__icons--left .icons,
 .nav__icons--right .icons {
-  font-size: 20px;
+  font-size: var(--textsize__subheading);
   width: 30px;
   text-align: center;
 }
@@ -185,8 +158,8 @@ td {
   padding-bottom: 2px;
   border: none;
   background: transparent;
-  color: var(--scdcolor);
-  font: 20px var(--headerFontFamily);
+  color: var(--theme__color-primary);
+  font: var(--textsize__subheading) var(--font-family__subheading);
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -195,17 +168,20 @@ td {
 }
 
 .nav__menu button > i {
-  font-size: 20px;
   margin-left: 5px;
 }
 
-#navigation .rotate {
+.nav__menu button:hover {
+  color: var(--theme__color-secondary);
+}
+
+.button-action .rotate {
   -moz-transition: all 0.5s linear;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
 
-#navigation .rotate.down {
+.button-action .rotate.down {
   -moz-transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
@@ -213,7 +189,6 @@ td {
 
 #navi {
   grid-area: breadcrumbs;
-  color: var(--textcolor__accent);
   padding-top: 5px;
 }
 
@@ -226,7 +201,7 @@ td {
 }
 
 #nav__userlinks {
-  background: var(--background__secondary);
+  background: var(--theme__background-contrast);
   background-position: center top;
   border-radius: 10px 10px 10px 10px;
   display: grid;
@@ -234,9 +209,9 @@ td {
   grid-row-gap: 15px;
   grid-column-gap: 5px;
   grid-template-areas:
-    'guidebook search'
-    'discord members'
-    'bank store'
+    'quicklink-1 quicklink-2'
+    'quicklink-3 quicklink-4'
+    'quicklink-5 quicklink-6'
     'user-info user-info'
     'admin-cp mod-cp'
     'view-profile my-controls'
@@ -277,10 +252,9 @@ td {
 }
 
 .nav__userlinks--users strong {
-  font: 25px var(--headerFontFamily);
+  font: var(--textsize__subheading) var(--font-family__title);
   text-transform: uppercase;
-  color: var(--userInfoColor);
-  text-shadow: var(--mainTextShadow);
+  color: var(--theme__color-secondary);
   letter-spacing: 1px;
   text-align: center;
 }
@@ -289,17 +263,27 @@ td {
   margin-top: 10px;
 }
 
-/* #nav__userlinks .admin-cp > a,
-  #nav__userlinks .mod-cp > a,
-  #nav__userlinks .view-profile > a,
-  #nav__userlinks .my-controls > a,
-  #nav__userlinks .active-topics > a,
-  #nav__userlinks .my-messages > a,
-  #nav__userlinks .view-new-posts > a,
-  #nav__userlinks .mu-alerts > a {
-	font-size: 15px;
-  } */
+#nav__userlinks.dropdown-menu {
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  left: calc(100% - 94%);
+  top: 80px;
+  margin: auto;
+  width: 85%;
+  max-height: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-transition: max-height, 0.5s ease-in-out;
+  transition: max-height, 0.5s ease-in-out;
+}
 
+#nav__userlinks.dropdown-menu.display-menu {
+  max-height: 350px;
+  padding: 10px 5px 10px;
+}
+
+/* Setting grid area identifiers on the menu */
 .admin-cp {
   grid-area: admin-cp;
 }
@@ -332,58 +316,41 @@ td {
   grid-area: alerts;
 }
 
-.nav-guidebook {
-  grid-area: guidebook;
+.quicklinks-1 {
+  grid-area: quicklink-1;
 }
 
-.nav-search {
-  grid-area: search;
+.quicklinks-2 {
+  grid-area: quicklink-2;
 }
 
-.nav-discord {
-  grid-area: discord;
+.quicklinks-3 {
+  grid-area: quicklink-3;
 }
 
-.nav-members {
-  grid-area: members;
+.quicklinks-4 {
+  grid-area: quicklink-4;
 }
 
-.nav-bank {
-  grid-area: bank;
+.quicklinks-5 {
+  grid-area: quicklink-5;
 }
 
-.nav-store {
-  grid-area: store;
+.quicklinks-6 {
+  grid-area: quicklink-6;
 }
 
-.dropdown-menu {
-  position: fixed;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  left: calc(100% - 94%);
-  top: 80px;
-  margin: auto;
-  width: 85%;
-  max-height: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-transition: max-height, 0.5s ease-in-out;
-  transition: max-height, 0.5s ease-in-out;
-}
-
-.display-menu {
-  max-height: 350px;
-  padding: 10px 5px 15px;
-}
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
 
 @media only screen and (min-width: 750px) {
   #nav__userlinks {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
       'user-info user-info user-info user-info'
-      'view-profile my-controls guidebook discord'
-      'topics messages search bank'
-      'view-new-posts alerts members store'
+      'view-profile my-controls quicklink-1 quicklink-2'
+      'topics messages quicklink-3 quicklink-4'
+      'view-new-posts alerts quicklink-5 quicklink-6'
       'admin-cp mod-cp . .';
   }
 }
@@ -392,9 +359,9 @@ td {
   #nav__userlinks {
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
-      'user-info view-profile my-controls guidebook discord'
-      'user-info topics messages search bank'
-      'user-info view-new-posts alerts members store'
+      'user-info view-profile my-controls quicklink-1 quicklink-2'
+      'user-info topics messages quicklink-3 quicklink-4'
+      'user-info view-new-posts alerts quicklink-5 quicklink-6'
       'user-info admin-cp mod-cp . .';
   }
 
@@ -414,11 +381,11 @@ a:link,
 a:visited,
 a:active {
   text-decoration: none;
-  color: var(--link__primary);
+  color: var(--theme__color-primary);
 }
 
 a:hover {
-  color: var(--linkHoverColor);
+  color: var(--theme__color-secondary);
 }
 
 /****************************************
@@ -426,22 +393,8 @@ a:hover {
  *****************************************/
 
 #profilename {
-  font-size: var(--profileNameFontSize);
+  font-size: var(--textsize__title);
   font-weight: bold;
-}
-
-#photowrap {
-  padding: 6px;
-}
-
-#phototitle {
-  font-size: var(--photoTitleFontSize);
-  border-bottom: 1px solid var(--photoTitleBorderColor);
-}
-
-#photoimg {
-  text-align: center;
-  margin-top: 15px;
 }
 
 /****************************************
@@ -493,7 +446,7 @@ a:hover {
 #submenu {
   height: 30px;
   box-sizing: border-box;
-  background: var(--background__primary);
+  background: var(--theme__color-primary);
 }
 
 table#submenu > tbody {
@@ -541,7 +494,7 @@ table#submenu > tbody {
 }
 
 .signature {
-  font-size: var(--signatureFontSize);
+  font-size: var(--textsize-body__secondary);
   color: var(--signatureColor);
   line-height: 150%;
 }
@@ -638,16 +591,16 @@ td.darkrow2 {
  *****************************************/
 
 .maintitle {
-  background: var(--background__primary);
+  background: var(--theme__color-primary);
   font-weight: bold;
   padding: 8px;
-  color: var(--link__low-contrast);
+  color: var(--theme__text-contrast);
 }
 
 .maintitle a:link,
 .maintitle a:visited,
 .maintitle a:active {
-  color: var(--link__low-contrast);
+  color: var(--theme__text-contrast);
 }
 
 .maintitle a:hover {
@@ -660,17 +613,17 @@ td.darkrow2 {
 
 .titlemedium {
   font-weight: bold;
-  color: var(--textcolor__high-contrast);
+  color: var(--theme__text-main);
   padding: 2px 6px;
   margin: 0px;
-  background: var(--background__accent);
+  background: var(--theme__background-contrast);
 }
 
 .titlemedium a:link,
 .titlemedium a:visited,
 .titlemedium a:active {
   text-decoration: none;
-  color: var(--titlemediumLinkColor);
+  color: var(--theme__color-primary);
 }
 
 /****************************************
@@ -844,41 +797,6 @@ input[type='reset'] {
 }
 
 /****************************************
-  Tabs on the portal profiles + sections
- *****************************************/
-
-.opentab {
-  color: var(--opentabColor);
-  padding: 8px;
-  float: left;
-  width: auto;
-  background: var(--opentabBGColor) var(--opentabBGImage);
-  margin-top: 3px;
-  margin-right: 2px;
-  font-size: var(--openTabFontSize);
-  border: 1px solid var(--openTabBorderColor);
-}
-
-.closedtab {
-  color: var(--closedtabColor);
-  padding: 7px;
-  float: left;
-  width: auto;
-  background: var(--closedtabBGColor) var(--closedtabBGImage);
-  margin-top: 6px;
-  margin-right: 2px;
-  font-size: var(--closedTabFontSize);
-  border-top: 1px solid var(--closedTabBorderColor);
-  border-right: 1px solid var(--closedTabBorderColor);
-  border-left: 1px solid var(--closedTabBorderColor);
-}
-
-.positiontab {
-  height: 34px;
-  margin-left: 2px;
-}
-
-/****************************************
     Delete all cookies / mark read
  *****************************************/
 
@@ -904,7 +822,7 @@ input[type='reset'] {
   *******************************/
 
 .toplinks a {
-  color: var(--link__primary);
+  color: var(--theme__color-primary);
   text-decoration: none;
 }
 
@@ -1003,7 +921,7 @@ img.attach {
    Copyright: Removal is against Terms
   ************************************/
 
-.copyright {
-  font-size: var(--copyrightFontSize);
-  line-height: 12px;
+#copyright {
+  font-size: var(--textsize-body__secondary);
+  text-align: center;
 }
