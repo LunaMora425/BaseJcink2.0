@@ -11,6 +11,14 @@
     <!-- start JavaScript files -->
     <script src="https://files.jcink.net/html/jquery-3.7.1.min.js"></script>
     <script src="https://files.jcink.net/html/catcollapse.js"></script>
+    <script>
+      // set dark/light mode before page load
+      if (localStorage.theme) {
+        document.documentElement.setAttribute('data-theme', localStorage.theme);
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
     <!-- end JavaScript files -->
   </head>
   <body
