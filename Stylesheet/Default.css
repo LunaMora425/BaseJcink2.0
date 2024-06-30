@@ -18,32 +18,17 @@ form {
  *****************************************/
 
 :root {
-  --formInputBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
-
-  --wrapperBoxShadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-
-  --paginationBoxShadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
-
-  --submitButtonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  --buttonBoxShadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-:root {
   /* Colors List */
   --eerie-black: #222222;
   --anti-flash-white: #efefef;
-  --timberwolf: #d6d1cd;
+  --timberwolf: #e5ded6;
   --maroon: #800000;
   --russian-violet: #290c3b;
-  --cordovan: #8b4d4c;
 
-  --theme__background-main: var(--anti-flash-white);
-  --theme__background-contrast: var(--timberwolf);
-  --theme__color-primary: var(--maroon);
-  --theme__color-secondary: var(--russian-violet);
-  --theme__color-accent: var(--timberwolf);
-  --theme__text-main: var(--eerie-black);
-  --theme__text-contrast: var(--anti-flash-white);
+  --jet: #3b3937;
+  --rosy-brown: #ccabab;
+  --rose-quartz: #aaa5b1;
+  --grey: #707774;
 
   /* Font List */
   --arial: 'Arial', sans-serif;
@@ -64,6 +49,28 @@ form {
   --textsize__subheading: var(--size24px);
   --textsize-body__primary: var(--size16px);
   --textsize-body__secondary: var(--size14px);
+}
+
+[data-theme='light'] {
+  /* Light Mode Colors */
+  --theme__background-main: var(--anti-flash-white);
+  --theme__background-contrast: var(--timberwolf);
+  --theme__color-primary: var(--maroon);
+  --theme__color-secondary: var(--russian-violet);
+  --theme__color-accent: var(--timberwolf);
+  --theme__text-main: var(--eerie-black);
+  --theme__text-contrast: var(--anti-flash-white);
+}
+
+[data-theme='dark'] {
+  /* Dark Mode Colors */
+  --theme__background-main: var(--eerie-black);
+  --theme__background-contrast: var(--jet);
+  --theme__color-primary: var(--rosy-brown);
+  --theme__color-secondary: var(--rose-quartz);
+  --theme__color-accent: var(--grey);
+  --theme__text-main: var(--anti-flash-white);
+  --theme__text-contrast: var(--eerie-black);
 }
 
 /****************************************
@@ -88,7 +95,7 @@ body {
   text-align: left;
   max-width: 1200px;
   margin: 0px auto 30px;
-  box-shadow: var(--wrapperBoxShadow);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   padding-bottom: 5px;
 }
 
@@ -239,7 +246,7 @@ body {
 }
 
 #nav__userlinks i {
-  margin-left: 15px;
+  margin-left: 5px;
   margin-right: 5px;
 }
 
@@ -281,6 +288,7 @@ body {
 #nav__userlinks.dropdown-menu.display-menu {
   max-height: 350px;
   padding: 10px 5px 10px;
+  border: 1px solid var(--theme__color-primary);
 }
 
 /* Setting grid area identifiers on the menu */
@@ -395,8 +403,7 @@ a:hover {
 #header > br,
 #logostrip,
 #submenu,
-#userlinks,
-.newstext {
+#userlinks {
   display: none;
 }
 
@@ -417,10 +424,80 @@ a:hover {
   #CATEGORY_HEADERS
 \*------------------------------------*/
 
+.category {
+  background: var(--theme__background-contrast);
+  border: 1px solid var(--theme__color-primary);
+}
+
 .category > .maintitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/*------------------------------------*\
+  #FORUM_ROWS
+\*------------------------------------*/
+
+.forum__row {
+  display: grid;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid var(--theme__background-main);
+  row-gap: 5px;
+  grid-template-areas:
+    'info info info'
+    'subforums subforums subforums'
+    'macro topics replies'
+    'lastpost lastpost lastpost';
+}
+
+.forum__row--macro,
+.forum__row--topics,
+.forum__row--replies {
+  text-align: center;
+}
+
+span.subforums > br {
+  display: none;
+}
+
+/* Grid Set Up */
+.forum__row--macro {
+  grid-area: macro;
+}
+
+.forum__row--info {
+  grid-area: info;
+}
+
+.forum__row--subforums {
+  grid-area: subforums;
+}
+
+.forum__row--topics {
+  grid-area: topics;
+}
+
+.forum__row--replies {
+  grid-area: replies;
+}
+
+.forum__row--last-post-info {
+  grid-area: lastpost;
+}
+
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
+
+@media only screen and (min-width: 750px) {
+  .forum__row {
+    grid-template-columns: 28px 55% 7% 7% 27%;
+    column-gap: 5px;
+    grid-template-areas:
+      'macro info topics replies lastpost'
+      'macro subforums subforums subforums subforums';
+  }
 }
 
 /****************************************
@@ -480,15 +557,20 @@ a:hover {
   padding-right: 6px;
   color: var(--paginationLinkColor);
   text-decoration: none;
-  box-shadow: var(--paginationBoxShadow);
 }
 
 .pagination a:hover {
   background: var(--paginationLinkHoverBGColor);
   text-decoration: none;
   color: var(--paginationLinkHoverColor);
-  box-shadow: var(--paginationBoxShadow);
   background: var(--paginationBGImage);
+}
+
+.pagination a:link,
+.pagination a:visited,
+.pagination a:active,
+.pagination a:hover {
+  box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
 }
 
 .pagination .pagination_current {
@@ -587,6 +669,7 @@ td.darkrow2 {
   font-weight: bold;
   padding: 8px;
   color: var(--theme__text-contrast);
+  font-size: var(--textsize__subheading);
 }
 
 .maintitle a:link,
@@ -682,7 +765,6 @@ td.darkrow2 {
   padding: 5px 12px;
   text-align: center;
   margin: 0px 5px 0px 5px;
-  box-shadow: var(--buttonBoxShadow);
   color: var(--link__low-contrast);
   font-weight: bold;
   min-width: 75px;
@@ -697,10 +779,14 @@ td.darkrow2 {
   font-size: var(--textsize-body__secondary);
   margin: 3px;
   padding: 4px 7px;
-  box-shadow: var(--buttonBoxShadow);
   text-decoration: none;
   min-width: 50px;
   max-width: 80px;
+}
+
+.button-large,
+.button-small {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .post-buttons-top {
@@ -730,7 +816,7 @@ td.darkrow2 {
   font-size: var(--formInputFontSize);
   padding: 2px;
   vertical-align: middle;
-  box-shadow: var(--formInputBoxShadow);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
 }
 
 input[type='submit'],
@@ -738,7 +824,7 @@ input[type='button'],
 input[type='reset'] {
   background: var(--background__primary);
   border-radius: 3px;
-  box-shadow: var(--submitButtonBoxShadow);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   color: var(--textcolor__low-contrast);
   font-size: var(--textsize-body__secondary);
   font-weight: bold;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width" />
     <title><% TITLE %></title>
     <!-- START CSS -->
     <% CSS %>
@@ -27,7 +28,9 @@
     <div id="wrapper">
       <!-- start navigation bar -->
       <div id="navigation-wrapper">
+        <!-- start nav top bar -->
         <div id="navigation">
+          <!-- home and theme toggle buttons -->
           <div class="nav__icons--left">
             <a href="/index.php" title="Home">
               <i class="fas fa-home icons"></i>
@@ -36,7 +39,8 @@
               <i class="fas fa-lightbulb icons"></i>
             </a>
           </div>
-
+          <!-- end home and theme toggle buttons -->
+          <!-- menu toggle button -->
           <div class="nav__menu">
             <button class="button-action">
               Menu
@@ -45,7 +49,8 @@
                 title="Toggle Menu"></i>
             </button>
           </div>
-
+          <!-- end menu toggle button -->
+          <!-- top and bottom buttons -->
           <div class="nav__icons--right">
             <a href="#" title="Back to Top">
               <i class="fas fa-arrow-up icons"></i>
@@ -54,10 +59,13 @@
               <i class="fas fa-arrow-down icons"></i>
             </a>
           </div>
-
+          <!-- end top and bottom buttons -->
+          <!-- site breadcrumbs -->
           <div id="navi"><% NAVIGATION %></div>
+          <!-- end site breadcrumbs -->
         </div>
-
+        <!-- end nav top bar -->
+        <!-- start dropdown menu -->
         <div id="nav__userlinks" class="dropdown-menu">
           <div class="nav__userlinks--users">
             <!-- start guest info -->
@@ -187,6 +195,7 @@
           </div>
           <!-- end quick links area -->
         </div>
+        <!-- end dropdown menu -->
       </div>
       <!-- end navigation bar -->
 
@@ -245,7 +254,7 @@
         if (currentTheme) {
           $('html').attr('data-theme', currentTheme);
         } else {
-          $('html').attr('data-theme', 'dark');
+          $('html').attr('data-theme', 'light');
         }
 
         $('a[title="Toggle Theme"]').click(function (e) {
@@ -258,5 +267,6 @@
         });
       });
     </script>
+    <!-- DO NOT ADD TO OR EDIT anything below this line -->
   </body>
 </html>
