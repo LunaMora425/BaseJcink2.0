@@ -1,0 +1,133 @@
+<div id="quick-login">
+  <!-- |quick_login| -->
+</div>
+<br class="cat-lb" />
+<!-- start board stats -->
+<div id="boardstats">
+  <div class="maintitle"><span class="bstats-text">Board Statistics</span></div>
+
+  <div id="board-stats__grid">
+    <!-- start "online now" grid item -->
+    <div class="boardstats__online-now">
+      <div class="maintitle">Members Online Now</div>
+      <div class="online-now__grid">
+        <div class="boardstats--macro"><{F_ACTIVE}></div>
+        <div>
+          <span id="activeusers-stats">
+            <b><!-- |total_guests| --></b> guests,
+            <b><!-- |total_mems| --></b> members,
+            <b><!-- |total_anons| --></b> anonymous members
+          </span>
+          <div class="online-now--thin"><!-- |online_list| --></div>
+          <span id="activeusers-links">
+            Sort by:
+            <a href="index.php?act=Online&CODE=listall&sort_key=click">
+              Last Click</a
+            >,
+            <a
+              href="index.php?act=Online&CODE=listall&sort_key=name&sort_order=asc&show_mem=reg">
+              Member Name
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- end "online now" grid item -->
+    <!-- start links grid item -->
+    <div class="boardstats__links">
+      <div class="maintitle">Board Links</div>
+      <div class="links__grid">
+        <a class="links-1" href="?act=Help">
+          <i class="fa-solid fa-circle-question"></i> Help
+        </a>
+        <a class="links-2" href="?act=Members">
+          <i class="fa-solid fa-address-book"></i> Members List
+        </a>
+        <a class="links-3" href="?act=Search">
+          <i class="fa-solid fa-magnifying-glass"></i> Search
+        </a>
+        <a class="links-4" href="?act=Stats&CODE=leaders">
+          <i class="fa-solid fa-clipboard-user"></i> Mod Team
+        </a>
+        <a class="links-5" href="?act=Login&CODE=06">
+          <i class="fa-solid fa-cookie-bite"></i> Delete Cookies
+        </a>
+        <a class="links-6" href="?act=Login&CODE=05">
+          <i class="fa-solid fa-check-to-slot"></i> Mark All Read
+        </a>
+      </div>
+    </div>
+    <!-- end links grid item -->
+    <!-- start birthdays grid item -->
+    <div class="boardstats__birthdays">
+      <div class="maintitle">Today's Birthdays</div>
+      <div class="birthdays__grid">
+        <div class="boardstats--macro"><{F_ACTIVE}></div>
+        <div>
+          <b><!-- |birthdays| --></b> members are celebrating their birthday
+          today
+          <br />
+          <!-- |birthdays_list| -->
+        </div>
+      </div>
+    </div>
+    <!-- end birthdays grid item -->
+    <!-- start site stats grid item -->
+    <div class="boardstats__stats">
+      <div class="maintitle">Board Statistics</div>
+      <div class="stats__grid">
+        <div class="boardstats--macro"><{F_STATS}></div>
+        <div class="boardstats--info">
+          <div>
+            Our members have made a total of <b><!-- |total_posts| --></b> posts
+          </div>
+          <div>
+            We have <b><!-- |total_mem_reg| --></b> registered members
+          </div>
+
+          <div>
+            The newest member is <b><!-- |newest_member| --></b>
+          </div>
+
+          <div>
+            Most users ever online was <b> <!-- |most_online| --></b> on
+            <br /><b> <!-- |most_online_date| --></b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end site stats grid item -->
+    <!-- start "online today" grid item -->
+    <div class="boardstats__online-today">
+      <div class="maintitle">
+        Members Online Today:
+        <!-- |online_today| -->
+        <span id="mot_explink" style="display: none">
+          [<a href="javascript:expand_mot()">Show</a>]
+        </span>
+        <span id="mot_collink" style="display: inline">
+          [<a href="javascript:collapse_mot()">Hide</a>]
+        </span>
+      </div>
+      <div id="mot" class="online-today__grid">
+        <div class="boardstats--macro"><{F_STATS}></div>
+        <div>
+          <span id="activeusers-mostevertxt">
+            Most members ever online in one day was
+            <b><!-- |most_online_oneday| --></b>, last accomplished on
+            <b><!-- |most_online_oneday_date| --></b>
+          </span>
+          <br />
+          <br />
+          <span id="activeusers-followingtxt">
+            The following members have visited today:
+          </span>
+          <br />
+          <!-- |online_today_list| -->
+        </div>
+      </div>
+    </div>
+    <!-- end "online today" grid item -->
+  </div>
+</div>
+<!-- end board stats -->

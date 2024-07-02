@@ -446,10 +446,10 @@ a:hover {
   border: 1px solid var(--theme__background-main);
   row-gap: 5px;
   grid-template-areas:
-    'info info info'
-    'subforums subforums subforums'
-    'macro topics replies'
-    'lastpost lastpost lastpost';
+    'info       info       info'
+    'subforums  subforums  subforums'
+    'macro      topics     replies'
+    'lastpost   lastpost   lastpost';
 }
 
 .forum__row--macro,
@@ -495,9 +495,205 @@ span.subforums > br {
     grid-template-columns: 28px 55% 7% 7% 27%;
     column-gap: 5px;
     grid-template-areas:
-      'macro info topics replies lastpost'
+      'macro  info       topics     replies    lastpost'
+      'macro  subforums  subforums  subforums  subforums';
+  }
+}
+
+/*------------------------------------*\
+  #REDIRECT_ROWS
+\*------------------------------------*/
+
+.redirect__row {
+  display: grid;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid var(--theme__background-main);
+  row-gap: 5px;
+  grid-template-areas:
+    'info info'
+    'macro hits';
+}
+
+/* Grid Set Up */
+.redirect__row--macro {
+  grid-area: macro;
+  text-align: center;
+}
+
+.redirect__row--info {
+  grid-area: info;
+}
+
+.redirect__row--subforums {
+  grid-area: subforums;
+}
+
+.redirect__row--hits {
+  grid-area: hits;
+}
+
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
+
+@media only screen and (min-width: 750px) {
+  .redirect__row {
+    grid-template-columns: 28px 55% 7% 7% 27%;
+    column-gap: 5px;
+    grid-template-areas:
+      'macro info info info hits'
       'macro subforums subforums subforums subforums';
   }
+}
+
+/*------------------------------------*\
+  #RECENT_TOPICS
+\*------------------------------------*/
+
+#recent-topics tr {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+#recent-topics tr > td.recent-topics-info,
+#recent-topics tr > td.recent-topics-date {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
+
+@media only screen and (min-width: 750px) {
+  #recent-topics tr {
+    flex-direction: row;
+  }
+
+  #recent-topics tr > td.recent-topics-date {
+    text-align: right;
+  }
+}
+
+/*------------------------------------*\
+  #BOARD_STATS
+\*------------------------------------*/
+
+#boardstats {
+  background: var(--theme__background-contrast);
+  border: 1px solid var(--theme__color-primary);
+}
+
+#board-stats__grid {
+  display: grid;
+  align-items: center;
+  padding: 5px;
+  grid-template-areas:
+    'links'
+    'online-now'
+    'stats'
+    'birthdays'
+    'online-today';
+}
+
+.boardstats__online-now > .maintitle,
+.boardstats__links > .maintitle,
+.boardstats__birthdays > .maintitle,
+.boardstats__stats > .maintitle,
+.boardstats__online-today > .maintitle {
+  font-size: var(--textsize-body__primary);
+  margin: 5px 0;
+}
+
+.online-now__grid,
+.links__grid,
+.birthdays__grid,
+.stats__grid,
+.online-today__grid {
+  display: grid;
+  align-items: center;
+  gap: 5px;
+  grid-template-columns: 0.1fr 1fr;
+}
+
+.links__grid {
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  margin-left: 5px;
+}
+
+.boardstats--macro {
+  text-align: center;
+}
+
+/* Online users list row */
+.online-now--thin {
+  padding: 6px 0px 6px 0px;
+  min-height: 20px;
+  line-height: 140%;
+  margin: 2px 0px 2px 0px;
+  border-top: 1px solid var(--theme__color-secondary);
+  border-bottom: 1px solid var(--theme__color-secondary);
+}
+
+/* Grid Set Up */
+.boardstats__online-now {
+  grid-area: online-now;
+}
+
+.boardstats__links {
+  grid-area: links;
+}
+
+.boardstats__birthdays {
+  grid-area: birthdays;
+}
+
+.boardstats__stats {
+  grid-area: stats;
+}
+
+.boardstats__online-today {
+  grid-area: online-today;
+}
+
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
+
+@media only screen and (min-width: 750px) {
+  #board-stats__grid {
+    display: grid;
+    align-items: start;
+    padding: 5px;
+    grid-column-gap: 15px;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas:
+      'online-now links'
+      'birthdays stats'
+      'online-today stats';
+  }
+
+  .stats__grid > .boardstats--info {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .links__grid {
+    margin-left: 50px;
+  }
+}
+
+/****************************************
+    Default Footer Area
+ *****************************************/
+
+#delcookiesrow,
+#mark-as-read-subto,
+.toplinks {
+  display: none;
 }
 
 /****************************************
@@ -843,7 +1039,7 @@ input[type='reset'] {
  *****************************************/
 
 .pformstrip {
-  background: var(--background__accent);
+  background: var(--theme__background-main);
   font-weight: bold;
   padding: 2px 5px;
   margin-top: 1px;
@@ -872,41 +1068,6 @@ input[type='reset'] {
   padding: 6px;
   margin-top: 1px;
   border-top: 1px solid var(--pformRightBorderColor);
-}
-
-/****************************************
-    Delete all cookies / mark read
- *****************************************/
-
-#delcookiesrow,
-#mark-as-read-subto {
-  background: var(--delCookiesRowBGColor);
-  border: 1px solid var(--delCookiesRowBorderColor);
-  font-size: var(--delCookiesRowFontSize);
-  padding: 5px;
-  width: 260px;
-  float: right;
-  margin-top: -3px;
-  padding-left: 1px;
-}
-
-#mark-as-read-subto {
-  float: none;
-  padding-top: 3px;
-}
-
-/*******************************
-       Board Statistics Links
-  *******************************/
-
-.toplinks a {
-  color: var(--theme__color-primary);
-  text-decoration: none;
-}
-
-.toplinks {
-  text-align: right;
-  color: transparent;
 }
 
 /*******************************
@@ -962,15 +1123,6 @@ img.attach {
 /* Skin selector dropdown */
 #skin_selector {
   margin: 10px 0;
-}
-
-/* Online users list row */
-.thin {
-  padding: 6px 0px 6px 0px;
-  line-height: 140%;
-  margin: 2px 0px 2px 0px;
-  border-top: 1px solid var(--thinBorderColor);
-  border-bottom: 1px solid var(--thinBorderColor);
 }
 
 /* Highlighted text in search */
