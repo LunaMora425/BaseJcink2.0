@@ -21,7 +21,7 @@ form {
   /* Colors List */
   --eerie-black: #222222;
   --anti-flash-white: #efefef;
-  --timberwolf: #e5ded6;
+  --platinum: #e1e1e1;
   --maroon: #800000;
   --russian-violet: #290c3b;
 
@@ -54,10 +54,10 @@ form {
 [data-theme='light'] {
   /* Light Mode Colors */
   --theme__background-main: var(--anti-flash-white);
-  --theme__background-contrast: var(--timberwolf);
+  --theme__background-contrast: var(--platinum);
   --theme__color-primary: var(--maroon);
   --theme__color-secondary: var(--russian-violet);
-  --theme__color-accent: var(--timberwolf);
+  --theme__color-accent: var(--platinum);
   --theme__text-main: var(--eerie-black);
   --theme__text-contrast: var(--anti-flash-white);
 }
@@ -627,6 +627,10 @@ span.subforums > br {
   text-align: center;
 }
 
+.boardstats--macro > .users-macro > i {
+  line-height: 140%;
+}
+
 /* Online users list row */
 .online-now--thin {
   padding: 6px 0px 6px 0px;
@@ -690,10 +694,134 @@ span.subforums > br {
     Default Footer Area
  *****************************************/
 
-#delcookiesrow,
-#mark-as-read-subto,
-.toplinks {
+#delcookiesrow {
   display: none;
+}
+
+#mark-as-read-subto {
+  font-size: var(--textsize-body__secondary);
+  background: var(--theme__background-contrast);
+  padding: 3px;
+  border: 1px solid var(--theme__color-secondary);
+  max-width: 350px;
+}
+
+/*------------------------------------*\
+  #SUBFORUM_HEADERS
+\*------------------------------------*/
+
+#subforum-list {
+  background: var(--theme__background-contrast);
+  border: 1px solid var(--theme__color-primary);
+}
+
+/*------------------------------------*\
+  #TOPIC_LIST_HEADERS
+\*------------------------------------*/
+
+#topic-list {
+  background: var(--theme__background-contrast);
+  border: 1px solid var(--theme__color-primary);
+}
+
+.topic-row.maintitle {
+  font-size: var(--textsize-body__primary);
+  margin: 5px;
+}
+
+.topic__row {
+  border-top: 2px solid var(--theme__background-main);
+  display: grid;
+  align-items: center;
+  padding: 5px 0;
+  margin: 5px;
+  row-gap: 5px;
+  grid-template-areas:
+    'info info info info info'
+    'macro posticon replies views mod-checkbox'
+    'lastpost lastpost lastpost lastpost lastpost';
+}
+
+/* this makes it so there is only a border 
+between topic rows and nothing else */
+.topic__row:first-child,
+.maintitle + .topic__row {
+  border-top: none;
+}
+
+.topic__row--macro,
+.topic__row--posticon,
+.topic__row--replies,
+.topic__row--views,
+.topic__row--mod-checkbox {
+  text-align: center;
+}
+
+.topic__row--macro,
+.topic__row--posticon {
+  color: var(--theme__color-secondary);
+}
+
+.topic__row--info > a {
+  font-weight: bold;
+}
+
+.forum-active {
+  border-top: 1px solid var(--theme__color-primary);
+}
+
+/* Topic Macros */
+
+.wrapmini {
+  margin: auto;
+}
+
+.new-post-macro {
+  color: var(--theme__color-primary);
+}
+
+/* Grid Set Up */
+.topic__row--macro {
+  grid-area: macro;
+}
+
+.topic__row--posticon {
+  grid-area: posticon;
+}
+
+.topic__row--info {
+  grid-area: info;
+}
+
+.topic__row--replies {
+  grid-area: replies;
+}
+
+.topic__row--views {
+  grid-area: views;
+}
+
+.topic__row--lastpost {
+  grid-area: lastpost;
+}
+
+.topic__row--mod-checkbox {
+  grid-area: mod-checkbox;
+}
+
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
+
+@media only screen and (min-width: 750px) {
+  .topic__row {
+    grid-template-columns: 2% 2% 51% 7% 7% 27% 2%;
+    column-gap: 4px;
+    grid-template-areas: 'macro posticon info replies views lastpost mod-checkbox';
+  }
+
+  .wrapmini {
+    float: left;
+  }
 }
 
 /****************************************
@@ -838,7 +966,7 @@ span.subforums > br {
 .darkrow1,
 .darkrow2,
 .darkrow3 {
-  background: var(--background__accent);
+  background: var(--theme__background-main);
 }
 
 td.darkrow2 {
@@ -956,21 +1084,21 @@ td.darkrow2 {
  ***********************************************/
 
 .button-large {
-  background: var(--background__primary);
+  background: var(--theme__color-primary);
+  color: var(--theme__text-contrast);
   border-radius: 3px;
   padding: 5px 12px;
   text-align: center;
   margin: 0px 5px 0px 5px;
-  color: var(--link__low-contrast);
   font-weight: bold;
   min-width: 75px;
   display: inline-block;
 }
 
 .button-small {
-  background: var(--background__primary);
+  background: var(--theme__color-primary);
+  color: var(--theme__text-contrast);
   border-radius: 3px;
-  color: var(--link__low-contrast);
   font-weight: bold;
   font-size: var(--textsize-body__secondary);
   margin: 3px;
@@ -990,12 +1118,12 @@ td.darkrow2 {
 }
 
 .button-large.closed {
-  background: var(--buttonLargeBGColor);
+  background: var(--theme__color-secondary);
+  color: var(--theme__text-contrast);
   padding: 7px 12px;
   text-align: center;
   margin: 0px 5px 0px 5px;
-  border: 1px solid var(--buttonLargeBorderColor);
-  color: var(--buttonLargeColor);
+  border: 1px solid var(--theme__color-secondary);
   font-weight: bold;
 }
 
@@ -1005,11 +1133,10 @@ td.darkrow2 {
 .radiobutton,
 .checkbox {
   border-radius: 2px;
-  background: var(--formInputBGColor);
-  border: 1px solid var(--formInputBorderColor);
-  color: var(--formInputColor);
-  font-family: var(--formInputFontFamily);
-  font-size: var(--formInputFontSize);
+  background: var(--theme__background-contrast);
+  border: 1px solid var(--theme__color-secondary);
+  font-size: var(--textsize-body__secondary);
+  color: var(--theme__color-secondary);
   padding: 2px;
   vertical-align: middle;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
@@ -1018,10 +1145,10 @@ td.darkrow2 {
 input[type='submit'],
 input[type='button'],
 input[type='reset'] {
-  background: var(--background__primary);
+  background: var(--theme__color-primary);
   border-radius: 3px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  color: var(--textcolor__low-contrast);
+  color: var(--theme__text-contrast);
   font-size: var(--textsize-body__secondary);
   font-weight: bold;
   margin: 3px;
@@ -1031,7 +1158,16 @@ input[type='reset'] {
 }
 
 .codebuttons {
-  font-size: var(--codeButtonsFontSize);
+  font-size: var(--textsize-body__secondary);
+}
+
+/* Topic Row 'Jump to Forum' box */
+@media only screen and (min-width: 320px) and (max-width: 750px) {
+  select[name='f'] {
+    width: 100%;
+    max-width: 80%;
+    box-sizing: border-box;
+  }
 }
 
 /****************************************
@@ -1104,12 +1240,6 @@ img.attach {
 /* Edited by text */
 .edit {
   font-size: var(--textsize-body__secondary);
-}
-
-/* Topic Macros */
-
-.wrapmini {
-  float: left;
 }
 
 /* Warning CSS */
