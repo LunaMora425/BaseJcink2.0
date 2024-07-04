@@ -824,6 +824,141 @@ between topic rows and nothing else */
   }
 }
 
+/*------------------------------------*\
+  #POST_ROW
+\*------------------------------------*/
+
+.topic-title {
+  font-size: var(--textsize__title);
+}
+
+.topic-desc {
+  display: block;
+  font-size: var(--textsize__subheading);
+  padding-left: 10px;
+}
+
+.post__row {
+  display: grid;
+  padding: 5px;
+  border-top: 1px solid var(--theme__background-main);
+  grid-template-areas:
+    'username'
+    'post-details'
+    'miniprofile'
+    'post-content';
+}
+
+.post__row--post-details.maintitle {
+  font-size: var(--textsize-body__secondary);
+  padding: 0px 8px 8px;
+}
+
+.post__row--post-details {
+  display: grid;
+  align-items: center;
+  row-gap: 10px;
+  grid-template-areas:
+    'grid-item-2 grid-item-2 grid-item-2 grid-item-2'
+    'grid-item-5 grid-item-1 grid-item-3 grid-item-4';
+}
+
+.grid-item-1 {
+  grid-area: grid-item-1;
+}
+
+.grid-item-2 {
+  grid-area: grid-item-2;
+}
+
+.grid-item-3 {
+  grid-area: grid-item-3;
+}
+
+.grid-item-4 {
+  grid-area: grid-item-4;
+}
+
+.grid-item-5 {
+  grid-area: grid-item-5;
+}
+
+.grid-item-2 {
+  background: var(--theme__color-secondary);
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+
+.grid-item-5 span.desc {
+  font-size: unset;
+  background: var(--theme__color-secondary);
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+
+span.quote-macro,
+span.delete-macro,
+span.edit-macro,
+span.report-macro {
+  background: var(--theme__color-secondary);
+  padding: 5px 7px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Grid Set Up */
+.post__row--username {
+  grid-area: username;
+}
+
+.post__row--post-details {
+  grid-area: post-details;
+}
+
+.post__row--miniprofile {
+  grid-area: miniprofile;
+}
+
+.post__row--post-content {
+  grid-area: post-content;
+}
+
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
+
+@media only screen and (min-width: 750px) {
+  .post__row {
+    column-gap: 4px;
+    grid-template-areas:
+      'username username'
+      'post-details post-details'
+      'miniprofile post-content';
+  }
+
+  .post__row--username.maintitle {
+    padding: 8px 20px 0;
+  }
+
+  .post__row--post-details {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .post__row--post-details {
+    display: grid;
+    align-items: center;
+    row-gap: 10px;
+    grid-template-areas: 'grid-item-1 grid-item-2 grid-item-3 grid-item-4 grid-item-5';
+  }
+
+  .post__row--miniprofile {
+    padding: 15px 0px 0px 10px;
+  }
+
+  .post__row--post-content {
+    padding: 20px 50px 10px;
+  }
+}
+
 /****************************************
     Topic View styles
  *****************************************/
@@ -839,11 +974,11 @@ between topic rows and nothing else */
 }
 
 .post1 {
-  background: var(--background__low-contrast);
+  background: var(--theme__background-contrast);
 }
 
 .post2 {
-  background: var(--background__low-contrast);
+  background: var(--theme__background-contrast);
 }
 
 .postdetails {
@@ -851,14 +986,16 @@ between topic rows and nothing else */
 }
 
 .postlinksbar {
-  padding: 1px 5px;
-  background: var(--background__accent);
+  padding: 5px 15px 5px;
+  background: var(--theme__background-main);
+  font-size: var(--textsize-body__secondary);
   margin-top: 1px;
+  text-align: left;
 }
 
 .signature {
   font-size: var(--textsize-body__secondary);
-  color: var(--signatureColor);
+  color: var(--theme__color-secondary);
   line-height: 150%;
 }
 
@@ -1083,7 +1220,8 @@ td.darkrow2 {
    Input buttons, e.g. submit, text input, etc
  ***********************************************/
 
-.button-large {
+.button-large,
+.button-large.closed {
   background: var(--theme__color-primary);
   color: var(--theme__text-contrast);
   border-radius: 3px;
@@ -1119,12 +1257,7 @@ td.darkrow2 {
 
 .button-large.closed {
   background: var(--theme__color-secondary);
-  color: var(--theme__text-contrast);
-  padding: 7px 12px;
-  text-align: center;
-  margin: 0px 5px 0px 5px;
   border: 1px solid var(--theme__color-secondary);
-  font-weight: bold;
 }
 
 .forminput,
