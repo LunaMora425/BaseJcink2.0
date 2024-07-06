@@ -946,6 +946,10 @@ span.report-macro {
     flex-direction: row;
   }
 
+  .post__row--miniprofile {
+    border-bottom: unset;
+  }
+
   .post__row--post-content {
     padding: 20px 50px 10px;
   }
@@ -958,7 +962,7 @@ span.report-macro {
 }
 
 /****************************************
-    Topic View styles
+    Default Topic View styles
  *****************************************/
 
 .postlinksbar {
@@ -1108,15 +1112,6 @@ span.report-macro {
 }
 
 /*******************************
-   Mini Profile Seperators
-  *******************************/
-
-/* .postbit {
-  border-bottom: 1px solid var(--theme__color-primary);
-  background: var(--theme__background-main);
-} */
-
-/*******************************
   Pagination e.g. [1],2,3 ...
  *******************************/
 
@@ -1186,7 +1181,7 @@ span.report-macro {
 
 #ucpmenu,
 #ucpcontent {
-  border: 1px solid var(--border__secondary);
+  border: 1px solid var(--theme__color-secondary);
   line-height: 150%;
   width: auto;
 }
@@ -1264,7 +1259,7 @@ td.darkrow2 {
    Bar directly below the maintitles 
  *****************************************/
 
-.titlemedium {
+/* .titlemedium {
   font-weight: bold;
   color: var(--theme__text-main);
   padding: 2px 6px;
@@ -1277,7 +1272,7 @@ td.darkrow2 {
 .titlemedium a:active {
   text-decoration: none;
   color: var(--theme__color-primary);
-}
+} */
 
 /****************************************
    Table & Div Borders 
@@ -1297,6 +1292,10 @@ td.darkrow2 {
 }
 
 /* Topic Options dropdown on post view */
+#topic_open {
+  margin-top: 5px;
+}
+
 #topic_open > .tableborder > .maintitle {
   font-size: var(--textsize-body__primary);
 }
@@ -1305,10 +1304,10 @@ td.darkrow2 {
   padding: 6px;
 }
 
-/* .tablepad {
-	background: var(--tablepadBGColor);
-	padding: 6px;
-} */
+/* Fast Reply */
+#qr_open .tablepad {
+  margin-top: 5px;
+}
 
 .tablebasic {
   width: 100%;
@@ -1429,6 +1428,161 @@ input[type='reset'] {
   }
 }
 
+/*------------------------------------*\
+  #POST.act-Post Styling
+  aka: New Topic, Add Reply, etc
+\*------------------------------------*/
+
+/* these form fields are the ones that cause the page 
+** to overflow and break the zoom on mobile
+** this is all you need to fix the post page */
+input[name='TopicTitle'],
+input[name='TopicDesc'],
+textarea[name='Post'],
+input[type='file'],
+/* New Poll specific styling */
+input[name='pollq'],
+textarea[name='PollAnswers'] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type='file'] {
+  /* to keep the attachments field from filling 
+  ** the whole row on desktop */
+  max-width: 264px;
+}
+
+/* this one breaks it SO BAD, this is the Guided Prompt text */
+input[name='helpbox'] {
+  display: none;
+  /* if you do want it displayed, this cuts off the 
+     text but it prevents the overflow on mobile 
+  width: 100% !important;
+  max-width: 80%;
+  box-sizing: border-box;
+  */
+}
+
+/* this is a case where desktop is fine and can stay as is...
+** so we reverse the media query and contain all styles within
+**
+** please note none of this stuff is NECESSARY, this is just to
+** make it look better than the default tiling */
+@media only screen and (max-width: 749px) {
+  /* needed to space the post icons correctly */
+  table#posting-form tr#post-icon-options > td.pformleft {
+    width: 25%;
+  }
+  /* needed to space the post icons correctly */
+  table#posting-form tr#post-icon-options > td.pformright {
+    width: 75%;
+  }
+
+  table#posting-form > tbody {
+    display: block;
+  }
+
+  table#posting-form tr#topic-title,
+  table#posting-form tr#topic-desc,
+  table#posting-form tr#code-buttons,
+  table#posting-form tr#enter-your-post,
+  table#posting-form tr#upload-files,
+  table#posting-form tr#pform-poll-question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table#posting-form > tbody > tr:first-child,
+  table#posting-form tr#topic-settings-header,
+  table#posting-form tr#code-buttons-header,
+  table#posting-form tr#enter-your-post-header,
+  table#posting-form tr#post-options,
+  table#posting-form tr#post-icon-options,
+  table#posting-form tr#upload-files-header,
+  table#posting-form tr:nth-child(13),
+  table#posting-form tr:nth-child(15),
+  /* New Poll specific styling */
+  #Post.code-10 table#posting-form tr:nth-child(5),
+  /* Add Reply specific styling */
+  #Post.code-02 table#posting-form tr:nth-child(10),
+  #Post.code-02 table#posting-form tr:nth-child(12) {
+    display: flex;
+  }
+
+  table#posting-form > tbody > tr:first-child > td.maintitle,
+  table#posting-form tr#topic-settings-header > td.pformstrip,
+  table#posting-form tr#code-buttons-header > td.pformstrip,
+  table#posting-form tr#enter-your-post-header > td.pformstrip,
+  table#posting-form tr#upload-files-header > td.pformstrip,
+  table#posting-form tr:nth-child(13) > td.pformstrip,
+  table#posting-form tr:nth-child(15) > td.pformstrip,
+  /* New Poll specific styling */
+  #Post.code-10 table#posting-form tr:nth-child(5) > td.pformstrip,
+  /* Add Reply specific styling */
+  #Post.code-02 table#posting-form tr:nth-child(10) > td.pformstrip,
+  #Post.code-02 table#posting-form tr:nth-child(12) > td.pformstrip {
+    width: 100%;
+  }
+
+  /* hide the smilies on mobile to conserve space */
+  table#smilies-table > tbody > tr[align='center'] {
+    display: none;
+  }
+
+  /* remove the line break between the emoji table and links on mobile */
+  table#posting-form > tbody > tr#enter-your-post > td.pformleft > br {
+    display: none;
+  }
+
+  /* center attachments as the mobile screen gets wider */
+  table#posting-form tr#upload-files > td.pformright {
+    text-align: center;
+  }
+
+  /* Last 10 Posts in reverse order on Add Reply screen
+  ** Again, not necessary but makes it look better on mobile */
+  #topic-summary table > tbody {
+    display: block;
+  }
+
+  #topic-summary table > tbody > tr:nth-child(odd) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #topic-summary table > tbody > tr:nth-child(even) {
+    display: flex;
+  }
+
+  #topic-summary table > tbody > tr:nth-child(even) > td[width='20%'] {
+    display: none;
+  }
+
+  #topic-summary table > tbody > tr:nth-child(even) > td[width='80%'] {
+    width: 100%;
+    border-bottom: 1px solid var(--theme__color-primary);
+  }
+}
+
+/* The act-Post styles for Desktop
+TODO: move these */
+@media only screen and (min-width: 750px) {
+  .pformleft {
+    width: 25%;
+  }
+
+  input[name='TopicTitle'],
+  input[name='TopicDesc'],
+  /* New Poll specific styling */
+  input[name='pollq'],
+  textarea[name='PollAnswers'],
+  textarea[name='Post'] {
+    max-width: 80%;
+  }
+}
+
 /****************************************
    Form table cell styles, left/right/top
  *****************************************/
@@ -1440,13 +1594,10 @@ input[type='reset'] {
   margin-top: 1px;
 }
 
-.pformleft {
-  background-color: var(--pformLeftBGColor);
+.pformleft,
+.pformright {
   padding: 6px;
   margin-top: 1px;
-  width: 25%;
-  border-top: 1px solid var(--pformLeftBorderColor);
-  border-right: 1px solid var(--pformLeftBorderColor);
 }
 
 .pformleftw {
@@ -1456,13 +1607,6 @@ input[type='reset'] {
   width: 40%;
   border-top: 1px solid var(--pformLeftwBorderColor);
   border-right: 1px solid var(--pformLeftwBorderColor);
-}
-
-.pformright {
-  background-color: var(--pformRightBGColor);
-  padding: 6px;
-  margin-top: 1px;
-  border-top: 1px solid var(--pformRightBorderColor);
 }
 
 /********************************
@@ -1479,7 +1623,8 @@ img.attach {
   padding: 2px;
 }
 
-/* Forum Descriptions */
+/* Forum Descriptions
+** this is used in a lot more places that just the forum descriptions */
 .desc {
   font-size: var(--textsize-body__primary);
 }
