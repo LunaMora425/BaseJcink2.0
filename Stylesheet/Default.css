@@ -1111,6 +1111,197 @@ span.report-macro {
   }
 }
 
+/*------------------------------------*\
+  #MAIN_PROFILE
+\*------------------------------------*/
+
+.main-profile {
+  background: var(--theme__background-contrast);
+  border: 1px solid var(--theme__color-primary);
+}
+
+.mainprofile__row.header > .maintitle {
+  overflow-wrap: anywhere;
+  font-size: var(--textsize__title);
+  padding-left: 20px;
+}
+
+.mainprofile__row.header .header--account-info {
+  font-size: var(--textsize-body__secondary);
+  font-weight: normal;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header--account-info > span.title {
+  font-style: italic;
+  text-align: center;
+  font-family: var(--font-family__accent), system-ui;
+  padding: 5px 0;
+}
+
+.main-profile.wrapper {
+  padding: 9px;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-areas:
+    'avatar icons'
+    'fields fields'
+    'stats stats'
+    'subaccounts subaccounts'
+    'awards awards'
+    'about-me about-me'
+    'signature signature'
+    'go-back go-back';
+}
+
+.mainprofile__row.icons {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: start;
+}
+
+.mainprofile__row.avatar {
+  margin: auto;
+}
+
+.mainprofile__row.avatar > img {
+  border: 1px solid var(--theme__color-primary);
+  border-radius: 3px;
+  width: 31.25vw;
+  height: 31.25vw;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.mainprofile__row.fields,
+.mainprofile__row.stats,
+.mainprofile__row.subaccounts,
+.mainprofile__row.awards {
+  padding: 5px 7px;
+  border-radius: 5px;
+  background: var(--theme__background-main);
+}
+
+.mainprofile__row.fields,
+.mainprofile__row.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.mainprofile__row.subaccounts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.mainprofile__row.awards {
+  text-align: center;
+}
+
+.mainprofile__row.awards > .awards-box {
+  display: block;
+  height: 70px;
+  margin: 5px auto;
+  overflow: auto;
+}
+
+.mainprofile__row.about-me {
+  padding-top: 10px;
+  border-top: 2px solid var(--theme__background-main);
+}
+
+.mainprofile__row.go-back {
+  background: var(--theme__color-secondary);
+  padding: 5px 7px;
+  border-radius: 5px;
+  text-align: center;
+  color: var(--theme__text-contrast);
+  max-width: 70px;
+}
+
+.mainprofile__row.go-back > a {
+  color: var(--theme__text-contrast);
+}
+
+/* Grid Set Up */
+.mainprofile__row.avatar {
+  grid-area: avatar;
+}
+
+.mainprofile__row.icons {
+  grid-area: icons;
+}
+
+.mainprofile__row.fields {
+  grid-area: fields;
+}
+
+.mainprofile__row.about-me {
+  grid-area: about-me;
+}
+
+.mainprofile__row.stats {
+  grid-area: stats;
+}
+
+.mainprofile__row.awards {
+  grid-area: awards;
+}
+
+.mainprofile__row.subaccounts {
+  grid-area: subaccounts;
+}
+
+.mainprofile__row.signature {
+  grid-area: signature;
+}
+
+.mainprofile__row.go-back {
+  grid-area: go-back;
+}
+
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
+
+@media only screen and (min-width: 750px) {
+  .main-profile.wrapper {
+    padding: 10px 20px 10px 15px;
+    grid-template-columns: 275px 1fr 1fr;
+    grid-template-rows: min-content 1fr 1fr 1fr min-content min-content;
+    grid-template-areas:
+      'avatar icons icons'
+      'avatar fields stats'
+      'avatar subaccounts awards'
+      'about-me about-me about-me'
+      'signature signature signature'
+      'go-back go-back go-back';
+  }
+
+  .mainprofile__row.avatar > img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .mainprofile__row.icons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 10px;
+    justify-items: center;
+  }
+
+  .mainprofile__row.about-me,
+  .mainprofile__row.signature,
+  .mainprofile__row.go-back {
+    margin-left: 10px;
+  }
+}
+
 /*******************************
   Pagination e.g. [1],2,3 ...
  *******************************/
@@ -1419,8 +1610,9 @@ input[type='reset'] {
   font-size: var(--textsize-body__secondary);
 }
 
-/* Topic Row 'Jump to Forum' box */
-@media only screen and (min-width: 320px) and (max-width: 750px) {
+/* Topic Row 'Jump to Forum' box
+** TODO: combine this with post stuff later */
+@media only screen and (max-width: 750px) {
   select[name='f'] {
     width: 100%;
     max-width: 80%;
@@ -1469,7 +1661,7 @@ input[name='helpbox'] {
 **
 ** please note none of this stuff is NECESSARY, this is just to
 ** make it look better than the default tiling */
-@media only screen and (max-width: 749px) {
+@media only screen and (max-width: 750px) {
   /* needed to space the post icons correctly */
   table#posting-form tr#post-icon-options > td.pformleft {
     width: 25%;
