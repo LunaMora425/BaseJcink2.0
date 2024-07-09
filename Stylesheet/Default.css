@@ -1130,8 +1130,9 @@ span.report-macro {
   font-size: var(--textsize-body__secondary);
   font-weight: normal;
   display: flex;
-  gap: 10px;
+  column-gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .header--account-info > span.title {
@@ -1302,6 +1303,130 @@ span.report-macro {
   }
 }
 
+/*------------------------------------*\
+  #MEMBER_LIST_HEADERS
+\*------------------------------------*/
+
+.memberlist__search-inputs {
+  background: var(--theme__background-main);
+  border-bottom: 1px solid var(--theme__color-secondary);
+  font-weight: bold;
+  padding: 5px;
+  gap: 5px;
+  line-height: 160%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*------------------------------------*\
+  #MEMBER_LIST_ROW
+\*------------------------------------*/
+
+.memberlist {
+  background: var(--theme__background-contrast);
+  border: 1px solid var(--theme__color-primary);
+}
+
+.memberlist__row {
+  padding: 5px;
+  border-bottom: 2px solid var(--theme__color-secondary);
+  margin: 0px 5px;
+  display: grid;
+  row-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-template-areas:
+    'name name'
+    'group group'
+    'avatar posts'
+    'avatar topics'
+    'joined joined'
+    'last-seen last-seen'
+    'last-post-date last-post-date';
+}
+
+/* stop last row from having a bottom border since the table
+** already has one */
+.memberlist__row:last-child {
+  border-bottom: none;
+}
+
+.memberlist__row--avatar {
+  justify-self: center;
+}
+
+.memberlist__row--avatar > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid var(--theme__color-primary);
+  border-radius: 3px;
+}
+
+.memberlist__row--name {
+  overflow-wrap: anywhere;
+  font-size: var(--textsize__subheading);
+}
+
+.memberlist__row--name,
+.memberlist__row--group {
+  justify-self: center;
+}
+
+/* Grid Set Up */
+.memberlist__row--avatar {
+  grid-area: avatar;
+}
+
+.memberlist__row--name {
+  grid-area: name;
+}
+
+.memberlist__row--group {
+  grid-area: group;
+}
+
+.memberlist__row--joined {
+  grid-area: joined;
+}
+
+.memberlist__row--posts {
+  grid-area: posts;
+}
+
+.memberlist__row--topics {
+  grid-area: topics;
+}
+
+.memberlist__row--last-seen {
+  grid-area: last-seen;
+}
+
+.memberlist__row--last-post-date {
+  grid-area: last-post-date;
+}
+
+/* Media Queries 
+* TODO: move the media queries to bottom once done */
+
+@media only screen and (min-width: 750px) {
+  .memberlist__row {
+    justify-items: start;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-areas:
+      'avatar  name   name   name    name    last-seen'
+      'avatar  group  posts  topics  joined  last-post-date';
+  }
+
+  .memberlist__row--name,
+  .memberlist__row--group {
+    justify-self: start;
+  }
+}
+
 /*******************************
   Pagination e.g. [1],2,3 ...
  *******************************/
@@ -1361,10 +1486,10 @@ span.report-macro {
     Profile styles 
  *****************************************/
 
-#profilename {
+/* #profilename {
   font-size: var(--textsize__title);
   font-weight: bold;
-}
+} */
 
 /****************************************
 	  UserCP/My Controls styles
@@ -1472,15 +1597,13 @@ td.darkrow2 {
 .tableborder {
   background: var(--theme__background-contrast);
   border: 1px solid var(--theme__color-primary);
-  padding: 0px;
-  margin: 0;
 }
 
-.tablefill {
+/* .tablefill {
   background: var(--tablefillBGColor);
   border: 1px solid var(--tableborderBorderColor);
   padding: 6px;
-}
+} */
 
 /* Topic Options dropdown on post view */
 #topic_open {
@@ -1507,10 +1630,10 @@ td.darkrow2 {
   border: 0px;
 }
 
-.plainborder {
+/* .plainborder {
   border: 1px solid var(--border__secondary);
   background: var(--background__low-contrast);
-}
+} */
 
 /****************************************
    QUOTE and CODE BBCode boxes
@@ -1844,6 +1967,18 @@ img.attach {
   color: red;
   font-weight: bold;
   background: yellow;
+}
+
+/****************************************
+   Viewing Online List
+ *****************************************/
+
+#Online table tr:first-child th.titlemedium:last-child {
+  display: none;
+}
+
+#Online table tr td.row1:last-child {
+  display: none;
 }
 
 /***********************************
