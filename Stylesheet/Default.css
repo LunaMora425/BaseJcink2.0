@@ -52,6 +52,8 @@ form {
 }
 
 [data-theme='light'] {
+  /* TODO: rehost; for testing only */
+  --theme__image__background-main: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
   /* Light Mode Colors */
   --theme__background-main: var(--anti-flash-white);
   --theme__background-contrast: var(--platinum);
@@ -63,6 +65,8 @@ form {
 }
 
 [data-theme='dark'] {
+  /* TODO: rehost; for testing only */
+  --theme__image__background-main: url('https://www.transparenttextures.com/patterns/black-twill.png');
   /* Dark Mode Colors */
   --theme__background-main: var(--eerie-black);
   --theme__background-contrast: var(--jet);
@@ -84,6 +88,7 @@ body {
   margin: 0px;
   padding: 0px;
   background: var(--theme__background-main);
+  background-image: var(--theme__image__background-main);
   text-align: center;
 }
 
@@ -97,6 +102,7 @@ body {
   margin: 0px auto 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   padding-bottom: 5px;
+  background: var(--theme__background-main);
 }
 
 #header,
@@ -374,7 +380,7 @@ body {
   }
 
   #nav__userlinks.dropdown-menu {
-    width: 1200px;
+    width: 98%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -1493,23 +1499,175 @@ span.report-macro {
 
 /****************************************
 	  UserCP/My Controls styles
-   *****************************************/
+*****************************************/
 
 #ucpmenu,
 #ucpcontent {
   border: 1px solid var(--theme__color-secondary);
-  line-height: 150%;
-  width: auto;
+  background: var(--theme__background-contrast);
 }
 
-#ucpmenu p {
-  padding: 2px 5px 6px 9px;
-  margin: 0px;
+@media only screen and (max-width: 750px) {
+  /* target just the top level tables and not any of the nested tables */
+  #UserCP #innerwrapper > table > tbody > tr:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* generic, also applies to custom fields */
+  #UserCP input[type='text'],
+  #UserCP textarea.forminput,
+  /* front page notes box */
+  textarea[name='notes'],
+  /* signature */
+  #UserCP textarea[name='Post'],
+  /* Subaccounts */ 
+  #UserCP input[type='password'],
+  /* Board Settings */
+  select[name='u_timezone'] {
+    width: 100%;
+    max-width: 80%;
+    box-sizing: border-box;
+  }
+
+  /* puts open tags on the same line */
+  #UserCP input[name='tagcount'] {
+    width: unset;
+  }
+
+  #ucpmenu p {
+    margin: 5px;
+  }
+
+  /* this causes the rest of the overflow on the ucp index */
+  td#ucpcontent table tr:first-child td[width='60%'] {
+    overflow-wrap: anywhere;
+  }
+
+  td#ucpcontent > table > tbody > tr,
+  td#ucpcontent form > table > tbody > tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  td#ucpcontent > table > tbody > tr > td,
+  td#ucpcontent form > table > tbody > tr > td {
+    width: 100%;
+    text-align: center;
+  }
+
+  #ucpcontent p {
+    padding: 10px;
+    margin: 0px;
+  }
 }
 
-#ucpcontent p {
-  padding: 10px;
-  margin: 0px;
+/* The #UserCP styles for Desktop
+TODO: move these */
+@media only screen and (min-width: 750px) {
+  #ucpmenu p {
+    padding: 2px 5px 6px 9px;
+    margin: 0px;
+  }
+}
+
+/*------------------------------------*\
+  #MESSENGER
+\*------------------------------------*/
+
+/* note: the 'create' and 'reply' codes of the messenger use the same post
+** PHP template as the create new thread/add reply codes, so the styles if
+** unscoped to the page, will apply to both sets */
+
+/* TODO: i do not have more than 1 account on the test site currently, will
+** need to go back and check the 'reply to PM' and other styling stuff once
+** i have a 2nd account to PM between */
+
+@media only screen and (max-width: 750px) {
+  /* target just the top level tables and not any of the nested tables */
+  #Msg #innerwrapper > table > tbody > tr:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[name='entered_name'],
+  textarea[name='carbon_copy'],
+  input[name='msg_title'] {
+    width: 100%;
+    max-width: 80%;
+    box-sizing: border-box;
+  }
+}
+
+/*------------------------------------*\
+  #SEARCH
+\*------------------------------------*/
+
+/* TODO: move and combine later 
+** NOTE: have to scope to the .code-00 class because things like
+** active topic, search results, etc all share the same ID & class */
+@media only screen and (max-width: 750px) {
+  #Search.code-00 table > tbody {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #Search.code-00 table > tbody > tr {
+    display: contents;
+  }
+
+  /* resize the input fields like we've been doing */
+  input[name='keywords'],
+  input[name='namesearch'] {
+    width: 100%;
+    max-width: 80%;
+    box-sizing: border-box;
+  }
+
+  /* the search td elements do not have unique ids, so we have to do the grid
+  ** the old school way */
+
+  /* Search Keywords & Search Options Main Title */
+  #Search.code-00 table > tbody > tr > td.maintitle {
+    grid-row: 1;
+  }
+
+  /* Search by Keywords heading & Search Where heading */
+  #Search.code-00 table > tbody > tr > td.pformstrip:nth-child(1) {
+    width: 100%;
+    grid-row: 2;
+    box-sizing: border-box;
+  }
+
+  /* Search by Keyword & Search Where row */
+  #Search.code-00 table > tbody > tr > td.row1:nth-child(1) {
+    grid-row: 3;
+  }
+
+  /* Filter by Member Name & Refine Search heading */
+  #Search.code-00 table > tbody > tr > td.pformstrip:nth-child(2) {
+    width: 100%;
+    grid-row: 4;
+    box-sizing: border-box;
+  }
+
+  /* Filter by Member Name & Refine Search row */
+  #Search.code-00 table > tbody > tr > td.row1:nth-child(2) {
+    grid-row: 5;
+  }
+
+  /* Perform Search button */
+  #Search.code-00 table > tbody > tr > td.pformstrip[colspan='2'] {
+    width: 100%;
+    grid-row: 6;
+    box-sizing: border-box;
+  }
+
+  /* resize the 'search topics by this member only' checkbox */
+  #Search.code-00 table > tbody > tr > td.row1:nth-child(2) td[width='40%'] {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 /****************************************
@@ -1520,13 +1678,13 @@ span.report-macro {
 .row3,
 .row4,
 .row2 {
-  background: var(--background__low-contrast);
+  /* background: var(--background__low-contrast); */
   padding: 5px;
 }
 
-#boardstats .row2 {
+/* #boardstats .row2 {
   text-align: center;
-}
+} */
 
 .darkrow1,
 .darkrow2,
@@ -1546,7 +1704,7 @@ td.darkrow2 {
   background: var(--hlightBGColor);
 }
 .dlight {
-  background: var(--dlightBGColor);
+  background: var(--theme__background-main);
 }
 
 /****************************************
@@ -1623,12 +1781,12 @@ td.darkrow2 {
   margin-top: 5px;
 }
 
-.tablebasic {
+/* .tablebasic {
   width: 100%;
   padding: 0;
   margin: 0px;
   border: 0px;
-}
+} */
 
 /* .plainborder {
   border: 1px solid var(--border__secondary);
@@ -1753,6 +1911,8 @@ input[type='reset'] {
 ** this is all you need to fix the post page */
 input[name='TopicTitle'],
 input[name='TopicDesc'],
+/* note that this one is used for the signature box and the create message box
+** in the user cp */
 textarea[name='Post'],
 input[type='file'],
 /* New Poll specific styling */
@@ -1915,14 +2075,14 @@ TODO: move these */
   margin-top: 1px;
 }
 
-.pformleftw {
+/* .pformleftw {
   background-color: var(--pformLeftwBGColor);
   padding: 6px;
   margin-top: 1px;
   width: 40%;
   border-top: 1px solid var(--pformLeftwBorderColor);
   border-right: 1px solid var(--pformLeftwBorderColor);
-}
+} */
 
 /********************************
       Miscellaneous
