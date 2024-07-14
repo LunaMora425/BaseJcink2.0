@@ -402,6 +402,10 @@ a:hover {
   color: var(--theme__color-secondary);
 }
 
+a:not([name]):empty {
+  display: none;
+}
+
 /****************************************
    Default Header Area
  *****************************************/
@@ -466,6 +470,10 @@ a:hover {
 
 span.subforums > br {
   display: none;
+}
+
+span.subforums > a {
+  text-decoration: underline;
 }
 
 /* Grid Set Up */
@@ -1671,6 +1679,216 @@ TODO: move these */
 }
 
 /****************************************
+   Active Topics Area
+ *****************************************/
+
+/* TODO: move and combine later 
+** NOTE: have to scope to the .code-getactive class because things like
+** active topic, search results, etc all share the same ID & class */
+@media only screen and (max-width: 750px) {
+  #Search.code-getactive form[name='dateline'] > div[align='right'] {
+    width: unset !important;
+  }
+
+  #active-topics table.tablebasic {
+    width: 100%;
+  }
+
+  /* there is a nested table so we have to scope it to the top-level tablebasic class */
+  #active-topics table.tablebasic > tbody > tr:first-child {
+    display: none;
+  }
+
+  #active-topics table.tablebasic > tbody > tr {
+    display: grid;
+    grid-template-columns: 0.5fr min-content 1fr 1fr 1fr;
+    align-items: center;
+  }
+
+  /* if there are no results to display */
+  #active-topics table.tablebasic > tbody > tr > td.row1 {
+    grid-column: span 5;
+  }
+
+  /* put a border between all topics except the last one, that doesn't need a
+  ** bottom border */
+  #active-topics table.tablebasic > tbody > tr:not(:last-child) {
+    border-bottom: 2px solid var(--theme__background-main);
+  }
+
+  /* hide post icon */
+  /* #active-topics table.tablebasic > tbody > tr > td:nth-child(2) {
+    display: none;
+  } */
+
+  /* Topic Title & topic description */
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(3) {
+    grid-column: span 3;
+  }
+
+  /* Forum Name & Link */
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(4) {
+    width: 100%;
+    grid-row: 2;
+    grid-column: 2 / 4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(4)::before {
+    content: 'In Forum:';
+  }
+
+  /* Started By Posted & Link */
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(5) {
+    grid-row: 2;
+    grid-column: 4 / 6;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+  }
+
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(5)::before {
+    content: 'Started By:';
+  }
+
+  /* Replies */
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(6) {
+    grid-row: 3;
+    grid-column: 1 / 1;
+  }
+
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(6)::after {
+    content: ' replies';
+  }
+
+  /* Views */
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(7) {
+    grid-row: 2;
+    grid-column: 1 / 1;
+  }
+
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(7)::after {
+    content: ' views';
+  }
+
+  /* Last Post by date & links */
+  #active-topics table.tablebasic > tbody > tr > td:nth-child(8) {
+    grid-row: 3;
+    grid-column: span 4;
+  }
+
+  /* Show Results */
+  #active-topics .titlemedium {
+    background: var(--theme__background-main);
+    text-align: center;
+  }
+}
+
+/****************************************
+   Alerts Area
+ *****************************************/
+
+/* TODO: move and combine later 
+** NOTE: have to scope to the .code-alerts class because things like
+** active topic, search results, etc all share the same ID & class */
+/* NOTE: the only thing that breaks the alert screen is the hardcoded 300px width style */
+
+#UserCP.code-alerts table.tableborder {
+  width: 100% !important;
+  max-width: 300px;
+}
+
+/****************************************
+	  Mod CP styles
+*****************************************/
+
+/* gonna attempt to clean this up some for mobile devices
+** this screen is so bad that even on mobile mode it kicks 
+** you back to a default view */
+
+/* we only want to show the new headers on mobile devices */
+#modcp span.header-name {
+  display: none;
+}
+
+/* if I did my script right, this will apply to all tables in the mod cp content area
+** TODO: move and combine with the rest */
+@media only screen and (max-width: 750px) {
+  /* target just the top level table and not any of the nested tables */
+  #modcp #innerwrapper > table > tbody > tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* still just targeting the top level table, override the inline style
+  ** of the mod cp menu (you have to do this manually because unlike the ucp, the modcp
+  ** class is actually on the table nested INSIDE and not on the td itself) */
+  #modcp #innerwrapper > table > tbody > tr > td:first-child {
+    width: 100% !important;
+    /* max-width: 211px; */
+  }
+
+  /* add a border to separate all but the last row of each table */
+  #modcp table.modcp-table > tbody > tr:not(:last-child) {
+    display: block;
+    border-bottom: 4px solid var(--theme__background-main);
+  }
+
+  /* we're getting rid of the first 2 trs of each nested table */
+  #modcp table.modcp-table > tbody > tr:nth-child(1),
+  #modcp table.modcp-table > tbody > tr:nth-child(2) {
+    display: none;
+  }
+
+  /* then we need to set all tds on a flex */
+  #modcp table.modcp-table td {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* and show the header names */
+  #modcp span.header-name {
+    display: block;
+    font-weight: bold;
+  }
+
+  /* fix the input boxes */
+  #modcp select[name='df'],
+  #modcp input[name='dateline'],
+  #modcp select[name='topic_type'],
+  #modcp input[name='posts'],
+  #modcp input[name='member'],
+  #modcp input[type='text'][name='name'] {
+    width: 100%;
+    max-width: 80%;
+    box-sizing: border-box;
+  }
+
+  #modcp select[name='topic_type'] {
+    max-width: unset;
+  }
+
+  /* Prune Posts */
+  #modcp form[name='ibform'] > table > tbody > tr > td {
+    width: 100%;
+  }
+
+  #modcp form[name='ibform'] > table > tbody > tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #modcp form[name='ibform'] > table > tbody > tr > td {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/****************************************
     Global general table/div row styles
  *****************************************/
 
@@ -1733,14 +1951,13 @@ td.darkrow2 {
    Bar directly below the maintitles 
  *****************************************/
 
-/* .titlemedium {
+.titlemedium {
   font-weight: bold;
-  color: var(--theme__text-main);
   padding: 2px 6px;
   margin: 0px;
-  background: var(--theme__background-contrast);
 }
 
+/* 
 .titlemedium a:link,
 .titlemedium a:visited,
 .titlemedium a:active {
@@ -1772,21 +1989,23 @@ td.darkrow2 {
   font-size: var(--textsize-body__primary);
 }
 
-#topic_open > .tableborder > .tablepad {
-  padding: 6px;
-}
-
 /* Fast Reply */
 #qr_open .tablepad {
   margin-top: 5px;
 }
 
-/* .tablebasic {
+/* on active topics table */
+.tablebasic {
   width: 100%;
   padding: 0;
   margin: 0px;
   border: 0px;
-} */
+}
+
+/* on Prune Posts Mod CP */
+.tablepad {
+  padding: 6px;
+}
 
 /* .plainborder {
   border: 1px solid var(--border__secondary);
@@ -2075,14 +2294,12 @@ TODO: move these */
   margin-top: 1px;
 }
 
-/* .pformleftw {
-  background-color: var(--pformLeftwBGColor);
+/* used in the Prune Posts Mod CP */
+.pformleftw {
   padding: 6px;
   margin-top: 1px;
   width: 40%;
-  border-top: 1px solid var(--pformLeftwBorderColor);
-  border-right: 1px solid var(--pformLeftwBorderColor);
-} */
+}
 
 /********************************
       Miscellaneous
@@ -2154,4 +2371,8 @@ img.attach {
 
 #copyright .tableborder {
   border: none;
+}
+
+#copyright a {
+  text-decoration: underline;
 }

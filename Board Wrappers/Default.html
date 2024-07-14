@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta name="viewport" content="width=device-width" />
     <title><% TITLE %></title>
+    <link href="https://jcink.com/favicon.png" rel="icon" />
     <!-- START CSS -->
     <% CSS %>
     <link
@@ -11,7 +12,7 @@
     <!-- end CSS -->
     <!-- start JavaScript files -->
     <script src="https://files.jcink.net/html/jquery-3.7.1.min.js"></script>
-    <script src="https://files.jcink.net/html/catcollapse.js"></script>
+    <script src="https://files.jcink.net/html/catcollapse.js" async></script>
     <script>
       // set dark/light mode before page load
       if (localStorage.theme) {
@@ -226,23 +227,27 @@
 
     <!-- all of your scripts for the site, unless your install guide tells you otherwise, should go BELOW this comment -->
     <script>
-      $('.button-action').click(function () {
-        var navbarHeight = $('#navigation-wrapper').outerHeight();
-        var dropdownMenu = $('.dropdown-menu');
-        dropdownMenu.css('top', `${navbarHeight + 10}px`);
+      $(document).ready(function () {
+        $('.button-action').click(function () {
+          var navbarHeight = $('#navigation-wrapper').outerHeight();
+          var dropdownMenu = $('.dropdown-menu');
+          dropdownMenu.css('top', `${navbarHeight + 10}px`);
 
-        $('#nav__userlinks').toggleClass('display-menu');
-        $('.rotate').toggleClass('down');
+          $('#nav__userlinks').toggleClass('display-menu');
+          $('.rotate').toggleClass('down');
+        });
       });
 
-      $('.fa-arrow-up').click(function (event) {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      $(document).ready(function () {
+        $('.fa-arrow-up').click(function (event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-      $('.fa-arrow-down').click(function (event) {
-        event.preventDefault();
-        $('#copyright').get(0).scrollIntoView({ behavior: 'smooth' });
+        $('.fa-arrow-down').click(function (event) {
+          event.preventDefault();
+          $('#copyright').get(0).scrollIntoView({ behavior: 'smooth' });
+        });
       });
 
       /* Light Mode Toggle, from CodePen
@@ -265,6 +270,51 @@
           $('html').attr('data-theme', theme);
           localStorage.theme = theme;
         });
+      });
+
+      /* Add Stylable Classes to Mod CP Table & Table Elements
+       ** script by Luna of Free Codes */
+      $(document).ready(function () {
+        if (window.location.href.indexOf('modcp') > -1) {
+          $('#modcp-content .tableborder > table').each(function () {
+            const headers = [];
+            const trs = $(this).find('tr');
+
+            if (trs.length < 2) {
+              return;
+            }
+
+            $(this).addClass('modcp-table');
+
+            $(trs[1])
+              .find('td')
+              .each(function () {
+                if ($(this).attr('lol') === 'lol') {
+                  const headerText = $(this).text();
+                  headers.push(headerText);
+                }
+              });
+            for (var i = 2; i < trs.length; i++) {
+              const tds = $(trs[i]).find('td');
+              if (tds.length < 2) {
+                return;
+              }
+              $(tds).each(function (index) {
+                if (headers[index]) {
+                  const sanitizedHeader = headers[index]
+                    .replace(/[\s?:]+/g, '')
+                    .toLowerCase();
+                  $(this).addClass(sanitizedHeader);
+
+                  const originalHeaderText = headers[index];
+                  $(this).prepend(
+                    `<span class="header-name">${originalHeaderText}:</span>`,
+                  );
+                }
+              });
+            }
+          });
+        }
       });
     </script>
     <!-- DO NOT ADD TO OR EDIT anything below this line -->
