@@ -935,6 +935,7 @@ span.report-macro {
 /* Target the add reply etc buttons to 
 ** tile them with spacing on mobile
 ** on both top and bottom of post row */
+#SF table > tbody > tr > td[align='right'],
 #ST table > tbody > tr > td[align='right'] {
   width: 100%;
   display: flex;
@@ -1072,6 +1073,11 @@ span.report-macro {
   background: var(--theme__background-main);
   padding: 5px;
   border-radius: 3px;
+}
+
+.miniprofile__row.awards > img {
+  width: 25px;
+  margin: 4px;
 }
 
 /* Grid Set Up */
@@ -1225,6 +1231,11 @@ span.report-macro {
   height: 70px;
   margin: 5px auto;
   overflow: auto;
+}
+
+.mainprofile__row.awards > .awards-box img {
+  width: 25px;
+  margin: 4px;
 }
 
 .mainprofile__row.about-me {
@@ -1453,20 +1464,19 @@ span.report-macro {
 .pagination a:link,
 .pagination a:visited,
 .pagination a:active {
-  border: 1px solid var(--paginationBorderColor);
+  border: 1px solid var(--theme__color-primary);
   border-radius: 3px;
-  background: var(--paginationLinkBGColor);
+  background: var(--theme__color-primary);
   padding-left: 6px;
   padding-right: 6px;
-  color: var(--paginationLinkColor);
+  color: var(--theme__text-contrast);
   text-decoration: none;
 }
 
 .pagination a:hover {
-  background: var(--paginationLinkHoverBGColor);
+  background: var(--theme__color-secondary);
   text-decoration: none;
-  color: var(--paginationLinkHoverColor);
-  background: var(--paginationBGImage);
+  color: var(--theme__text-contrast);
 }
 
 .pagination a:link,
@@ -1477,9 +1487,9 @@ span.report-macro {
 }
 
 .pagination .pagination_current {
-  background: none repeat scroll 0% 0% var(--paginationCurrentBGColor)
-    var(--paginationBGImage);
-  border: 1px solid var(--paginationCurrentBorderColor);
+  background: none repeat scroll 0% 0% var(--theme__color-secondary);
+  color: var(--theme__text-contrast);
+  border: 1px solid var(--theme__color-secondary);
   border-radius: 3px;
   padding-left: 6px;
   padding-right: 6px;
@@ -1495,15 +1505,6 @@ span.report-macro {
 .pagination_pagetxt {
   display: none;
 }
-
-/****************************************
-    Profile styles 
- *****************************************/
-
-/* #profilename {
-  font-size: var(--textsize__title);
-  font-weight: bold;
-} */
 
 /****************************************
 	  UserCP/My Controls styles
@@ -1568,6 +1569,14 @@ span.report-macro {
     padding: 10px;
     margin: 0px;
   }
+
+  /* Your Forum Subscriptions &
+  ** Your Topic Subscriptions */
+
+  #UserCP.code-50 td#ucpcontent td.row1[align='left'],
+  #UserCP.code-26 td#ucpcontent td.row3[align='left'] {
+    overflow-wrap: anywhere;
+  }
 }
 
 /* The #UserCP styles for Desktop
@@ -1604,6 +1613,74 @@ TODO: move these */
     width: 100%;
     max-width: 80%;
     box-sizing: border-box;
+  }
+
+  #Msg .post-buttons-top > a {
+    color: var(--theme__text-contrast);
+  }
+
+  #Msg span.msg-normal tbody {
+    display: grid;
+  }
+
+  #Msg span.msg-normal tbody > tr {
+    display: contents;
+  }
+
+  #Msg span.msg-normal tbody > tr:last-of-type {
+    display: none;
+  }
+
+  #Msg span.msg-normal td.row4[valign='middle'] {
+    font-size: var(--textsize__subheading);
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  #Msg span.msg-normal td.row4[valign='top'] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  #Msg span.msg-normal td.miniprofile > .postdetails {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* remove the terrible spacing between the miniprofile info */
+  #Msg span.msg-normal td.miniprofile > .postdetails > br:nth-of-type(1),
+  #Msg span.msg-normal td.miniprofile > .postdetails > br:nth-of-type(2),
+  #Msg span.msg-normal td.miniprofile > .postdetails > br:nth-of-type(3) {
+    display: none;
+  }
+
+  #Msg span.msg-normal td.miniprofile > .postdetails > img {
+    border: 1px solid var(--theme__color-primary);
+    border-radius: 3px;
+    vertical-align: baseline;
+    width: 31.25vw;
+    height: 31.25vw;
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  #Msg span.msg-normal td.post1[width='100%'] {
+    border-top: 5px solid var(--theme__background-main);
+    padding: 15px 5px;
+    box-sizing: border-box;
+  }
+
+  /* color and space the jump to folder */
+  #Msg.code-03 td#ucpcontent div:nth-of-type(5) {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  #Msg.code-03 td#ucpcontent div:nth-of-type(6) {
+    background: var(--theme__background-main);
   }
 }
 
@@ -1675,6 +1752,177 @@ TODO: move these */
   #Search.code-00 table > tbody > tr > td.row1:nth-child(2) td[width='40%'] {
     width: 100%;
     box-sizing: border-box;
+  }
+
+  /* View All Posts results 
+  ** this has to come first in the style sheet because the search results all share the same 
+  ** code-show -- but the topics has a search-topics id wrapped around it 
+  ** so if this one comes first, we can override as needed with a more specific selector for the
+  ** topics results */
+  #Search.code-show .tableborder > table.tablebasic > tbody {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Search.code-show .tableborder > table.tablebasic > tbody > tr {
+    display: contents;
+  }
+
+  #Search.code-show .tableborder > table.tablebasic td.post1:first-child > img,
+  #Search.code-show .tableborder > table.tablebasic td.post1:first-child > br,
+  #Search.code-show
+    .tableborder
+    > table.tablebasic
+    td.post1
+    span.postdetails
+    > br {
+    display: none;
+  }
+
+  #Search.code-show .tableborder > table.tablebasic td.post1 span.postdetails {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    border-bottom: 5px solid var(--theme__background-main);
+  }
+
+  /* View All Topics results */
+  #Search.code-show #search-topics table.tablebasic > tbody > tr {
+    display: grid;
+    grid-template-columns: 0.5fr min-content 1fr 1fr 1fr;
+    align-items: center;
+  }
+
+  #Search.code-show #search-topics table.tablebasic > tbody > tr:first-child {
+    display: none;
+  }
+
+  /* if there are no results to display */
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td.row1 {
+    grid-column: span 5;
+  }
+
+  /* put a border between all topics except the last one, that doesn't need a
+  ** bottom border */
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr:not(:last-child) {
+    border-bottom: 2px solid var(--theme__background-main);
+  }
+
+  /* Topic Title & topic description */
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(3) {
+    grid-column: span 3;
+  }
+
+  /* Forum Name & Link */
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(4) {
+    width: 100%;
+    grid-row: 2;
+    grid-column: 2 / 4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(4)::before {
+    content: 'In Forum:';
+  }
+
+  /* Started By Posted & Link */
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(5) {
+    grid-row: 2;
+    grid-column: 4 / 6;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+  }
+
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(5)::before {
+    content: 'Started By:';
+  }
+
+  /* Replies */
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(6) {
+    grid-row: 3;
+    grid-column: 1 / 1;
+  }
+
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(6)::after {
+    content: ' replies';
+  }
+
+  /* Views */
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(7) {
+    grid-row: 2;
+    grid-column: 1 / 1;
+  }
+
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(7)::after {
+    content: ' views';
+  }
+
+  /* Last Post by date & links */
+  #Search.code-show
+    #search-topics
+    table.tablebasic
+    > tbody
+    > tr
+    > td:nth-child(8) {
+    grid-row: 3;
+    grid-column: span 4;
+  }
+
+  /* Show Results */
+  #search-topics .titlemedium {
+    background: var(--theme__background-main);
+    text-align: center;
   }
 }
 
@@ -1888,6 +2136,75 @@ TODO: move these */
   }
 }
 
+/*------------------------------------*\
+  #REGISTRATION
+\*------------------------------------*/
+
+/* used on both login and registration
+** has to be scoped because quick login uses the same fields */
+#registration-form input[name='UserName'],
+#Login input[name='UserName'],
+#Login input[name='PassWord'],
+#registration-form select[name='time_offset'] {
+  width: 100%;
+  max-width: 80%;
+  box-sizing: border-box;
+}
+
+/* TODO: move and combine with the rest */
+@media only screen and (max-width: 750px) {
+  #registration-form table {
+    display: block;
+  }
+
+  #registration-form .tablepad > table > tbody {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #registration-form tbody > tr {
+    display: contents;
+  }
+
+  #registration-form tbody > tr > td {
+    width: 100%;
+  }
+
+  /* registration form a nightmare of nested tables, this is to target
+  ** just the fieldsets */
+  #registration-form fieldset > table > tbody {
+    display: grid;
+  }
+
+  /* position the password and email input fields correctly */
+  #registration-form fieldset:nth-of-type(2) > table > tbody td[width='100%'],
+  #registration-form fieldset:nth-of-type(3) > table > tbody td[width='100%'] {
+    grid-row: 3;
+  }
+
+  /* recaptcha overflows on smallest screen size of 320px, this is the best
+  ** that I can do to make the overflow be not so noticeable */
+  #registration-form fieldset:nth-of-type(4) {
+    padding: 0;
+  }
+}
+
+/*------------------------------------*\
+  #LOGIN
+\*------------------------------------*/
+
+/* TODO: move and combine with the rest */
+@media only screen and (max-width: 750px) {
+  #Login form[name='LOGIN'] tbody {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Login form[name='LOGIN'] tbody > tr {
+    display: contents;
+  }
+}
+
 /****************************************
     Global general table/div row styles
  *****************************************/
@@ -1918,9 +2235,9 @@ td.darkrow2 {
   padding: 3px;
 }
 
-.hlight {
+/* .hlight {
   background: var(--hlightBGColor);
-}
+} */
 .dlight {
   background: var(--theme__background-main);
 }
@@ -1974,12 +2291,6 @@ td.darkrow2 {
   border: 1px solid var(--theme__color-primary);
 }
 
-/* .tablefill {
-  background: var(--tablefillBGColor);
-  border: 1px solid var(--tableborderBorderColor);
-  padding: 6px;
-} */
-
 /* Topic Options dropdown on post view */
 #topic_open {
   margin-top: 5px;
@@ -2020,11 +2331,11 @@ td.darkrow2 {
 #CODE {
   white-space: normal;
   font-family: var(--font-family__body);
-  font-size: var(--quoteFontSize);
-  color: var(--quoteColor);
-  background: var(--quoteBGColor);
+  font-size: var(--textsize-body__primary);
+  color: var(--theme__text-main);
+  background: var(--theme__background-main);
   padding: 2px;
-  border: 1px solid var(--border__secondary);
+  border: 1px solid var(--theme__color-secondary);
   margin-top: 2px;
 }
 
@@ -2065,6 +2376,13 @@ td.darkrow2 {
 .button-large,
 .button-small {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.button-small.copy-button {
+  background: var(--theme__color-secondary);
+  box-shadow: none;
+  padding: 0px 7px;
+  max-width: 100px;
 }
 
 .post-buttons-top {
@@ -2294,11 +2612,11 @@ TODO: move these */
   margin-top: 1px;
 }
 
-/* used in the Prune Posts Mod CP */
+/* used in the Prune Posts Mod CP
+* & login page */
 .pformleftw {
   padding: 6px;
   margin-top: 1px;
-  width: 40%;
 }
 
 /********************************
@@ -2317,8 +2635,9 @@ img.attach {
 
 /* Forum Descriptions
 ** this is used in a lot more places that just the forum descriptions */
-.desc {
-  font-size: var(--textsize-body__primary);
+.desc,
+span.small {
+  font-size: var(--textsize-body__secondary);
 }
 
 /* Edited by text */
@@ -2350,12 +2669,51 @@ img.attach {
    Viewing Online List
  *****************************************/
 
+#Online table tr:first-child th.titlemedium {
+  background: var(--theme__background-main);
+}
+
 #Online table tr:first-child th.titlemedium:last-child {
   display: none;
 }
 
 #Online table tr td.row1:last-child {
   display: none;
+}
+
+/****************************************
+  Redirect Screen 
+  (for login, registration, search, etc)
+*****************************************/
+
+/* I am hard coding these values because the redirect screen does not let you run the dark/light mode toggle
+** and so you'll always be blasted by whatever the opposite of your color theme is. i picked up the most neutral
+** colors I could find and set them to be the default to hopefully not make the switch so jarring */
+#redirect-screen {
+  background: #9a907c;
+}
+
+#redirect-screen .tablefill {
+  background: #e3e0d7;
+  border: 1px solid #666363;
+  padding: 6px;
+}
+
+/****************************************
+  Mod Team Link
+*****************************************/
+
+/* have to scope it to the top level table because there are nested tables */
+/* remove the table headings, the 'moderates in' column, the location column, and the
+** post count column */
+/* TODO: move these */
+@media only screen and (max-width: 750px) {
+  #moderating-team table[cellspacing='1'] > tbody > tr:nth-child(1),
+  #moderating-team table[cellspacing='1'] td:nth-child(3),
+  #moderating-team table[cellspacing='1'] td:nth-child(4),
+  #moderating-team table[cellspacing='1'] td:nth-child(5) {
+    display: none;
+  }
 }
 
 /***********************************
