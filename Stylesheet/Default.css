@@ -1,8 +1,37 @@
-/*=============================================== *
- * Jcink.com Forum Hosting Stylesheet
- * ==============================================
- * #Version:	1.0.2
- *=============================================== */
+/*============================================================================================================ *
+ *      _      _       _      ____                   ____  _  ___       
+ *     | | ___(_)_ __ | | __ | __ )  __ _ ___  ___  / ___|| |/ (_)_ __  
+ *  _  | |/ __| | '_ \| |/ / |  _ \ / _` / __|/ _ \ \___ \| ' /| | '_ \ 
+ * | |_| | (__| | | | |   <  | |_) | (_| \__ \  __/  ___) | . \| | | | |
+ *  \___/ \___|_|_| |_|_|\_\ |____/ \__,_|___/\___| |____/|_|\_\_|_| |_|
+ *
+ *  -- Jcink Base Skin --
+ * Built off the Jcink.com Forum Hosting Skin v1.0.2 (last modified February 2024)
+ * Created By: Luna of Free Codes, https://freecodes.jcink.net
+ * License: GNU General Public License v3.0
+ * ===========================================================================================================
+ * Version: 1.0.0
+ * Initial Release: 2024-##-##
+ * Last Updated: 2024-##-##
+ * ===========================================================================================================
+ * 	-- Design --
+ * Designed for viewports 320px and up. Fully mobile responsive. !!NO JCINK MOBILE MODE!! so make sure to
+ * turn that off. Font sizes will scale with screen size and the user preference in their browser. No 
+ * external javascript codes necessary. Designed for all major browsers (Chrome, Firefox, Safari, Edge, Opera).
+ *
+ * 	-- Purpose --
+ * The Jcink Base skin is designed to serve two main purposes:
+ * 1.) To provide a clean, modern, and responsive skin that can be used entirely as-is, with minimal
+ *     customization of colors, fonts, a header and background images, to replace the default Jcink skin.
+ * 2.) To serve as a base for jcink coders to build their own custom skins
+ * 
+ * 	-- Usage --
+ * This skin is licensed under the GNU GPL v3.0. This means you are free to use, modify, and distribute as you 
+ * see fit. No credit is needed. You may remove and replace this header with your own if desired.
+ * 
+ * Notations and documentation have been provided throughout the CSS and HTML. You can use the Table of Contents
+ * below to navigate the CSS file. Feel free to remove any notations you don't need.
+ *============================================================================================================ */
 
 html {
   overflow-x: auto;
