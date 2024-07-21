@@ -1,10 +1,7 @@
-/*============================================================================================================ *
- *      _      _       _      ____                   ____  _  ___       
- *     | | ___(_)_ __ | | __ | __ )  __ _ ___  ___  / ___|| |/ (_)_ __  
- *  _  | |/ __| | '_ \| |/ / |  _ \ / _` / __|/ _ \ \___ \| ' /| | '_ \ 
- * | |_| | (__| | | | |   <  | |_) | (_| \__ \  __/  ___) | . \| | | | |
- *  \___/ \___|_|_| |_|_|\_\ |____/ \__,_|___/\___| |____/|_|\_\_|_| |_|
- *
+/*============================================================================================================
+ * ░▀▀█░█▀▀░▀█▀░█▀█░█░█░░░█▀▄░█▀█░█▀▀░█▀▀░░░█▀▀░█░█░▀█▀░█▀█
+ * ░░░█░█░░░░█░░█░█░█▀▄░░░█▀▄░█▀█░▀▀█░█▀▀░░░▀▀█░█▀▄░░█░░█░█
+ * ░▀▀░░▀▀▀░▀▀▀░▀░▀░▀░▀░░░▀▀░░▀░▀░▀▀▀░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░▀░▀
  *  -- Jcink Base Skin --
  * Built off the Jcink.com Forum Hosting Skin v1.0.2 (last modified February 2024)
  * Created By: Luna of Free Codes, https://freecodes.jcink.net
@@ -29,31 +26,63 @@
  * This skin is licensed under the GNU GPL v3.0. This means you are free to use, modify, and distribute as you 
  * see fit. No credit is needed. You may remove and replace this header with your own if desired.
  * 
- * Notations and documentation have been provided throughout the CSS and HTML. You can use the Table of Contents
- * below to navigate the CSS file. Feel free to remove any notations you don't need.
+ * Notations and documentation have been provided throughout the CSS and HTML. Notations will always be on the
+ * line above the relevant code. You can use the Table of Contents below to navigate the CSS file. Feel free 
+ * to remove any notations you don't need.
  *============================================================================================================ */
 
-html {
-  overflow-x: auto;
-  font-size: 62.5%;
-}
-
-form {
-  display: inline;
-}
+/*============================================================================================================
+ *
+ * --TABLE OF CONTENTS-- 
+ * 
+ *============================================================================================================ */
 
 /****************************************
   Default Colors, Fonts, and Styles
  *****************************************/
 
+/* 
+ This skin is set up with the following defaults based on current UI Design best practices:
++--------------+--------------+---------------+-------------+
+|    Images    |    Colors    | Font Families | Font Sizes  |
++--------------+--------------+---------------+-------------+
+| 1 background | 2 B&W Body   | 1 title       | 1 title     |
+| 1 logo       | 2 background | 1 subtitle    | 1 subtitle  |
+|              | 1 primary    | 1 body        | 1 primary   |
+|              | 1 secondary  | 1 accent      | 1 secondary |
+|              | 1 accent     |               |             |
++--------------+--------------+---------------+-------------+
+
+
+How to Set Colors, Fonts, and Font Sizes for Your Site
+ 1.) The first root contains your _Variable Store_. This is where you put the actual values. This base has been
+ designed with the best practice of giving your colors, font families, and font sizes clear defined names that
+ you will know at a glance. 
+ 2.) The second root contains the actual _Site Variables_ that will apply to your skin. Once you have your
+ variables entered in the first root, you use those variable names to fill in the second root. Doing it this
+ way makes it much easier to swap colors, fonts, and sizes in and out at will without having to touch the
+ set up in the rest of your CSS
+ Note: the colors that are in the second root are your skin default colors. On this skin, the default is Light
+ 3.) The data-theme determines what the colors, font families, and font sizes are swapped to when the light/dark
+ mode is toggled. On this base, the default is Light Mode, so the data-theme is dark. Input the variables here that
+ you want to change.
+ Note: to change the default from Light to Dark, put the dark colors in the 2nd root, change the data-theme to 'light',
+ and in the script in the Board Wrappers, change the word from 'light' to 'dark' */
 :root {
-  /* Colors List */
+  /**************************
+   Colors List
+  ***************************/
+
+  /* Black & White colors */
   --eerie-black: #222222;
   --anti-flash-white: #efefef;
+
+  /* Light Mode Specific */
   --platinum: #e1e1e1;
   --maroon: #800000;
   --russian-violet: #290c3b;
 
+  /* Dark Mode Specific */
   --jet: #3b3937;
   --rosy-brown: #ccabab;
   --rose-quartz: #aaa5b1;
@@ -63,26 +92,28 @@ form {
   --arial: 'Arial', sans-serif;
   --courier: 'Courier', monospace;
 
-  --font-family__title: var(--arial);
-  --font-family__subheading: var(--arial);
-  --font-family__body: var(--arial);
-  --font-family__accent: var(--courier);
-
   /* Font Sizes */
   --size14px: 1.4rem;
   --size16px: 1.6rem;
   --size24px: 2.4rem;
   --size35px: 3.5rem;
+}
 
+:root {
+  /* Font Families */
+  --font-family__title: var(--arial);
+  --font-family__subheading: var(--arial);
+  --font-family__body: var(--arial);
+  --font-family__accent: var(--courier);
+  /* Font Sizes */
   --textsize__title: var(--size35px);
   --textsize__subheading: var(--size24px);
   --textsize-body__primary: var(--size16px);
   --textsize-body__secondary: var(--size14px);
-}
-
-[data-theme='light'] {
+  /* Light Mode Images */
   /* TODO: rehost; for testing only */
   --theme__image__background-main: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+  --theme__image__logo: url('https://via.placeholder.com/150');
   /* Light Mode Colors */
   --theme__background-main: var(--anti-flash-white);
   --theme__background-contrast: var(--platinum);
@@ -95,7 +126,9 @@ form {
 
 [data-theme='dark'] {
   /* TODO: rehost; for testing only */
+  /* Dark Mode Images */
   --theme__image__background-main: url('https://www.transparenttextures.com/patterns/black-twill.png');
+  --theme__image__logo: url('https://via.placeholder.com/150');
   /* Dark Mode Colors */
   --theme__background-main: var(--eerie-black);
   --theme__background-contrast: var(--jet);
@@ -107,31 +140,46 @@ form {
 }
 
 /****************************************
-  Body Background & Text Style
+  Global Board Styles
  *****************************************/
 
-body {
-  font-family: var(--font-family__body);
-  font-size: var(--textsize-body__primary);
-  color: var(--theme__text-main);
-  margin: 0px;
-  padding: 0px;
-  background: var(--theme__background-main);
-  background-image: var(--theme__image__background-main);
-  text-align: center;
+html {
+  overflow-x: auto;
+  /* sets the default font-size down to 10px on the root on all devices, 
+   * this makes the math for font-sizes easy, 
+   * ex. 16px = 1.6rem, 30px = 3.0rem */
+  font-size: 62.5%;
 }
 
-/****************************************
-    Board Width
- *****************************************/
+form {
+  display: inline;
+}
+
+body {
+  /* box model */
+  margin: 0px;
+  padding: 0px;
+  /* background */
+  background: var(--theme__background-main);
+  background-image: var(--theme__image__background-main);
+  /* type */
+  font-family: var(--font-family__body);
+  font-size: var(--textsize-body__primary);
+  text-align: center;
+  color: var(--theme__text-main);
+}
 
 #wrapper {
-  text-align: left;
+  /* box model */
   max-width: 1200px;
   margin: 0px auto 30px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   padding-bottom: 5px;
+  /* background */
   background: var(--theme__background-main);
+  /* type */
+  text-align: left;
+  /* other */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #header,
@@ -140,72 +188,96 @@ body {
   padding: 0 10px;
 }
 
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: var(--theme__color-primary);
+}
+
+a:hover {
+  color: var(--theme__color-secondary);
+}
+
+/* this is for accessibility purposes when there is no title */
+a:not([name]):empty {
+  display: none;
+}
+
 /****************************************
-    Sticky Navbar Styling
+  #CSS - Custom Navigation Bar
 *****************************************/
 #navigation-wrapper {
-  position: sticky;
-  top: 0;
-  background-color: var(--theme__background-contrast);
-  border-bottom: 1px solid var(--theme__color-primary);
-  z-index: 9999;
+  /* box model */
   width: 100%;
   padding: 5px 0;
+  border-bottom: 1px solid var(--theme__color-primary);
+  /* background */
+  background-color: var(--theme__background-contrast);
+  /* layout */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 #navigation {
-  display: grid;
+  /* box model */
   margin: auto;
+  padding: 0 10px;
+  /* layout */
+  display: grid;
+  align-items: center;
+  justify-items: stretch;
   grid-template-columns: 0.5fr 1fr 0.5fr;
   grid-template-areas:
-    'nav-icons-left mobile-menu nav-icons-right'
-    'breadcrumbs breadcrumbs breadcrumbs';
-  justify-items: stretch;
-  align-items: center;
-  padding: 0 10px;
+    'nav-icons-left  mobile-menu  nav-icons-right'
+    'breadcrumbs     breadcrumbs  breadcrumbs';
 }
 
 .nav__icons--left,
 .nav__icons--right {
+  /* layout */
   display: flex;
+  /* type */
   color: var(--theme__color-primary);
   cursor: pointer;
 }
 
-.nav__icons--left {
-  grid-area: nav-icons-left;
-}
-
 .nav__icons--right {
-  grid-area: nav-icons-right;
-  display: flex;
+  /* layout */
   align-items: flex-end;
   justify-content: flex-end;
 }
 
 .nav__icons--left .icons,
 .nav__icons--right .icons {
-  font-size: var(--textsize__subheading);
+  /* box model */
   width: 30px;
+  /* type */
+  font-size: var(--textsize__subheading);
   text-align: center;
 }
 
 .nav__menu {
-  grid-area: mobile-menu;
   margin: auto;
 }
 
 .nav__menu button {
+  /* box model */
   height: 30px;
   padding-bottom: 2px;
   border: none;
+  /* background */
   background: transparent;
-  color: var(--theme__color-primary);
-  font: var(--textsize__subheading) var(--font-family__subheading);
-  text-transform: uppercase;
+  /* layout */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  /* type */
+  font-family: var(--font-family__subheading);
+  font-size: var(--textsize__subheading);
+  text-transform: uppercase;
+  color: var(--theme__color-primary);
   cursor: pointer;
 }
 
@@ -218,19 +290,14 @@ body {
 }
 
 .button-action .rotate {
-  -moz-transition: all 0.5s linear;
-  -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
 
 .button-action .rotate.down {
-  -moz-transform: rotate(-180deg);
-  -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
 
 #navi {
-  grid-area: breadcrumbs;
   padding-top: 5px;
 }
 
@@ -243,13 +310,16 @@ body {
 }
 
 #nav__userlinks {
-  background: var(--theme__background-contrast);
-  background-position: center top;
+  /* box model */
   border-radius: 10px 10px 10px 10px;
+  /* background */
+  background: var(--theme__background-contrast);
+  /* layout */
   display: grid;
+  justify-items: start;
   grid-template-columns: 1.1fr 1fr;
-  grid-row-gap: 15px;
   grid-column-gap: 5px;
+  grid-row-gap: 15px;
   grid-template-areas:
     'quicklink-1     quicklink-2'
     'quicklink-3     quicklink-4'
@@ -259,15 +329,16 @@ body {
     'view-profile    my-controls'
     'topics          messages'
     'view-new-posts  alerts';
-  justify-items: start;
 }
 
+/* This will hide your member/admin/mod stuff from guests */
 #nav__userlinks .mcp-0,
 #nav__userlinks .acp-0,
 #nav__userlinks .m-2 {
   display: none;
 }
 
+/* this will show the guest stuff to ONLY guests */
 #nav__userlinks .g-2 {
   display: block !important;
 }
@@ -286,19 +357,23 @@ body {
 }
 
 .nav__userlinks--users {
-  grid-area: user-info;
-  display: inline-grid;
+  /* box model */
   width: 100%;
-  word-break: break-word;
+  /* layout */
+  display: inline-grid;
   justify-items: center;
+  /* type */
+  word-break: break-word;
 }
 
 .nav__userlinks--users strong {
-  font: var(--textsize__subheading) var(--font-family__title);
-  text-transform: uppercase;
-  color: var(--theme__color-secondary);
+  /* type */
+  font-family: var(--font-family__title);
+  font-size: var(--textsize__subheading);
   letter-spacing: 1px;
   text-align: center;
+  text-transform: uppercase;
+  color: var(--theme__color-secondary);
 }
 
 .account-switcher {
@@ -306,27 +381,50 @@ body {
 }
 
 #nav__userlinks.dropdown-menu {
-  position: fixed;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  left: calc(100% - 94%);
-  top: 80px;
-  margin: auto;
+  /* box model */
   width: 85%;
   max-height: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-transition: max-height, 0.5s ease-in-out;
+  margin: auto;
+  /* layout */
+  position: fixed;
+  top: 80px;
+  left: calc(100% - 94%);
+  /* other */
+  overflow-x: hidden;
+  overflow-y: hidden;
   transition: max-height, 0.5s ease-in-out;
 }
 
 #nav__userlinks.dropdown-menu.display-menu {
+  /* box model */
   max-height: 350px;
   padding: 10px 5px 10px;
   border: 1px solid var(--theme__color-primary);
 }
 
-/* Setting grid area identifiers on the menu */
+/* Grid Set Up */
+/* Top level nav grid */
+.nav__icons--left {
+  grid-area: nav-icons-left;
+}
+
+.nav__icons--right {
+  grid-area: nav-icons-right;
+}
+
+.nav__menu {
+  grid-area: mobile-menu;
+}
+
+#navi {
+  grid-area: breadcrumbs;
+}
+
+.nav__userlinks--users {
+  grid-area: user-info;
+}
+
+/* menu grid */
 .admin-cp {
   grid-area: admin-cp;
 }
@@ -390,11 +488,11 @@ body {
   #nav__userlinks {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
-      'user-info       user-info   user-info   user-info'
-      'view-profile    my-controls quicklink-1 quicklink-2'
-      'topics          messages    quicklink-3 quicklink-4'
-      'view-new-posts  alerts      quicklink-5 quicklink-6'
-      'admin-cp        mod-cp      .           .';
+      'user-info       user-info    user-info    user-info'
+      'view-profile    my-controls  quicklink-1  quicklink-2'
+      'topics          messages     quicklink-3  quicklink-4'
+      'view-new-posts  alerts       quicklink-5  quicklink-6'
+      'admin-cp        mod-cp       .            .';
   }
 }
 
@@ -409,30 +507,14 @@ body {
   }
 
   #nav__userlinks.dropdown-menu {
+    /* box model */
     width: 98%;
+    /* layout */
     position: absolute;
     left: 50%;
+    /* other */
     transform: translateX(-50%);
   }
-}
-
-/****************************************
-    Link colors
- *****************************************/
-
-a:link,
-a:visited,
-a:active {
-  text-decoration: none;
-  color: var(--theme__color-primary);
-}
-
-a:hover {
-  color: var(--theme__color-secondary);
-}
-
-a:not([name]):empty {
-  display: none;
 }
 
 /****************************************
@@ -447,10 +529,12 @@ a:not([name]):empty {
 }
 
 #logo {
+  /* box model */
   min-height: 60px;
-  text-align: left;
   margin-top: 5px;
   padding: 20px 0px 0px;
+  /* type */
+  text-align: left;
 }
 
 #logo a,
@@ -459,30 +543,41 @@ a:not([name]):empty {
   font-weight: bold;
 }
 
-/*------------------------------------*\
-  #CATEGORY_HEADERS
-\*------------------------------------*/
+/*========================================================*\
+ * ░█░█░▀█▀░█▄█░█░░░░░▀█▀░█▀▀░█▄█░█▀█░█░░░█▀█░▀█▀░█▀▀░█▀▀
+ * ░█▀█░░█░░█░█░█░░░░░░█░░█▀▀░█░█░█▀▀░█░░░█▀█░░█░░█▀▀░▀▀█
+ * ░▀░▀░░▀░░▀░▀░▀▀▀░░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀
+ * --Jcink HTML Templates-- 
+\*========================================================*/
 
+/*------------------------------------*\
+  #CSS - CATEGORY_HEADERS
+\*------------------------------------*/
 .category {
-  background: var(--theme__background-contrast);
+  /* box model */
   border: 1px solid var(--theme__color-primary);
+  /* background */
+  background: var(--theme__background-contrast);
 }
 
 .category > .maintitle {
+  /* layout */
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 /*------------------------------------*\
-  #FORUM_ROWS
+  #CSS - FORUM_ROWS
 \*------------------------------------*/
 
 .forum__row {
-  display: grid;
-  align-items: center;
+  /* box model */
   padding: 5px;
   border: 1px solid var(--theme__background-main);
+  /* layout */
+  display: grid;
+  align-items: center;
   row-gap: 5px;
   grid-template-areas:
     'info       info       info'
@@ -535,8 +630,9 @@ span.subforums > a {
 
 @media only screen and (min-width: 750px) {
   .forum__row {
+    /* layout */
     grid-template-columns: 28px 55% 7% 7% 27%;
-    column-gap: 5px;
+    grid-column-gap: 5px;
     grid-template-areas:
       'macro  info       topics     replies    lastpost'
       'macro  subforums  subforums  subforums  subforums';
@@ -544,18 +640,20 @@ span.subforums > a {
 }
 
 /*------------------------------------*\
-  #REDIRECT_ROWS
+  #CSS - REDIRECT_ROWS
 \*------------------------------------*/
 
 .redirect__row {
-  display: grid;
-  align-items: center;
+  /* box model */
   padding: 5px;
   border: 1px solid var(--theme__background-main);
+  /* layout */
+  display: grid;
+  align-items: center;
   row-gap: 5px;
   grid-template-areas:
-    'info info'
-    'macro hits';
+    'info   info'
+    'macro  hits';
 }
 
 /* Grid Set Up */
@@ -582,28 +680,31 @@ span.subforums > a {
 @media only screen and (min-width: 750px) {
   .redirect__row {
     grid-template-columns: 28px 55% 7% 7% 27%;
-    column-gap: 5px;
+    grid-column-gap: 5px;
     grid-template-areas:
-      'macro info info info hits'
-      'macro subforums subforums subforums subforums';
+      'macro  info       info       info       hits'
+      'macro  subforums  subforums  subforums  subforums';
   }
 }
 
 /*------------------------------------*\
   #RECENT_TOPICS
 \*------------------------------------*/
-
+/* TODO: default jcink style */
 #recent-topics tr {
+  /* box model */
+  padding: 5px;
+  /* layout */
   display: flex;
   flex-direction: column;
-  padding: 5px;
 }
 
 #recent-topics tr > td.recent-topics-info,
 #recent-topics tr > td.recent-topics-date {
+  /* box model */
   width: 100%;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 /* Media Queries 
@@ -624,14 +725,18 @@ span.subforums > a {
 \*------------------------------------*/
 
 #boardstats {
-  background: var(--theme__background-contrast);
+  /* box model */
   border: 1px solid var(--theme__color-primary);
+  /* background */
+  background: var(--theme__background-contrast);
 }
 
 #board-stats__grid {
+  /* box model */
+  padding: 5px;
+  /* layout */
   display: grid;
   align-items: center;
-  padding: 5px;
   grid-template-areas:
     'links'
     'online-now'
@@ -645,8 +750,10 @@ span.subforums > a {
 .boardstats__birthdays > .maintitle,
 .boardstats__stats > .maintitle,
 .boardstats__online-today > .maintitle {
-  font-size: var(--textsize-body__primary);
+  /* box model */
   margin: 5px 0;
+  /* type */
+  font-size: var(--textsize-body__primary);
 }
 
 .online-now__grid,
@@ -654,6 +761,7 @@ span.subforums > a {
 .birthdays__grid,
 .stats__grid,
 .online-today__grid {
+  /* layout */
   display: grid;
   align-items: center;
   gap: 5px;
@@ -661,9 +769,11 @@ span.subforums > a {
 }
 
 .links__grid {
+  /* box model */
+  margin-left: 5px;
+  /* layout */
   grid-template-columns: 1fr 1fr;
   row-gap: 10px;
-  margin-left: 5px;
 }
 
 .boardstats--macro {
@@ -676,12 +786,14 @@ span.subforums > a {
 
 /* Online users list row */
 .online-now--thin {
-  padding: 6px 0px 6px 0px;
+  /* box model */
   min-height: 20px;
-  line-height: 140%;
   margin: 2px 0px 2px 0px;
+  padding: 6px 0px 6px 0px;
   border-top: 1px solid var(--theme__color-secondary);
   border-bottom: 1px solid var(--theme__color-secondary);
+  /* type */
+  line-height: 140%;
 }
 
 /* Grid Set Up */
@@ -710,19 +822,23 @@ span.subforums > a {
 
 @media only screen and (min-width: 750px) {
   #board-stats__grid {
+    /* box model */
+    padding: 5px;
+    /* layout */
     display: grid;
     align-items: start;
-    padding: 5px;
-    grid-column-gap: 15px;
     grid-template-columns: 1.5fr 1fr;
+    grid-column-gap: 15px;
     grid-template-areas:
-      'online-now links'
-      'birthdays stats'
-      'online-today stats';
+      'online-now    links'
+      'birthdays     stats'
+      'online-today  stats';
   }
 
   .stats__grid > .boardstats--info {
+    /* box model */
     min-height: 150px;
+    /* layout */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -742,20 +858,25 @@ span.subforums > a {
 }
 
 #mark-as-read-subto {
-  font-size: var(--textsize-body__secondary);
-  background: var(--theme__background-contrast);
+  /* box model */
+  max-width: 350px;
   padding: 3px;
   border: 1px solid var(--theme__color-secondary);
-  max-width: 350px;
+  /* background */
+  background: var(--theme__background-contrast);
+  /* type */
+  font-size: var(--textsize-body__secondary);
 }
 
 /*------------------------------------*\
-  #SUBFORUM_HEADERS
+  #CSS - SUBFORUM_HEADERS
 \*------------------------------------*/
 
 #subforum-list {
-  background: var(--theme__background-contrast);
+  /* box model */
   border: 1px solid var(--theme__color-primary);
+  /* background */
+  background: var(--theme__background-contrast);
 }
 
 /*------------------------------------*\
@@ -763,26 +884,32 @@ span.subforums > a {
 \*------------------------------------*/
 
 #topic-list {
-  background: var(--theme__background-contrast);
+  /* box model */
   border: 1px solid var(--theme__color-primary);
+  /* background */
+  background: var(--theme__background-contrast);
 }
 
 .topic-row.maintitle {
-  font-size: var(--textsize-body__primary);
+  /* box model */
   margin: 5px;
+  /* type */
+  font-size: var(--textsize-body__primary);
 }
 
 .topic__row {
+  /* box model */
+  margin: 5px;
+  padding: 5px 0;
   border-top: 2px solid var(--theme__background-main);
+  /* layout */
   display: grid;
   align-items: center;
-  padding: 5px 0;
-  margin: 5px;
   row-gap: 5px;
   grid-template-areas:
-    'info info info info info'
-    'macro posticon replies views mod-checkbox'
-    'lastpost lastpost lastpost lastpost lastpost';
+    'info      info      info      info      info'
+    'macro     posticon  replies   views     mod-checkbox'
+    'lastpost  lastpost  lastpost  lastpost  lastpost';
 }
 
 /* this makes it so there is only a border 
@@ -858,33 +985,40 @@ between topic rows and nothing else */
 @media only screen and (min-width: 750px) {
   .topic__row {
     grid-template-columns: 2% 2% 51% 7% 7% 27% 2%;
-    column-gap: 4px;
+    grid-column-gap: 4px;
     grid-template-areas: 'macro posticon info replies views lastpost mod-checkbox';
   }
 
+  /* default jcink style */
   .wrapmini {
     float: left;
   }
 }
 
 /*------------------------------------*\
-  #POST_ROW
+  #CSS - POST_ROW
 \*------------------------------------*/
 
+/* maintitle above the post row */
 .topic-title {
   font-size: var(--textsize__title);
 }
 
 .topic-desc {
-  display: block;
-  font-size: var(--textsize__subheading);
+  /* box model */
   padding-left: 10px;
+  /* layout */
+  display: block;
+  /* type */
+  font-size: var(--textsize__subheading);
 }
 
 .post__row {
-  display: grid;
+  /* box model */
   padding: 5px;
   border-top: 1px solid var(--theme__background-main);
+  /* layout */
+  display: grid;
   grid-template-areas:
     'post-details'
     'miniprofile'
@@ -894,8 +1028,10 @@ between topic rows and nothing else */
 
 .post__row--post-details.maintitle,
 .post__row--bottombar.maintitle {
-  font-size: var(--textsize-body__secondary);
+  /* box model */
   padding: 8px 15px;
+  /* type */
+  font-size: var(--textsize-body__secondary);
 }
 
 .post__row--miniprofile {
@@ -903,10 +1039,11 @@ between topic rows and nothing else */
 }
 
 .post__row--post-details {
+  /* layout */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex-direction: column;
   row-gap: 8px;
 }
 
@@ -914,16 +1051,21 @@ span.quote-macro,
 span.delete-macro,
 span.edit-macro,
 span.report-macro {
-  background: var(--theme__color-secondary);
+  /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+  /* background */
+  background: var(--theme__color-secondary);
+  /* type */
   text-align: center;
 }
 
 .post-details--post-date {
-  background: var(--theme__color-secondary);
+  /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+  /* background */
+  background: var(--theme__color-secondary);
 }
 
 .post__row--post-content {
@@ -932,16 +1074,19 @@ span.report-macro {
 
 .post__row--bottombar {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   column-gap: 5px;
-  align-items: center;
 }
 
 .post__row--bottombar b > span.desc {
-  font-size: unset;
-  background: var(--theme__color-secondary);
+  /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+  /* background */
+  background: var(--theme__color-secondary);
+  /* type */
+  font-size: unset;
 }
 
 /* Grid Set Up */
@@ -966,7 +1111,9 @@ span.report-macro {
 ** on both top and bottom of post row */
 #SF table > tbody > tr > td[align='right'],
 #ST table > tbody > tr > td[align='right'] {
+  /* box model */
   width: 100%;
+  /* layout */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -979,11 +1126,11 @@ span.report-macro {
 @media only screen and (min-width: 750px) {
   .post__row {
     grid-template-columns: 275px 1fr;
-    column-gap: 4px;
+    grid-column-gap: 4px;
     grid-template-areas:
-      'post-details post-details'
-      'miniprofile post-content'
-      'bottom-bar bottom-bar';
+      'post-details  post-details'
+      'miniprofile   post-content'
+      'bottom-bar    bottom-bar';
   }
 
   .post__row--post-details {
@@ -1010,101 +1157,130 @@ span.report-macro {
  *****************************************/
 
 .postlinksbar {
-  padding: 5px 15px 5px;
-  background: var(--theme__background-main);
-  font-size: var(--textsize-body__secondary);
+  /* box model */
   margin-top: 1px;
+  padding: 5px 15px 5px;
+  /* background */
+  background: var(--theme__background-main);
+  /* type */
+  font-size: var(--textsize-body__secondary);
   text-align: left;
 }
 
 .signature {
+  /* type */
   font-size: var(--textsize-body__secondary);
-  color: var(--theme__color-secondary);
   line-height: 150%;
+  color: var(--theme__color-secondary);
 }
 
 .activeuserstrip {
-  background: var(--theme__background-main);
+  /* box model */
   padding: 6px;
+  /* background */
+  background: var(--theme__background-main);
 }
 
 /*------------------------------------*\
-  #MINI_PROFILE
+  #CSS - MINI_PROFILE
 \*------------------------------------*/
 
 .miniprofile__row--wrapper {
+  /* box model */
   padding: 9px;
+  /* layout */
   display: grid;
-  gap: 5px;
-  grid-template-columns: 0.2fr 1fr;
-  grid-template-areas:
-    'postnum postnum'
-    'avatar name'
-    'title title'
-    'fields fields'
-    'awards awards';
   align-content: center;
+  grid-template-columns: 0.2fr 1fr;
+  gap: 5px;
+  grid-template-areas:
+    'postnum  postnum'
+    'avatar   name'
+    'title    title'
+    'fields   fields'
+    'awards   awards';
 }
 
 .miniprofile__row.postnum {
-  display: flex;
-  background: var(--theme__color-secondary);
+  /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+  /* background */
+  background: var(--theme__color-secondary);
+  /* layout */
+  display: flex;
   justify-content: space-between;
+  /* type */
   color: var(--theme__text-contrast);
 }
 
+/* #IMG */
 .miniprofile__row.avatar > img {
-  border: 1px solid var(--theme__color-primary);
-  border-radius: 3px;
-  vertical-align: baseline;
+  /* box model */
   width: 31.25vw;
   height: 31.25vw;
   max-width: 250px;
   max-height: 250px;
+  border: 1px solid var(--theme__color-primary);
+  border-radius: 3px;
+  vertical-align: baseline;
 }
 
 .miniprofile__row.title {
+  /* box model */
+  padding: 5px 0;
+  /* type */
+  font-family: var(--font-family__accent), system-ui;
   font-style: italic;
   text-align: center;
-  font-family: var(--font-family__accent), system-ui;
-  padding: 5px 0;
 }
 
 .miniprofile__row.name {
-  background: var(--theme__background-main);
+  /* box model */
   padding: 5px;
-  text-align: center;
-  font-size: var(--textsize-body__secondary);
+  /* background */
+  background: var(--theme__background-main);
+  /* layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* type */
+  font-size: var(--textsize-body__secondary);
+  text-align: center;
 }
 
 .miniprofile__row.name > .span {
-  font-size: var(--textsize__subheading);
-  border-bottom: 1px solid var(--theme__color-secondary);
-  padding-bottom: 5px;
+  /* box model */
   margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--theme__color-secondary);
+  /* type */
+  font-size: var(--textsize__subheading);
+  /* other */
   overflow-wrap: anywhere;
 }
 
 .mini-profile__row.fields {
-  background: var(--theme__color-secondary);
+  /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+  /* background */
+  background: var(--theme__color-secondary);
+  /* type */
   text-align: center;
   color: var(--theme__text-contrast);
 }
 
 .miniprofile__row.awards {
-  background: var(--theme__background-main);
+  /* box model */
   padding: 5px;
   border-radius: 3px;
+  /* background */
+  background: var(--theme__background-main);
 }
 
 .miniprofile__row.awards > img {
+  /* box model */
   width: 25px;
   margin: 4px;
 }
@@ -1150,6 +1326,7 @@ span.report-macro {
       'awards';
   }
 
+  /* #IMG */
   .miniprofile__row.avatar > img {
     width: 250px;
     height: 250px;
@@ -1161,90 +1338,109 @@ span.report-macro {
 }
 
 /*------------------------------------*\
-  #MAIN_PROFILE
+  #CSS - MAIN_PROFILE
 \*------------------------------------*/
 
 .main-profile {
-  background: var(--theme__background-contrast);
+  /* box model */
   border: 1px solid var(--theme__color-primary);
+  /* background */
+  background: var(--theme__background-contrast);
 }
 
 .mainprofile__row.header > .maintitle {
-  overflow-wrap: anywhere;
-  font-size: var(--textsize__title);
+  /* box model */
   padding-left: 20px;
+  /* type */
+  font-size: var(--textsize__title);
+  /* other */
+  overflow-wrap: anywhere;
 }
 
 .mainprofile__row.header .header--account-info {
+  /* layout */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 10px;
+  /* type */
   font-size: var(--textsize-body__secondary);
   font-weight: normal;
-  display: flex;
-  column-gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .header--account-info > span.title {
+  /* box model */
+  padding: 5px 0;
+  /* type */
+  font-family: var(--font-family__accent), system-ui;
   font-style: italic;
   text-align: center;
-  font-family: var(--font-family__accent), system-ui;
-  padding: 5px 0;
 }
 
 .main-profile.wrapper {
+  /* box model */
   padding: 9px;
-  gap: 10px;
+  /* layout */
   display: grid;
   grid-template-columns: min-content 1fr;
+  gap: 10px;
   grid-template-areas:
-    'avatar icons'
-    'fields fields'
-    'stats stats'
-    'subaccounts subaccounts'
-    'awards awards'
-    'about-me about-me'
-    'signature signature'
-    'go-back go-back';
+    'avatar       icons'
+    'fields       fields'
+    'stats        stats'
+    'subaccounts  subaccounts'
+    'awards       awards'
+    'about-me     about-me'
+    'signature    signature'
+    'go-back      go-back';
 }
 
 .mainprofile__row.icons {
+  /* layout */
   display: grid;
-  grid-template-columns: 1fr;
-  text-transform: uppercase;
   align-items: center;
   justify-content: start;
+  grid-template-columns: 1fr;
+  /* type */
+  text-transform: uppercase;
 }
 
 .mainprofile__row.avatar {
   margin: auto;
 }
 
+/* #IMG */
 .mainprofile__row.avatar > img {
-  border: 1px solid var(--theme__color-primary);
-  border-radius: 3px;
+  /* box model */
   width: 31.25vw;
   height: 31.25vw;
   max-width: 250px;
   max-height: 250px;
+  border: 1px solid var(--theme__color-primary);
+  border-radius: 3px;
 }
 
 .mainprofile__row.fields,
 .mainprofile__row.stats,
 .mainprofile__row.subaccounts,
 .mainprofile__row.awards {
+  /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+  /* background */
   background: var(--theme__background-main);
 }
 
 .mainprofile__row.fields,
 .mainprofile__row.stats {
+  /* layout */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
 .mainprofile__row.subaccounts {
+  /* layout */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1256,29 +1452,37 @@ span.report-macro {
 }
 
 .mainprofile__row.awards > .awards-box {
-  display: block;
+  /* box model */
   height: 70px;
   margin: 5px auto;
+  /* layout */
+  display: block;
+  /* other */
   overflow: auto;
 }
 
 .mainprofile__row.awards > .awards-box img {
+  /* box model */
   width: 25px;
   margin: 4px;
 }
 
 .mainprofile__row.about-me {
+  /* box model */
   padding-top: 10px;
   border-top: 2px solid var(--theme__background-main);
 }
 
 .mainprofile__row.go-back {
-  background: var(--theme__color-secondary);
+  /* box model */
+  max-width: 70px;
   padding: 5px 7px;
   border-radius: 5px;
+  /* background */
+  background: var(--theme__color-secondary);
+  /* type */
   text-align: center;
   color: var(--theme__text-contrast);
-  max-width: 70px;
 }
 
 .mainprofile__row.go-back > a {
@@ -1327,27 +1531,33 @@ span.report-macro {
 
 @media only screen and (min-width: 750px) {
   .main-profile.wrapper {
+    /* box model */
     padding: 10px 20px 10px 15px;
+    /* layout */
     grid-template-columns: 275px 1fr 1fr;
     grid-template-rows: min-content 1fr 1fr 1fr min-content min-content;
     grid-template-areas:
-      'avatar icons icons'
-      'avatar fields stats'
-      'avatar subaccounts awards'
-      'about-me about-me about-me'
-      'signature signature signature'
-      'go-back go-back go-back';
+      'avatar     icons        icons'
+      'avatar     fields       stats'
+      'avatar     subaccounts  awards'
+      'about-me   about-me     about-me'
+      'signature  signature    signature'
+      'go-back    go-back      go-back';
   }
 
+  /* #IMG */
   .mainprofile__row.avatar > img {
+    /* box model */
     width: 250px;
     height: 250px;
   }
 
   .mainprofile__row.icons {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* box model */
     margin-top: 10px;
+    /* layout */
     justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   .mainprofile__row.about-me,
@@ -1358,48 +1568,56 @@ span.report-macro {
 }
 
 /*------------------------------------*\
-  #MEMBER_LIST_HEADERS
+  #CSS - MEMBER_LIST_HEADERS
 \*------------------------------------*/
 
 .memberlist__search-inputs {
-  background: var(--theme__background-main);
-  border-bottom: 1px solid var(--theme__color-secondary);
-  font-weight: bold;
+  /* box model */
   padding: 5px;
-  gap: 5px;
-  line-height: 160%;
-  text-align: center;
+  border-bottom: 1px solid var(--theme__color-secondary);
+  /* background */
+  background: var(--theme__background-main);
+  /* layout */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 5px;
+  /* type */
+  line-height: 160%;
+  font-weight: bold;
+  text-align: center;
 }
 
 /*------------------------------------*\
-  #MEMBER_LIST_ROW
+  #CSS - MEMBER_LIST_ROW
 \*------------------------------------*/
 
 .memberlist {
-  background: var(--theme__background-contrast);
+  /* box model */
   border: 1px solid var(--theme__color-primary);
+  /* background */
+  background: var(--theme__background-contrast);
 }
 
 .memberlist__row {
+  /* box model */
+  margin: 0px 5px;
   padding: 5px;
   border-bottom: 2px solid var(--theme__color-secondary);
-  margin: 0px 5px;
+  /* layout */
   display: grid;
-  row-gap: 5px;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 5px;
   grid-template-areas:
-    'name name'
-    'group group'
-    'avatar posts'
-    'avatar topics'
-    'joined joined'
-    'last-seen last-seen'
-    'last-post-date last-post-date';
+    'name            name'
+    'group           group'
+    'avatar          posts'
+    'avatar          topics'
+    'joined          joined'
+    'last-seen       last-seen'
+    'last-post-date  last-post-date';
 }
 
 /* stop last row from having a bottom border since the table
@@ -1413,16 +1631,20 @@ span.report-macro {
 }
 
 .memberlist__row--avatar > img {
+  /* box model */
   width: 100px;
   height: 100px;
-  object-fit: cover;
   border: 1px solid var(--theme__color-primary);
   border-radius: 3px;
+  /* other */
+  object-fit: cover;
 }
 
 .memberlist__row--name {
-  overflow-wrap: anywhere;
+  /* type */
   font-size: var(--textsize__subheading);
+  /* other */
+  overflow-wrap: anywhere;
 }
 
 .memberlist__row--name,
@@ -1468,6 +1690,7 @@ span.report-macro {
 
 @media only screen and (min-width: 750px) {
   .memberlist__row {
+    /* layout */
     justify-items: start;
     grid-template-columns: auto auto auto auto auto auto;
     grid-template-areas:
@@ -1490,45 +1713,33 @@ span.report-macro {
   padding: 2px 5px;
 }
 
+.pagination .pagination_current,
 .pagination a:link,
 .pagination a:visited,
 .pagination a:active {
+  /* box model */
+  padding: 0 6px;
   border: 1px solid var(--theme__color-primary);
   border-radius: 3px;
+  /* background */
   background: var(--theme__color-primary);
-  padding-left: 6px;
-  padding-right: 6px;
+  /* type */
   color: var(--theme__text-contrast);
-  text-decoration: none;
 }
 
 .pagination a:hover {
   background: var(--theme__color-secondary);
-  text-decoration: none;
-  color: var(--theme__text-contrast);
 }
 
 .pagination a:link,
 .pagination a:visited,
 .pagination a:active,
 .pagination a:hover {
-  box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
-}
-
-.pagination .pagination_current {
-  background: none repeat scroll 0% 0% var(--theme__color-secondary);
+  /* type */
+  text-decoration: none;
   color: var(--theme__text-contrast);
-  border: 1px solid var(--theme__color-secondary);
-  border-radius: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
-.pagination_first,
-.pagination_last,
-.pagination_page {
-  background: none repeat scroll 0% 0% var(--paginationFirstLastBGColor);
-  border: 1px solid var(--paginationBorderColor);
+  /* other */
+  box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
 }
 
 .pagination_pagetxt {
@@ -1541,18 +1752,22 @@ span.report-macro {
 
 #ucpmenu,
 #ucpcontent {
+  /* box model */
   border: 1px solid var(--theme__color-secondary);
+  /* background */
   background: var(--theme__background-contrast);
 }
 
 @media only screen and (max-width: 750px) {
   /* target just the top level tables and not any of the nested tables */
   #UserCP #innerwrapper > table > tbody > tr:first-child {
+    /* layout */
     display: flex;
     flex-direction: column;
   }
 
-  /* generic, also applies to custom fields */
+  /* generic, also applies to custom fields 
+  #INPUT */
   #UserCP input[type='text'],
   #UserCP textarea.forminput,
   /* front page notes box */
@@ -1577,11 +1792,6 @@ span.report-macro {
     margin: 5px;
   }
 
-  /* this causes the rest of the overflow on the ucp index */
-  td#ucpcontent table tr:first-child td[width='60%'] {
-    overflow-wrap: anywhere;
-  }
-
   td#ucpcontent > table > tbody > tr,
   td#ucpcontent form > table > tbody > tr {
     display: flex;
@@ -1595,13 +1805,13 @@ span.report-macro {
   }
 
   #ucpcontent p {
+    margin: 0;
     padding: 10px;
-    margin: 0px;
   }
 
-  /* Your Forum Subscriptions &
-  ** Your Topic Subscriptions */
-
+  /* this causes the rest of the overflow on the ucp index */
+  td#ucpcontent table tr:first-child td[width='60%'],
+  /* Your Forum Subscriptions & Your Topic Subscriptions */
   #UserCP.code-50 td#ucpcontent td.row1[align='left'],
   #UserCP.code-26 td#ucpcontent td.row3[align='left'] {
     overflow-wrap: anywhere;
@@ -1625,10 +1835,6 @@ TODO: move these */
 ** PHP template as the create new thread/add reply codes, so the styles if
 ** unscoped to the page, will apply to both sets */
 
-/* TODO: i do not have more than 1 account on the test site currently, will
-** need to go back and check the 'reply to PM' and other styling stuff once
-** i have a 2nd account to PM between */
-
 @media only screen and (max-width: 750px) {
   /* target just the top level tables and not any of the nested tables */
   #Msg #innerwrapper > table > tbody > tr:first-child {
@@ -1636,6 +1842,7 @@ TODO: move these */
     flex-direction: column;
   }
 
+  /* #INPUT */
   input[name='entered_name'],
   textarea[name='carbon_copy'],
   input[name='msg_title'] {
@@ -1661,9 +1868,11 @@ TODO: move these */
   }
 
   #Msg span.msg-normal td.row4[valign='middle'] {
+    /* type */
     font-size: var(--textsize__subheading);
-    overflow-wrap: anywhere;
     text-align: center;
+    /* other */
+    overflow-wrap: anywhere;
   }
 
   #Msg span.msg-normal td.row4[valign='top'] {
@@ -1675,8 +1884,8 @@ TODO: move these */
 
   #Msg span.msg-normal td.miniprofile > .postdetails {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
   }
 
   /* remove the terrible spacing between the miniprofile info */
@@ -1686,19 +1895,22 @@ TODO: move these */
     display: none;
   }
 
+  /* #IMG */
   #Msg span.msg-normal td.miniprofile > .postdetails > img {
-    border: 1px solid var(--theme__color-primary);
-    border-radius: 3px;
-    vertical-align: baseline;
+    /* box model */
     width: 31.25vw;
     height: 31.25vw;
     max-width: 250px;
     max-height: 250px;
+    border: 1px solid var(--theme__color-primary);
+    border-radius: 3px;
+    vertical-align: baseline;
   }
 
   #Msg span.msg-normal td.post1[width='100%'] {
-    border-top: 5px solid var(--theme__background-main);
+    /* box model */
     padding: 15px 5px;
+    border-top: 5px solid var(--theme__background-main);
     box-sizing: border-box;
   }
 
@@ -1730,7 +1942,8 @@ TODO: move these */
     display: contents;
   }
 
-  /* resize the input fields like we've been doing */
+  /* resize the input fields like we've been doing 
+  #INPUT */
   input[name='keywords'],
   input[name='namesearch'] {
     width: 100%;
@@ -1748,9 +1961,11 @@ TODO: move these */
 
   /* Search by Keywords heading & Search Where heading */
   #Search.code-00 table > tbody > tr > td.pformstrip:nth-child(1) {
+    /* box model */
     width: 100%;
-    grid-row: 2;
     box-sizing: border-box;
+    /* layout */
+    grid-row: 2;
   }
 
   /* Search by Keyword & Search Where row */
@@ -1760,9 +1975,11 @@ TODO: move these */
 
   /* Filter by Member Name & Refine Search heading */
   #Search.code-00 table > tbody > tr > td.pformstrip:nth-child(2) {
+    /* box model */
     width: 100%;
-    grid-row: 4;
     box-sizing: border-box;
+    /* layout */
+    grid-row: 4;
   }
 
   /* Filter by Member Name & Refine Search row */
@@ -1772,9 +1989,11 @@ TODO: move these */
 
   /* Perform Search button */
   #Search.code-00 table > tbody > tr > td.pformstrip[colspan='2'] {
+    /* box model */
     width: 100%;
-    grid-row: 6;
     box-sizing: border-box;
+    /* layout */
+    grid-row: 6;
   }
 
   /* resize the 'search topics by this member only' checkbox */
@@ -1809,17 +2028,20 @@ TODO: move these */
   }
 
   #Search.code-show .tableborder > table.tablebasic td.post1 span.postdetails {
-    display: flex;
-    justify-content: space-around;
+    /* box model */
     padding-bottom: 10px;
     border-bottom: 5px solid var(--theme__background-main);
+    /* layout */
+    display: flex;
+    justify-content: space-around;
   }
 
   /* View All Topics results */
   #Search.code-show #search-topics table.tablebasic > tbody > tr {
+    /* layout */
     display: grid;
-    grid-template-columns: 0.5fr min-content 1fr 1fr 1fr;
     align-items: center;
+    grid-template-columns: 0.5fr min-content 1fr 1fr 1fr;
   }
 
   #Search.code-show #search-topics table.tablebasic > tbody > tr:first-child {
@@ -1858,7 +2080,9 @@ TODO: move these */
     > tbody
     > tr
     > td:nth-child(4) {
+    /* box model */
     width: 100%;
+    /* layout */
     grid-row: 2;
     grid-column: 2 / 4;
     display: flex;
@@ -1881,10 +2105,12 @@ TODO: move these */
     > tbody
     > tr
     > td:nth-child(5) {
+    /* layout */
     grid-row: 2;
     grid-column: 4 / 6;
     display: flex;
     flex-direction: column;
+    /* other */
     overflow-wrap: anywhere;
   }
 
@@ -1950,7 +2176,9 @@ TODO: move these */
 
   /* Show Results */
   #search-topics .titlemedium {
+    /* background */
     background: var(--theme__background-main);
+    /* type */
     text-align: center;
   }
 }
@@ -1977,9 +2205,10 @@ TODO: move these */
   }
 
   #active-topics table.tablebasic > tbody > tr {
+    /* layout */
     display: grid;
-    grid-template-columns: 0.5fr min-content 1fr 1fr 1fr;
     align-items: center;
+    grid-template-columns: 0.5fr min-content 1fr 1fr 1fr;
   }
 
   /* if there are no results to display */
@@ -2005,7 +2234,9 @@ TODO: move these */
 
   /* Forum Name & Link */
   #active-topics table.tablebasic > tbody > tr > td:nth-child(4) {
+    /* box model */
     width: 100%;
+    /* layout */
     grid-row: 2;
     grid-column: 2 / 4;
     display: flex;
@@ -2018,10 +2249,12 @@ TODO: move these */
 
   /* Started By Posted & Link */
   #active-topics table.tablebasic > tbody > tr > td:nth-child(5) {
+    /* layout */
     grid-row: 2;
     grid-column: 4 / 6;
     display: flex;
     flex-direction: column;
+    /* other */
     overflow-wrap: anywhere;
   }
 
@@ -2055,9 +2288,11 @@ TODO: move these */
     grid-column: span 4;
   }
 
-  /* Show Results */
+  /* TODO: Show Results */
   #active-topics .titlemedium {
+    /* background */
     background: var(--theme__background-main);
+    /* type */
     text-align: center;
   }
 }
@@ -2122,9 +2357,9 @@ TODO: move these */
   #modcp table.modcp-table td {
     display: flex;
     flex-direction: row;
-    text-align: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    text-align: center;
   }
 
   /* and show the header names */
@@ -2133,7 +2368,8 @@ TODO: move these */
     font-weight: bold;
   }
 
-  /* fix the input boxes */
+  /* fix the input boxes
+  #INPUT */
   #modcp select[name='df'],
   #modcp input[name='dateline'],
   #modcp select[name='topic_type'],
@@ -2170,7 +2406,8 @@ TODO: move these */
 \*------------------------------------*/
 
 /* used on both login and registration
-** has to be scoped because quick login uses the same fields */
+** has to be scoped because quick login uses the same fields 
+#INPUT */
 #registration-form input[name='UserName'],
 #Login input[name='UserName'],
 #Login input[name='PassWord'],
@@ -2242,13 +2479,8 @@ TODO: move these */
 .row3,
 .row4,
 .row2 {
-  /* background: var(--background__low-contrast); */
   padding: 5px;
 }
-
-/* #boardstats .row2 {
-  text-align: center;
-} */
 
 .darkrow1,
 .darkrow2,
@@ -2264,9 +2496,6 @@ td.darkrow2 {
   padding: 3px;
 }
 
-/* .hlight {
-  background: var(--hlightBGColor);
-} */
 .dlight {
   background: var(--theme__background-main);
 }
@@ -2276,11 +2505,14 @@ td.darkrow2 {
  *****************************************/
 
 .maintitle {
-  background: var(--theme__color-primary);
-  font-weight: bold;
+  /* box model */
   padding: 8px;
-  color: var(--theme__text-contrast);
+  /* background */
+  background: var(--theme__color-primary);
+  /* type */
   font-size: var(--textsize__subheading);
+  font-weight: bold;
+  color: var(--theme__text-contrast);
 }
 
 .maintitle a:link,
@@ -2298,26 +2530,22 @@ td.darkrow2 {
  *****************************************/
 
 .titlemedium {
-  font-weight: bold;
-  padding: 2px 6px;
+  /* box model */
   margin: 0px;
+  padding: 2px 6px;
+  /* type */
+  font-weight: bold;
 }
-
-/* 
-.titlemedium a:link,
-.titlemedium a:visited,
-.titlemedium a:active {
-  text-decoration: none;
-  color: var(--theme__color-primary);
-} */
 
 /****************************************
    Table & Div Borders 
  *****************************************/
 
 .tableborder {
-  background: var(--theme__background-contrast);
+  /* box model */
   border: 1px solid var(--theme__color-primary);
+  /* background */
+  background: var(--theme__background-contrast);
 }
 
 /* Topic Options dropdown on post view */
@@ -2337,8 +2565,8 @@ td.darkrow2 {
 /* on active topics table */
 .tablebasic {
   width: 100%;
-  padding: 0;
   margin: 0px;
+  padding: 0;
   border: 0px;
 }
 
@@ -2347,25 +2575,24 @@ td.darkrow2 {
   padding: 6px;
 }
 
-/* .plainborder {
-  border: 1px solid var(--border__secondary);
-  background: var(--background__low-contrast);
-} */
-
 /****************************************
    QUOTE and CODE BBCode boxes
  *****************************************/
 
 #QUOTE,
 #CODE {
-  white-space: normal;
+  /* box model */
+  margin-top: 2px;
+  padding: 2px;
+  border: 1px solid var(--theme__color-secondary);
+  /* background */
+  background: var(--theme__background-main);
+  /* type */
   font-family: var(--font-family__body);
   font-size: var(--textsize-body__primary);
   color: var(--theme__text-main);
-  background: var(--theme__background-main);
-  padding: 2px;
-  border: 1px solid var(--theme__color-secondary);
-  margin-top: 2px;
+  /* other */
+  white-space: normal;
 }
 
 #CODE {
@@ -2377,50 +2604,66 @@ td.darkrow2 {
  ***********************************************/
 
 .button-large,
-.button-large.closed {
-  background: var(--theme__color-primary);
-  color: var(--theme__text-contrast);
+.button-large.closed,
+.button-small {
+  /* box model */
   border-radius: 3px;
-  padding: 5px 12px;
-  text-align: center;
-  margin: 0px 5px 0px 5px;
+  /* type */
   font-weight: bold;
-  min-width: 75px;
-  display: inline-block;
+  color: var(--theme__text-contrast);
 }
 
-.button-small {
-  background: var(--theme__color-primary);
-  color: var(--theme__text-contrast);
-  border-radius: 3px;
-  font-weight: bold;
-  font-size: var(--textsize-body__secondary);
-  margin: 3px;
-  padding: 4px 7px;
-  text-decoration: none;
-  min-width: 50px;
-  max-width: 80px;
+.button-large,
+.button-large.closed {
+  /* box model */
+  min-width: 75px;
+  margin: 0px 5px 0px 5px;
+  padding: 5px 12px;
+  /* layout */
+  display: inline-block;
+  /* type */
+  text-align: center;
 }
 
 .button-large,
 .button-small {
+  /* background */
+  background: var(--theme__color-primary);
+  /* other */
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.button-small.copy-button {
+.button-large.closed {
+  /* box model */
+  border: 1px solid var(--theme__color-secondary);
+  /* background */
   background: var(--theme__color-secondary);
-  box-shadow: none;
-  padding: 0px 7px;
+}
+
+.button-small {
+  /* box model */
+  min-width: 50px;
+  max-width: 80px;
+  margin: 3px;
+  padding: 4px 7px;
+  /* type */
+  font-size: var(--textsize-body__secondary);
+  text-decoration: none;
+}
+
+/* for use with clipboard script */
+.button-small.copy-button {
+  /* box model */
   max-width: 100px;
+  padding: 0px 7px;
+  /* background */
+  background: var(--theme__color-secondary);
+  /* other */
+  box-shadow: none;
 }
 
 .post-buttons-top {
   margin-top: 3px;
-}
-
-.button-large.closed {
-  background: var(--theme__color-secondary);
-  border: 1px solid var(--theme__color-secondary);
 }
 
 .forminput,
@@ -2428,29 +2671,38 @@ td.darkrow2 {
 .textinput,
 .radiobutton,
 .checkbox {
-  border-radius: 2px;
-  background: var(--theme__background-contrast);
+  /* box model */
+  padding: 2px;
   border: 1px solid var(--theme__color-secondary);
+  border-radius: 2px;
+  vertical-align: middle;
+  /* background */
+  background: var(--theme__background-contrast);
+  /* type */
   font-size: var(--textsize-body__secondary);
   color: var(--theme__color-secondary);
-  padding: 2px;
-  vertical-align: middle;
+  /* other */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
 }
 
+/* #INPUT */
 input[type='submit'],
 input[type='button'],
 input[type='reset'] {
-  background: var(--theme__color-primary);
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  color: var(--theme__text-contrast);
-  font-size: var(--textsize-body__secondary);
-  font-weight: bold;
+  /* box model */
   margin: 3px;
   padding: 2px 6px;
-  text-decoration: none;
   border: none;
+  border-radius: 3px;
+  /* background */
+  background: var(--theme__color-primary);
+  /* type */
+  font-size: var(--textsize-body__secondary);
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--theme__text-contrast);
+  /* other */
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .codebuttons {
@@ -2460,6 +2712,7 @@ input[type='reset'] {
 /* Topic Row 'Jump to Forum' box
 ** TODO: combine this with post stuff later */
 @media only screen and (max-width: 750px) {
+  /* #INPUT */
   select[name='f'] {
     width: 100%;
     max-width: 80%;
@@ -2472,6 +2725,7 @@ input[type='reset'] {
   aka: New Topic, Add Reply, etc
 \*------------------------------------*/
 
+/* #INPUT */
 /* these form fields are the ones that cause the page 
 ** to overflow and break the zoom on mobile
 ** this is all you need to fix the post page */
@@ -2614,6 +2868,7 @@ TODO: move these */
     width: 25%;
   }
 
+  /* #INPUT */
   input[name='TopicTitle'],
   input[name='TopicDesc'],
   /* New Poll specific styling */
@@ -2629,23 +2884,22 @@ TODO: move these */
  *****************************************/
 
 .pformstrip {
-  background: var(--theme__background-main);
-  font-weight: bold;
+  /* box model */
+  margin-top: 1px;
   padding: 2px 5px;
-  margin-top: 1px;
+  /* background */
+  background: var(--theme__background-main);
+  /* type */
+  font-weight: bold;
 }
 
-.pformleft,
-.pformright {
-  padding: 6px;
-  margin-top: 1px;
-}
-
-/* used in the Prune Posts Mod CP
+/* .pformleftw used in the Prune Posts Mod CP
 * & login page */
+.pformleft,
+.pformright,
 .pformleftw {
-  padding: 6px;
   margin-top: 1px;
+  padding: 6px;
 }
 
 /********************************
@@ -2654,12 +2908,12 @@ TODO: move these */
 
 /* image tag styles */
 img {
-  vertical-align: middle;
   border: 0px;
+  vertical-align: middle;
 }
 img.attach {
-  border: 2px outset var(--imgAttachBorderColor);
   padding: 2px;
+  border: 2px outset var(--imgAttachBorderColor);
 }
 
 /* Forum Descriptions
@@ -2689,9 +2943,9 @@ span.small {
 
 /* Highlighted text in search */
 .searchlite {
-  color: red;
-  font-weight: bold;
   background: yellow;
+  font-weight: bold;
+  color: red;
 }
 
 /****************************************
@@ -2702,10 +2956,7 @@ span.small {
   background: var(--theme__background-main);
 }
 
-#Online table tr:first-child th.titlemedium:last-child {
-  display: none;
-}
-
+#Online table tr:first-child th.titlemedium:last-child,
 #Online table tr td.row1:last-child {
   display: none;
 }
@@ -2750,10 +3001,13 @@ span.small {
   ************************************/
 
 #copyright {
+  /* box model */
+  border: 1px solid var(--theme__color-primary);
+  /* background */
+  background: var(--theme__background-contrast);
+  /* type */
   font-size: var(--textsize-body__secondary);
   text-align: center;
-  background: var(--theme__background-contrast);
-  border: 1px solid var(--theme__color-primary);
 }
 
 #copyright .tableborder {

@@ -28,7 +28,7 @@
   </head>
   <body
     id="<!-- |input_act| -->"
-    class="act-<!-- |input_act| --> g_<!-- |g_id| --> m_<!-- |id| --> code-<!-- |input_CODE| -->">
+    class="act-<!-- |input_act| --> code-<!-- |input_CODE| -->">
     <div id="wrapper">
       <!-- start navigation bar -->
       <div id="navigation-wrapper">
@@ -57,10 +57,10 @@
           <!-- top and bottom buttons -->
           <div class="nav__icons--right">
             <a href="#" title="Back to Top">
-              <i class="fas fa-arrow-up icons"></i>
+              <i id="click-up" class="fas fa-arrow-up icons"></i>
             </a>
             <a href="#" title="Down to Bottom">
-              <i class="fas fa-arrow-down icons"></i>
+              <i id="click-down" class="fas fa-arrow-down icons"></i>
             </a>
           </div>
           <!-- end top and bottom buttons -->
@@ -73,9 +73,9 @@
         <div id="nav__userlinks" class="dropdown-menu">
           <div class="nav__userlinks--users">
             <!-- start guest info -->
-            <a class="g-<!-- |g_id| -->" style="display: none">
+            <div class="g-<!-- |g_id| -->" style="display: none">
               <strong> HI GUEST! </strong>
-            </a>
+            </div>
             <div class="g-<!-- |g_id| --> logging" style="display: none">
               <a href="/index.php?act=Login&CODE=00" title="Log In">
                 LOG IN <i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>
@@ -98,11 +98,11 @@
             </a>
             <div class="m-<!-- |g_id| --> account-switcher">
               <span id="subacct_link">
-                <a
-                  href="javascript:void(0);"
+                <button
+                  type="button"
                   onclick="document.getElementById('subacct_link').innerHTML=document.getElementById('sub_bar').innerHTML;">
                   Switch Account
-                </a>
+                </button>
               </span>
             </div>
           </div>
@@ -231,40 +231,30 @@
     <!-- all of your scripts for the site, unless your install guide tells you otherwise, should go BELOW this comment -->
     <script>
       $(document).ready(function () {
+        /* Toggle Dropdown Menu */
         $('.button-action').click(function () {
-          var navbarHeight = $('#navigation-wrapper').outerHeight();
-          var dropdownMenu = $('.dropdown-menu');
+          const navbarHeight = $('#navigation-wrapper').outerHeight();
+          const dropdownMenu = $('.dropdown-menu');
           dropdownMenu.css('top', `${navbarHeight + 10}px`);
 
           $('#nav__userlinks').toggleClass('display-menu');
           $('.rotate').toggleClass('down');
         });
-      });
 
-      $(document).ready(function () {
-        $('.fa-arrow-up').click(function (event) {
+        /* Scroll to Top/Bottom Buttons */
+        $('#click-up').click(function (event) {
           event.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        $('.fa-arrow-down').click(function (event) {
+        $('#click-down').click(function (event) {
           event.preventDefault();
           $('#copyright').get(0).scrollIntoView({ behavior: 'smooth' });
         });
-      });
 
-      /* Light Mode Toggle, from CodePen
-       * https://codepen.io/ananyaneogi/pen/zXZyMP
-       * heavily modified by Luna */
-      $(document).ready(function () {
-        const currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme) {
-          $('html').attr('data-theme', currentTheme);
-        } else {
-          $('html').attr('data-theme', 'light');
-        }
-
+        /* Light/Dark Mode Toggle, from CodePen
+         * https://codepen.io/ananyaneogi/pen/zXZyMP
+         * heavily modified by Luna */
         $('a[title="Toggle Theme"]').click(function (e) {
           e.preventDefault();
           const theme =
