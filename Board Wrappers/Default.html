@@ -6,7 +6,11 @@
     <title><% TITLE %></title>
     <!-- DO NOT ADD TO OR EDIT ANYTHING ABOVE THIS LINE -->
 
-    <link href="https://jcink.com/favicon.png" rel="icon" />
+    <link
+      rel="icon"
+      href="https://jcink.com/favicon.png"
+      type="image/png"
+      sizes="16x16" />
     <!-- START CSS -->
     <% CSS %>
     <link
@@ -21,14 +25,13 @@
       if (localStorage.theme) {
         document.documentElement.setAttribute('data-theme', localStorage.theme);
       } else {
+        // if you want to change the default from light to dark, change 'light' to 'dark'
         document.documentElement.setAttribute('data-theme', 'light');
       }
     </script>
     <!-- end JavaScript files -->
   </head>
-  <body
-    id="<!-- |input_act| -->"
-    class="act-<!-- |input_act| --> code-<!-- |input_CODE| -->">
+  <body id="<!-- |input_act| -->" class="code-<!-- |input_CODE| -->">
     <div id="wrapper">
       <!-- start navigation bar -->
       <div id="navigation-wrapper">
