@@ -39,7 +39,9 @@
  * ├── Custom Navigation Bar
  * ├── Default Jcink Styles & Pages
  * ├── HTML Templates
+ * │   └── Search #TEMPLATES to quick jump to each section
  * └── Media Queries
+       └── Search #MEDIA750 to quick jump to each section
  */
 
 /*============================================================================================================
@@ -58,26 +60,26 @@
  * |              | 1 secondary  | 1 accent      | 1 secondary |
  * |              | 1 accent     |               |             |
  * +--------------+--------------+---------------+-------------+
+ *
+ *  --How to Set Colors, Fonts, and Font Sizes for Your Site--
+ * I have chosen to set up this base a little differently than most, with the hopes it makes it easier to change
+ * your skin's colors, fonts, and text sizes on the fly whenever you want.
+ *
+ * There are 3 different :root sections for you to fill out: the _Variable_ Store, the _Site Variables_, and the
+ * _Data Theme Colors_. Each section will include instructions for how to fill it out. */
 
-
-How to Set Colors, Fonts, and Font Sizes for Your Site
- 1.) The first root contains your _Variable Store_. This is where you put the actual values. This base has been
- designed with the best practice of giving your colors, font families, and font sizes clear defined names that
- you will know at a glance. 
- 2.) The second root contains the actual _Site Variables_ that will apply to your skin. Once you have your
- variables entered in the first root, you use those variable names to fill in the second root. Doing it this
- way makes it much easier to swap colors, fonts, and sizes in and out at will without having to touch the
- set up in the rest of your CSS
- Note: the colors that are in the second root are your skin default colors. On this skin, the default is Light
- 3.) The data-theme determines what the colors, font families, and font sizes are swapped to when the light/dark
- mode is toggled. On this base, the default is Light Mode, so the data-theme is dark. Input the variables here that
- you want to change.
- Note: to change the default from Light to Dark, put the dark colors in the 2nd root, change the data-theme to 'light',
- and in the script in the Board Wrappers, change the word from 'light' to 'dark' */
 :root {
-  /**************************
-   Variable Store
-  ***************************/
+  /* _Variable Store_
+  This is where you put your actual values for your colors, fonts, and font sizes. This design practice gives your
+  actual CSS values clear, defined names that you will know at a glance, instead of having to memorize that #222 
+  is your shade of black, for example. This also allows you to swap colors in and out at will without having to 
+  touch the rest of your CSS. 
+  
+  You can probably tell that the font size calculation for rem is based on 10px, so you can divide your px by 10 
+  to get the rem on this skin. Ex: 45px is 4.5rem.
+
+  Feel free to delete these instructions if you don't need them.
+  */
 
   /* Black & White colors */
   --eerie-black: #222222;
@@ -106,6 +108,19 @@ How to Set Colors, Fonts, and Font Sizes for Your Site
 }
 
 :root {
+  /* _Site Variables_
+  This is where you use the variables you set up in the Variable Store to apply to your site. These variables
+  are what's used throughout the skin - to find any instance within the CSS itself, you just need to search
+  it. Ex: you can search --font-family__title to find all instances of the title font family.
+
+  On this base skin, Light Mode is your default, so that's included in this :root here. If you want Dark Mode
+  to be default instead, you'll put the dark mode colors here instead. They use the same variable names; it's
+  just the colors that change. Your background image and logo can also change between light and dark if you
+  want. If not, just put the same image in both places.
+
+  Feel free to delete these instructions if you don't need them.
+  */
+
   /* Font Families */
   --font-family__title: var(--arial);
   --font-family__subheading: var(--arial);
@@ -135,7 +150,22 @@ How to Set Colors, Fonts, and Font Sizes for Your Site
 }
 
 [data-theme='dark'] {
+  /* _Data Theme Colors_
+  The data-theme determines what the colors, font families, and font sizes are swapped to when the light/dark
+  mode is toggled. On this base, the default is Light Mode, so the data-theme is dark. We don't want the
+  font families or font sizes to change, so they aren't included. Put your dark mode images and colors in here. 
+  Note for colors, even if you don't want a color to override (ex. you want the same color on both modes), 
+  you should still put it in here and just have the value the same.
+
+  If you want to make Dark Mode the default, change the word dark to light in the :root above as well as the
+  color-scheme below. Then put your light mode colors here instead. You'll also need to change the
+  toggle in the Board Wrappers script, but there are instructions there for how to do it.
+
+  Feel free to delete these instructions if you don't need them.
+  */
+
   color-scheme: dark;
+
   /* Dark Mode Images */
   --theme__image__background-main: url('https://files.jcink.net/uploads2/freecodes/shared/BaseSkin20/bg_darkmode.png');
   --theme__image__logo: url('https://placehold.co/92?text=Logo');
@@ -570,6 +600,7 @@ input[name='helpbox'] {
 }
 
 /*------------------------------------*\
+  #MEDIA750 - Input Fields 
   MOBILE - mobile devices ONLY
 *-------------------------------------*/
 
@@ -618,6 +649,7 @@ input[name='helpbox'] {
 }
 
 /*------------------------------------*\
+  #MEDIA750 - Input Fields
   DESKTOP - over 750px screens ONLY
 *-------------------------------------*/
 
@@ -1241,7 +1273,7 @@ span.small {
 \*========================================================*/
 
 /*------------------------------------*\
-  #BOARD_STATS
+  #TEMPLATES - BOARD_STATS
 *-------------------------------------*/
 
 #board-stats__grid {
@@ -1334,7 +1366,7 @@ span.small {
 }
 
 /*------------------------------------*\
-  #CSS - CATEGORY_HEADERS
+  #TEMPLATES - CATEGORY_HEADERS
 *-------------------------------------*/
 .category > .maintitle {
   /* layout */
@@ -1344,7 +1376,7 @@ span.small {
 }
 
 /*------------------------------------*\
-  #CSS - FORUM_ROWS
+  #TEMPLATES - FORUM_ROWS
 *-------------------------------------*/
 
 .forum__row {
@@ -1403,7 +1435,7 @@ span.subforums > a {
 }
 
 /*------------------------------------*\
-  #CSS - MAIN_PROFILE
+  #TEMPLATES - MAIN_PROFILE
 *-------------------------------------*/
 
 .mainprofile__row.header > .maintitle {
@@ -1595,7 +1627,7 @@ span.subforums > a {
 }
 
 /*------------------------------------*\
-  #CSS - MEMBER_LIST_HEADERS
+  #TEMPLATES - MEMBER_LIST_HEADERS
 *-------------------------------------*/
 
 .memberlist__search-inputs {
@@ -1620,7 +1652,7 @@ span.subforums > a {
 }
 
 /*------------------------------------*\
-  #CSS - MEMBER_LIST_ROW
+  #TEMPLATES - MEMBER_LIST_ROW
 *-------------------------------------*/
 
 .memberlist__row {
@@ -1712,7 +1744,7 @@ span.subforums > a {
 }
 
 /*------------------------------------*\
-  #CSS - MINI_PROFILE
+  #TEMPLATES - MINI_PROFILE
 *-------------------------------------*/
 
 .miniprofile__row--wrapper {
@@ -1853,7 +1885,7 @@ span.subforums > a {
 }
 
 /*------------------------------------*\
-  #CSS - POST_ROW
+  #TEMPLATES - POST_ROW
 *-------------------------------------*/
 
 /* maintitle above the post row */
@@ -1988,7 +2020,7 @@ span.report-macro {
 }
 
 /*------------------------------------*\
-  #CSS - REDIRECT_ROWS
+  #TEMPLATES - REDIRECT_ROWS
 *-------------------------------------*/
 
 .redirect__row {
@@ -2024,14 +2056,14 @@ span.report-macro {
 }
 
 /*------------------------------------*\
-  #CSS - SUBFORUM_HEADERS
+  #TEMPLATES - SUBFORUM_HEADERS
   Note: the only specific style for this is
   the #subforum-list id, which you can find in
   the global styles section
 *-------------------------------------*/
 
 /*------------------------------------*\
-  #TOPIC_LIST_HEADERS
+  #TEMPLATES - TOPIC_LIST_HEADERS
 *-------------------------------------*/
 
 #topic-list {
@@ -2146,7 +2178,7 @@ between topic rows and nothing else */
  *============================================================================================================*/
 
 /*------------------------------------*\
-    MOBILE - END at 750px
+  #MEDIA750 - MOBILE - END at 750px
 *-------------------------------------*/
 @media only screen and (max-width: 750px) {
   /*------------------------------------*\
@@ -2244,7 +2276,7 @@ between topic rows and nothing else */
   }
 
   /* Last 10 Posts in reverse order on Add Reply screen
-   * Again, not necessary but makes it look better on mobile */
+   * Not necessary but makes it look better on mobile */
   #topic-summary table > tbody {
     display: block;
   }
@@ -2861,7 +2893,7 @@ between topic rows and nothing else */
 }
 
 /*------------------------------------*\
-    DESKTOP - START at 750px
+  #MEDIA750 - DESKTOP - START at 750px
 *-------------------------------------*/
 @media only screen and (min-width: 750px) {
   /*------------------------------------*\
@@ -2895,7 +2927,50 @@ between topic rows and nothing else */
   }
 
   /*------------------------------------*\
-    #CSS - FORUM_ROW - Desktop Styles
+    RECENT TOPICS - Desktop Styles
+  *-------------------------------------*/
+  #recent-topics tr {
+    flex-direction: row;
+  }
+
+  #recent-topics tr > td.recent-topics-date {
+    text-align: right;
+  }
+
+  /*------------------------------------*\
+  #TEMPLATES - BOARD_STATS - Desktop Styles
+  *-------------------------------------*/
+  #board-stats__grid {
+    /* box model */
+    padding: 5px;
+
+    /* layout */
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1.5fr 1fr;
+    grid-column-gap: 15px;
+    grid-template-areas:
+      'online-now    links'
+      'birthdays     stats'
+      'online-today  stats';
+  }
+
+  .stats__grid > .boardstats--info {
+    /* box model */
+    min-height: 150px;
+
+    /* layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .links__grid {
+    margin-left: 50px;
+  }
+
+  /*------------------------------------*\
+  #TEMPLATES - FORUM_ROWS - Desktop Styles
   *-------------------------------------*/
   .forum__row {
     /* layout */
@@ -2906,85 +2981,9 @@ between topic rows and nothing else */
       'macro  subforums  subforums  subforums  subforums';
   }
 
-  /*------------------------------------*\
-    #CSS - REDIRECT_ROW - Desktop Styles
-  *-------------------------------------*/
-  .redirect__row {
-    grid-template-columns: 28px 55% 7% 7% 27%;
-    grid-column-gap: 5px;
-    grid-template-areas:
-      'macro  info       info       info       hits'
-      'macro  subforums  subforums  subforums  subforums';
-  }
-
-  /*------------------------------------*\
-    #CSS - TOPIC_ROW - Desktop Styles
-  *-------------------------------------*/
-  .topic__row {
-    grid-template-columns: 2% 2% 51% 7% 7% 27% 2%;
-    grid-column-gap: 4px;
-    grid-template-areas: 'macro posticon info replies views lastpost mod-checkbox';
-  }
-
-  /* default jcink style */
-  .wrapmini {
-    float: left;
-  }
-
-  /*------------------------------------*\
-    #CSS - POST_ROW - Desktop Styles
-  *-------------------------------------*/
-  .post__row {
-    grid-template-columns: 275px 1fr;
-    grid-column-gap: 4px;
-    grid-template-areas:
-      'post-details  post-details'
-      'miniprofile   post-content'
-      'bottom-bar    bottom-bar';
-  }
-
-  .post__row--post-details {
-    flex-direction: row;
-  }
-
-  .post__row--miniprofile {
-    border-bottom: unset;
-  }
-
-  .post__row--post-content {
-    padding: 20px 50px 10px;
-  }
-
-  /*------------------------------------*\
-    #CSS - MINI_PROFILE - Desktop Styles
-  *-------------------------------------*/
-  .miniprofile__row--wrapper {
-    /* box model */
-    padding: 10px 10px 10px 15px;
-
-    /* layout */
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'postnum'
-      'title'
-      'avatar'
-      'name'
-      'fields'
-      'awards';
-  }
-
-  .miniprofile__row.avatar > img {
-    width: 250px;
-    height: 250px;
-  }
-
-  .miniprofile__row.name {
-    margin-top: -9px;
-  }
-
-  /*------------------------------------*\
-    #CSS - MAIN_PROFILE - Desktop Styles
-  *-------------------------------------*/
+  /*----------------------------------------*\
+  #TEMPLATES - MAIN_PROFILE - Desktop Styles
+  *-----------------------------------------*/
   .main-profile.wrapper {
     /* box model */
     padding: 10px 20px 10px 15px;
@@ -3022,52 +3021,9 @@ between topic rows and nothing else */
     margin-left: 10px;
   }
 
-  /*------------------------------------*\
-    #CSS - RECENT TOPICS - Desktop Styles
-  *-------------------------------------*/
-  #recent-topics tr {
-    flex-direction: row;
-  }
-
-  #recent-topics tr > td.recent-topics-date {
-    text-align: right;
-  }
-
-  /*------------------------------------*\
-    #CSS - BOARD_STATS - Desktop Styles
-  *-------------------------------------*/
-  #board-stats__grid {
-    /* box model */
-    padding: 5px;
-
-    /* layout */
-    display: grid;
-    align-items: start;
-    grid-template-columns: 1.5fr 1fr;
-    grid-column-gap: 15px;
-    grid-template-areas:
-      'online-now    links'
-      'birthdays     stats'
-      'online-today  stats';
-  }
-
-  .stats__grid > .boardstats--info {
-    /* box model */
-    min-height: 150px;
-
-    /* layout */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  .links__grid {
-    margin-left: 50px;
-  }
-
-  /*------------------------------------*\
-    #CSS - MEMBERLIST_ROWS - Desktop Styles
-  *-------------------------------------*/
+  /*-------------------------------------------*\
+  #TEMPLATES - MEMBER_LIST_ROW - Desktop Styles
+  *--------------------------------------------*/
   .memberlist__row {
     /* layout */
     justify-items: start;
@@ -3080,6 +3036,82 @@ between topic rows and nothing else */
   .memberlist__row--name,
   .memberlist__row--group {
     justify-self: start;
+  }
+
+  /*------------------------------------*\
+  #TEMPLATES - MINI_PROFILE - Desktop Styles
+  *-------------------------------------*/
+  .miniprofile__row--wrapper {
+    /* box model */
+    padding: 10px 10px 10px 15px;
+
+    /* layout */
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'postnum'
+      'title'
+      'avatar'
+      'name'
+      'fields'
+      'awards';
+  }
+
+  .miniprofile__row.avatar > img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .miniprofile__row.name {
+    margin-top: -9px;
+  }
+
+  /*------------------------------------*\
+  #TEMPLATES - POST_ROW - Desktop Styles
+  *-------------------------------------*/
+  .post__row {
+    grid-template-columns: 275px 1fr;
+    grid-column-gap: 4px;
+    grid-template-areas:
+      'post-details  post-details'
+      'miniprofile   post-content'
+      'bottom-bar    bottom-bar';
+  }
+
+  .post__row--post-details {
+    flex-direction: row;
+  }
+
+  .post__row--miniprofile {
+    border-bottom: unset;
+  }
+
+  .post__row--post-content {
+    padding: 20px 50px 10px;
+  }
+
+  /*------------------------------------*\
+  #TEMPLATES - REDIRECT_ROWS - Desktop Styles
+  *-------------------------------------*/
+  .redirect__row {
+    grid-template-columns: 28px 55% 7% 7% 27%;
+    grid-column-gap: 5px;
+    grid-template-areas:
+      'macro  info       info       info       hits'
+      'macro  subforums  subforums  subforums  subforums';
+  }
+
+  /*------------------------------------*\
+  #TEMPLATES - TOPIC_ROW - Desktop Styles
+  *-------------------------------------*/
+  .topic__row {
+    grid-template-columns: 2% 2% 51% 7% 7% 27% 2%;
+    grid-column-gap: 4px;
+    grid-template-areas: 'macro posticon info replies views lastpost mod-checkbox';
+  }
+
+  /* default jcink style */
+  .wrapmini {
+    float: left;
   }
 }
 
@@ -3110,16 +3142,16 @@ between topic rows and nothing else */
   }
 
   /*------------------------------------*\
-    #CSS - POST_ROW
+    #TEMPLATES - POST_ROW - 1440px screen
   *-------------------------------------*/
   .post__row--post-content {
     padding: 20px 75px 10px;
   }
 }
 
-/*************************************
+/***************************************
  * Copyright: Removal is against Terms
- *************************************/
+ ***************************************/
 
 #copyright {
   /* type */
