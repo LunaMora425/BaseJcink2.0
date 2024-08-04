@@ -1,7 +1,7 @@
 /*============================================================================================================
- * ░▀▀█░█▀▀░▀█▀░█▀█░█░█░░░█▀▄░█▀█░█▀▀░█▀▀░░░█▀▀░█░█░▀█▀░█▀█
- * ░░░█░█░░░░█░░█░█░█▀▄░░░█▀▄░█▀█░▀▀█░█▀▀░░░▀▀█░█▀▄░░█░░█░█
- * ░▀▀░░▀▀▀░▀▀▀░▀░▀░▀░▀░░░▀▀░░▀░▀░▀▀▀░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░▀░▀
+ *  ▀▀█ █▀▀ ▀█▀ █▀█ █ █  █▀▄ █▀█ █▀▀ █▀▀  █▀▀ █ █ ▀█▀ █▀█
+ *    █ █    █  █ █ █▀▄  █▀▄ █▀█ ▀▀█ █▀▀  ▀▀█ █▀▄  █  █ █
+ *  ▀▀  ▀▀▀ ▀▀▀ ▀ ▀ ▀ ▀  ▀▀  ▀ ▀ ▀▀▀ ▀▀▀  ▀▀▀ ▀ ▀ ▀▀▀ ▀ ▀
  *  -- Jcink Base Skin --
  * Built off the Jcink.com Forum Hosting Skin v1.0.2 (last modified February 2024)
  * Created By: Luna of Free Codes, https://freecodes.jcink.net
@@ -31,34 +31,33 @@
  * to remove any notations you don't need.
  *============================================================================================================ */
 
-/*============================================================================================================
- * --TABLE OF CONTENTS-- 
+/* --TABLE OF CONTENTS-- 
  * CSS
+ * ├── Default Typography
  * ├── Global Board Styles
+ * ├── Input Fields
  * ├── Custom Navigation Bar
- * ├── Header Area
- * ├── Board Area
- * │   └── HTML Templates
- * ├── Footer Area
- * ├── Default Jcink Pages
+ * ├── Default Jcink Styles & Pages
+ * ├── HTML Templates
  * └── Media Queries
- *============================================================================================================ */
+ */
 
-/****************************************
-  Default Colors, Fonts, and Styles
- *****************************************/
-
-/* 
- This skin is set up with the following defaults based on current UI Design best practices:
-+--------------+--------------+---------------+-------------+
-|    Images    |    Colors    | Font Families | Font Sizes  |
-+--------------+--------------+---------------+-------------+
-| 1 background | 2 b&w body   | 1 title       | 1 title     |
-| 1 logo       | 2 background | 1 subtitle    | 1 subtitle  |
-|              | 1 primary    | 1 body        | 1 primary   |
-|              | 1 secondary  | 1 accent      | 1 secondary |
-|              | 1 accent     |               |             |
-+--------------+--------------+---------------+-------------+
+/*============================================================================================================
+ *  █▀▄ █▀▀ █▀▀ █▀█ █ █ █  ▀█▀  ▀█▀ █ █ █▀█ █▀█ █▀▀ █▀▄ █▀█ █▀█ █ █ █ █
+ *  █ █ █▀▀ █▀▀ █▀█ █ █ █   █    █   █  █▀▀ █ █ █ █ █▀▄ █▀█ █▀▀ █▀█  █ 
+ *  ▀▀  ▀▀▀ ▀   ▀ ▀ ▀▀▀ ▀▀▀ ▀    ▀   ▀  ▀   ▀▀▀ ▀▀▀ ▀ ▀ ▀ ▀ ▀   ▀ ▀  ▀ 
+ * --Default Typography--
+ *
+ * This skin is set up with the following defaults based on current UI Design best practices:
+ * +--------------+--------------+---------------+-------------+
+ * |    Images    |    Colors    | Font Families | Font Sizes  |
+ * +--------------+--------------+---------------+-------------+
+ * | 1 background | 2 b&w body   | 1 title       | 1 title     |
+ * | 1 logo       | 2 background | 1 subtitle    | 1 subtitle  |
+ * |              | 1 primary    | 1 body        | 1 primary   |
+ * |              | 1 secondary  | 1 accent      | 1 secondary |
+ * |              | 1 accent     |               |             |
+ * +--------------+--------------+---------------+-------------+
 
 
 How to Set Colors, Fonts, and Font Sizes for Your Site
@@ -135,10 +134,12 @@ How to Set Colors, Fonts, and Font Sizes for Your Site
 }
 
 [data-theme='dark'] {
+  color-scheme: dark;
   /* TODO: rehost; for testing only */
   /* Dark Mode Images */
   --theme__image__background-main: url('https://www.transparenttextures.com/patterns/black-twill.png');
   --theme__image__logo: url('https://via.placeholder.com/150');
+
   /* Dark Mode Colors */
   --theme__background-main: var(--eerie-black);
   --theme__background-contrast: var(--jet);
@@ -149,9 +150,12 @@ How to Set Colors, Fonts, and Font Sizes for Your Site
   --theme__text-contrast: var(--eerie-black);
 }
 
-/****************************************
-  Global Board Styles
- *****************************************/
+/*=====================================================
+ *  █▀▀ █   █▀█ █▀▄ █▀█ █    █▀▀ ▀█▀ █ █ █   █▀▀ █▀▀
+ *  █ █ █   █ █ █▀▄ █▀█ █    ▀▀█  █   █  █   █▀▀ ▀▀█
+ *  ▀▀▀ ▀▀▀ ▀▀▀ ▀▀  ▀ ▀ ▀▀▀  ▀▀▀  ▀   ▀  ▀▀▀ ▀▀▀ ▀▀▀
+ *  --Global Board Styles-- 
+ *=====================================================*/
 
 html {
   overflow-x: auto;
@@ -203,6 +207,23 @@ body {
   padding: 0 10px;
 }
 
+/* this sets the background color across most of the site, 
+change it here and it will change in all these places. 
+Tread carefully. */
+.tableborder,
+.category,
+#subforum-list,
+#boardstats,
+.main-profile,
+.memberlist,
+#copyright {
+  /* box model */
+  border: 1px solid var(--theme__color-primary);
+
+  /* background */
+  background: var(--theme__background-contrast);
+}
+
 /*------------------------------------*\
     Links
 \*------------------------------------*/
@@ -218,7 +239,7 @@ a:hover {
   color: var(--theme__color-secondary);
 }
 
-/* this is for accessibility purposes when there is no title */
+/* this is for accessibility purposes when there is no title or content */
 a:not([name]):empty {
   display: none;
 }
@@ -285,7 +306,7 @@ a:not([name]):empty {
   font-family: var(--font-family__accent);
 }
 
-/* for use with clipboard script */
+/* for use with custom clipboard script */
 .button-small.copy-button {
   /* box model */
   max-width: 100px;
@@ -299,8 +320,8 @@ a:not([name]):empty {
 }
 
 /**********************************************
-     Input buttons, e.g. submit, text input, etc
-   ***********************************************/
+  Input buttons, e.g. submit, text input, etc
+ **********************************************/
 
 .button-large,
 .button-large.closed,
@@ -382,10 +403,55 @@ a:not([name]):empty {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset;
 }
 
+/*******************************
+  Pagination e.g. [1],2,3 ...
+ *******************************/
+
+.pagination .pagination_current,
+.pagination a {
+  padding: 2px 5px;
+}
+
+.pagination .pagination_current,
+.pagination a:link,
+.pagination a:visited,
+.pagination a:active {
+  /* box model */
+  padding: 0 6px;
+  border: 1px solid var(--theme__color-primary);
+  border-radius: 3px;
+
+  /* background */
+  background: var(--theme__color-primary);
+
+  /* type */
+  color: var(--theme__text-contrast);
+}
+
+.pagination a:hover {
+  background: var(--theme__color-secondary);
+}
+
+.pagination a:link,
+.pagination a:visited,
+.pagination a:active,
+.pagination a:hover {
+  /* type */
+  text-decoration: none;
+  color: var(--theme__text-contrast);
+
+  /* other */
+  box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.pagination_pagetxt {
+  display: none;
+}
+
 /*==================================================================================================
- * ░▀█▀░█▀█░█▀█░█░█░▀█▀░░░█▀▀░▀█▀░█▀▀░█░░░█▀▄░█▀▀
- * ░░█░░█░█░█▀▀░█░█░░█░░░░█▀▀░░█░░█▀▀░█░░░█░█░▀▀█
- * ░▀▀▀░▀░▀░▀░░░▀▀▀░░▀░░░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀░░▀▀▀
+ *  ▀█▀ █▀█ █▀█ █ █ ▀█▀  █▀▀ ▀█▀ █▀▀ █   █▀▄ █▀▀
+ *   █  █ █ █▀▀ █ █  █   █▀▀  █  █▀▀ █   █ █ ▀▀█
+ *  ▀▀▀ ▀ ▀ ▀   ▀▀▀  ▀   ▀   ▀▀▀ ▀▀▀ ▀▀▀ ▀▀  ▀▀▀
  *  --Input Fields-- 
  * The input fields are almost wholly responsible for how bad a mobile view of desktop is on Jcink
  * Fixing these solves a good 75% of the design problems when trying to style pages that aren't
@@ -429,7 +495,7 @@ input[type='reset'] {
 /* form fields on posting pages */
 input[name='TopicTitle'],
 input[name='TopicDesc'],
-/* used for signature & create message boxes also */
+/* used for posting pages but used for signature & create message boxes also */
 textarea[name='Post'],
 input[type='file'],
 /* New Poll specific styling */
@@ -526,11 +592,18 @@ input[name='helpbox'] {
 }
 
 /*============================================================================================================
- * --Default Jcink Styles-- 
+ *  █▀▄ █▀▀ █▀▀ █▀█ █ █ █  ▀█▀  █▀█ █▀█ █▀▀ █▀▀ █▀▀
+ *  █ █ █▀▀ █▀▀ █▀█ █ █ █   █   █▀▀ █▀█ █ █ █▀▀ ▀▀█
+ *  ▀▀  ▀▀▀ ▀   ▀ ▀ ▀▀▀ ▀▀▀ ▀   ▀   ▀ ▀ ▀▀▀ ▀▀▀ ▀▀▀
+ * --Default Jcink Styles & Pages-- 
  * These are primarily classes that are part of jcink pages that you can't edit without JavaScript/JQuery 
  * and are used in places you don't expect, so styling the 'default' risks changing something on a 
  * completely different page that you won't know about until you do it. Tried to keep the use of these 
  * 'global' styles minimal for this skin, and instead style them on the pages where they're used.
+ *
+ * The pages are all Jcink pages that we do not have access to edit as part of our HTML Template set.
+ * They have all been made 100% mobile responsive based on existing jcink html structures. One script
+ * was used to style the Mod CP, but everything else is 100% pure vanilla jcink.
  *============================================================================================================*/
 
 /*------------------------------------*\
@@ -581,17 +654,97 @@ input[name='helpbox'] {
   font-weight: bold;
 }
 
+/****************************************
+    Default Footer Area
+ *****************************************/
+
+/* this can be hidden because these links are included in the HTML template for the board stats */
+#delcookiesrow {
+  display: none;
+}
+
+#mark-as-read-subto {
+  /* box model */
+  max-width: 350px;
+  padding: 3px;
+  border: 1px solid var(--theme__color-secondary);
+
+  /* background */
+  background: var(--theme__background-contrast);
+
+  /* type */
+  font-size: var(--textsize-body__secondary);
+}
+
+/****************************************
+   Viewing Online List
+ *****************************************/
+
+#Online table tr:first-child th.titlemedium {
+  background: var(--theme__background-main);
+}
+
+#Online table tr:first-child th.titlemedium:last-child,
+#Online table tr td.row1:last-child {
+  display: none;
+}
+
+/****************************************
+  Redirect Screen 
+  (for login, registration, search, etc)
+*****************************************/
+
+#redirect-screen .tablefill {
+  border: 1px solid var(--theme__color-accent);
+  padding: 6px;
+}
+
 /*------------------------------------*\
-   Table Classes
+  #UserCP - Global Styles
 \*------------------------------------*/
 
-.tableborder {
+#ucpmenu,
+#ucpcontent {
   /* box model */
-  border: 1px solid var(--theme__color-primary);
+  border: 1px solid var(--theme__color-secondary);
 
   /* background */
   background: var(--theme__background-contrast);
 }
+
+/****************************************
+  Alerts Area
+  /index.php?act=UserCP&CODE=alerts
+  NOTE: the only thing that breaks the alert 
+  screen is the hardcoded 300px width style
+ *****************************************/
+
+#UserCP.code-alerts table.tableborder {
+  width: 100% !important;
+  max-width: 300px;
+}
+
+/*-----------------------------------------------------------------------------------------*\
+  #ModCP - Global Styles
+  starts from /index.php?act=modcp
+
+  NOTE: this styling can only be accomplished via a script because the modcp is a mess 
+  and there have been no updates to it to add targetable selectors. The script is included
+  as part of this skin and adds a span class of header-name to each item in the former 
+  table row and wraps the tables in a class called .modcp-table (which is needed because 
+  there are MANY nested tables in the modcp). 
+  
+  If you aren't using the script you can get rid of this whole section
+\*-----------------------------------------------------------------------------------------*/
+
+/* we only want to show the new headers on mobile devices */
+#modcp span.header-name {
+  display: none;
+}
+
+/*------------------------------------*\
+   Table Classes
+\*------------------------------------*/
 
 /* Topic Options dropdown on post view */
 #topic_open {
@@ -704,6 +857,8 @@ td.darkrow2 {
 
 /********************************
   Miscellaneous
+  Note: this category is called Miscellaneous
+  by Jcink, I didn't change the name of the section
  ********************************/
 
 /* image tag styles */
@@ -743,9 +898,9 @@ span.small {
 }
 
 /*========================================================
- * ░█▀▀░█░█░█▀▀░▀█▀░█▀█░█▄█░░░█▀█░█▀█░█░█░░░█▀▄░█▀█░█▀▄
- * ░█░░░█░█░▀▀█░░█░░█░█░█░█░░░█░█░█▀█░▀▄▀░░░█▀▄░█▀█░█▀▄
- * ░▀▀▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░░░▀░▀░▀░▀░░▀░░░░▀▀░░▀░▀░▀░▀
+ *  █▀▀ █ █ █▀▀ ▀█▀ █▀█ █▄█  █▀█ █▀█ █ █  █▀▄ █▀█ █▀▄
+ *  █   █ █ ▀▀█  █  █ █ █ █  █ █ █▀█ ▀▄▀  █▀▄ █▀█ █▀▄
+ *  ▀▀▀ ▀▀▀ ▀▀▀  ▀  ▀▀▀ ▀ ▀  ▀ ▀ ▀ ▀  ▀   ▀▀  ▀ ▀ ▀ ▀
  * --Custom Navigation Bar-- 
  * This is a 100% custom navigation bar to replace all 
  * jcink defaults. For Desktop styles, search for
@@ -1047,23 +1202,15 @@ span.small {
 }
 
 /*========================================================*\
- * ░█░█░▀█▀░█▄█░█░░░░░▀█▀░█▀▀░█▄█░█▀█░█░░░█▀█░▀█▀░█▀▀░█▀▀
- * ░█▀█░░█░░█░█░█░░░░░░█░░█▀▀░█░█░█▀▀░█░░░█▀█░░█░░█▀▀░▀▀█
- * ░▀░▀░░▀░░▀░▀░▀▀▀░░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀
+ *  █ █ ▀█▀ █▄█ █    ▀█▀ █▀▀ █▄█ █▀█ █   █▀█ ▀█▀ █▀▀ █▀▀
+ *  █▀█  █  █ █ █     █  █▀▀ █ █ █▀▀ █   █▀█  █  █▀▀ ▀▀█
+ *  ▀ ▀  ▀  ▀ ▀ ▀▀▀   ▀  ▀▀▀ ▀ ▀ ▀   ▀▀▀ ▀ ▀  ▀  ▀▀▀ ▀▀▀
  * --Jcink HTML Templates-- 
 \*========================================================*/
 
 /*------------------------------------*\
   #CSS - CATEGORY_HEADERS
 \*------------------------------------*/
-.category {
-  /* box model */
-  border: 1px solid var(--theme__color-primary);
-
-  /* background */
-  background: var(--theme__background-contrast);
-}
-
 .category > .maintitle {
   /* layout */
   display: flex;
@@ -1073,15 +1220,10 @@ span.small {
 
 /*------------------------------------*\
   #CSS - SUBFORUM_HEADERS
+  Note: the only specific style for this is
+  the #subforum-list class, which you can find in
+  the global styles section
 \*------------------------------------*/
-
-#subforum-list {
-  /* box model */
-  border: 1px solid var(--theme__color-primary);
-
-  /* background */
-  background: var(--theme__background-contrast);
-}
 
 /*------------------------------------*\
   #CSS - FORUM_ROWS
@@ -1182,16 +1324,10 @@ span.subforums > a {
   #BOARD_STATS
 \*------------------------------------*/
 
-#boardstats {
-  /* box model */
-  border: 1px solid var(--theme__color-primary);
-  /* background */
-  background: var(--theme__background-contrast);
-}
-
 #board-stats__grid {
   /* box model */
   padding: 5px;
+
   /* layout */
   display: grid;
   align-items: center;
@@ -1210,6 +1346,7 @@ span.subforums > a {
 .boardstats__online-today > .maintitle {
   /* box model */
   margin: 5px 0;
+
   /* type */
   font-size: var(--textsize-body__primary);
 }
@@ -1229,6 +1366,7 @@ span.subforums > a {
 .links__grid {
   /* box model */
   margin-left: 5px;
+
   /* layout */
   grid-template-columns: 1fr 1fr;
   row-gap: 10px;
@@ -1275,28 +1413,6 @@ span.subforums > a {
   grid-area: online-today;
 }
 
-/****************************************
-    Default Footer Area
- *****************************************/
-
-/* this can be hidden because these links are included in the HTML template for the board stats */
-#delcookiesrow {
-  display: none;
-}
-
-#mark-as-read-subto {
-  /* box model */
-  max-width: 350px;
-  padding: 3px;
-  border: 1px solid var(--theme__color-secondary);
-
-  /* background */
-  background: var(--theme__background-contrast);
-
-  /* type */
-  font-size: var(--textsize-body__secondary);
-}
-
 /*------------------------------------*\
   #TOPIC_LIST_HEADERS
 \*------------------------------------*/
@@ -1304,6 +1420,7 @@ span.subforums > a {
 #topic-list {
   /* box model */
   border: 1px solid var(--theme__color-primary);
+
   /* background */
   background: var(--theme__background-contrast);
 }
@@ -1409,8 +1526,10 @@ between topic rows and nothing else */
 .topic-desc {
   /* box model */
   padding-left: 10px;
+
   /* layout */
   display: block;
+
   /* type */
   font-size: var(--textsize__subheading);
 }
@@ -1419,6 +1538,7 @@ between topic rows and nothing else */
   /* box model */
   padding: 5px;
   border-top: 1px solid var(--theme__background-main);
+
   /* layout */
   display: grid;
   grid-template-areas:
@@ -1432,6 +1552,7 @@ between topic rows and nothing else */
 .post__row--bottombar.maintitle {
   /* box model */
   padding: 8px 15px;
+
   /* type */
   font-size: var(--textsize-body__secondary);
 }
@@ -1456,8 +1577,10 @@ span.report-macro {
   /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+
   /* background */
   background: var(--theme__color-secondary);
+
   /* type */
   text-align: center;
 }
@@ -1466,6 +1589,7 @@ span.report-macro {
   /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+
   /* background */
   background: var(--theme__color-secondary);
 }
@@ -1485,8 +1609,10 @@ span.report-macro {
   /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+
   /* background */
   background: var(--theme__color-secondary);
+
   /* type */
   font-size: unset;
 }
@@ -1515,6 +1641,7 @@ span.report-macro {
 #ST table > tbody > tr > td[align='right'] {
   /* box model */
   width: 100%;
+
   /* layout */
   display: flex;
   flex-wrap: wrap;
@@ -1529,6 +1656,7 @@ span.report-macro {
 .miniprofile__row--wrapper {
   /* box model */
   padding: 9px;
+
   /* layout */
   display: grid;
   align-content: center;
@@ -1546,11 +1674,14 @@ span.report-macro {
   /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+
   /* background */
   background: var(--theme__color-secondary);
+
   /* layout */
   display: flex;
   justify-content: space-between;
+
   /* type */
   color: var(--theme__text-contrast);
 }
@@ -1569,6 +1700,7 @@ span.report-macro {
 .miniprofile__row.title {
   /* box model */
   padding: 5px 0;
+
   /* type */
   font-family: var(--font-family__accent), system-ui;
   font-style: italic;
@@ -1578,12 +1710,15 @@ span.report-macro {
 .miniprofile__row.name {
   /* box model */
   padding: 5px;
+
   /* background */
   background: var(--theme__background-main);
+
   /* layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   /* type */
   font-size: var(--textsize-body__secondary);
   text-align: center;
@@ -1594,8 +1729,10 @@ span.report-macro {
   margin-bottom: 10px;
   padding-bottom: 5px;
   border-bottom: 1px solid var(--theme__color-secondary);
+
   /* type */
   font-size: var(--textsize__subheading);
+
   /* other */
   overflow-wrap: anywhere;
 }
@@ -1604,8 +1741,10 @@ span.report-macro {
   /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+
   /* background */
   background: var(--theme__color-secondary);
+
   /* type */
   text-align: center;
   color: var(--theme__text-contrast);
@@ -1615,6 +1754,7 @@ span.report-macro {
   /* box model */
   padding: 5px;
   border-radius: 3px;
+
   /* background */
   background: var(--theme__background-main);
 }
@@ -1654,18 +1794,13 @@ span.report-macro {
   #CSS - MAIN_PROFILE
 \*------------------------------------*/
 
-.main-profile {
-  /* box model */
-  border: 1px solid var(--theme__color-primary);
-  /* background */
-  background: var(--theme__background-contrast);
-}
-
 .mainprofile__row.header > .maintitle {
   /* box model */
   padding-left: 20px;
+
   /* type */
   font-size: var(--textsize__title);
+
   /* other */
   overflow-wrap: anywhere;
 }
@@ -1676,6 +1811,7 @@ span.report-macro {
   flex-wrap: wrap;
   align-items: center;
   column-gap: 10px;
+
   /* type */
   font-size: var(--textsize-body__secondary);
   font-weight: normal;
@@ -1684,6 +1820,7 @@ span.report-macro {
 .header--account-info > span.title {
   /* box model */
   padding: 5px 0;
+
   /* type */
   font-family: var(--font-family__accent), system-ui;
   font-style: italic;
@@ -1693,6 +1830,7 @@ span.report-macro {
 .main-profile.wrapper {
   /* box model */
   padding: 9px;
+
   /* layout */
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -1714,6 +1852,7 @@ span.report-macro {
   align-items: center;
   justify-content: start;
   grid-template-columns: 1fr;
+
   /* type */
   text-transform: uppercase;
 }
@@ -1739,6 +1878,7 @@ span.report-macro {
   /* box model */
   padding: 5px 7px;
   border-radius: 5px;
+
   /* background */
   background: var(--theme__background-main);
 }
@@ -1767,8 +1907,10 @@ span.report-macro {
   /* box model */
   height: 70px;
   margin: 5px auto;
+
   /* layout */
   display: block;
+
   /* other */
   overflow: auto;
 }
@@ -1790,8 +1932,10 @@ span.report-macro {
   max-width: 70px;
   padding: 5px 7px;
   border-radius: 5px;
+
   /* background */
   background: var(--theme__color-secondary);
+
   /* type */
   text-align: center;
   color: var(--theme__text-contrast);
@@ -1846,14 +1990,17 @@ span.report-macro {
   /* box model */
   padding: 5px;
   border-bottom: 1px solid var(--theme__color-secondary);
+
   /* background */
   background: var(--theme__background-main);
+
   /* layout */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
+
   /* type */
   line-height: 160%;
   font-weight: bold;
@@ -1864,18 +2011,12 @@ span.report-macro {
   #CSS - MEMBER_LIST_ROW
 \*------------------------------------*/
 
-.memberlist {
-  /* box model */
-  border: 1px solid var(--theme__color-primary);
-  /* background */
-  background: var(--theme__background-contrast);
-}
-
 .memberlist__row {
   /* box model */
   margin: 0px 5px;
   padding: 5px;
   border-bottom: 2px solid var(--theme__color-secondary);
+
   /* layout */
   display: grid;
   align-items: center;
@@ -1892,7 +2033,7 @@ span.report-macro {
 }
 
 /* stop last row from having a bottom border since the table
-** already has one */
+ * already has one */
 .memberlist__row:last-child {
   border-bottom: none;
 }
@@ -1907,6 +2048,7 @@ span.report-macro {
   height: 100px;
   border: 1px solid var(--theme__color-primary);
   border-radius: 3px;
+
   /* other */
   object-fit: cover;
 }
@@ -1914,6 +2056,7 @@ span.report-macro {
 .memberlist__row--name {
   /* type */
   font-size: var(--textsize__subheading);
+
   /* other */
   overflow-wrap: anywhere;
 }
@@ -1956,196 +2099,10 @@ span.report-macro {
   grid-area: last-post-date;
 }
 
-/*******************************
-  Pagination e.g. [1],2,3 ...
- *******************************/
-
-.pagination .pagination_current,
-.pagination a {
-  padding: 2px 5px;
-}
-
-.pagination .pagination_current,
-.pagination a:link,
-.pagination a:visited,
-.pagination a:active {
-  /* box model */
-  padding: 0 6px;
-  border: 1px solid var(--theme__color-primary);
-  border-radius: 3px;
-  /* background */
-  background: var(--theme__color-primary);
-  /* type */
-  color: var(--theme__text-contrast);
-}
-
-.pagination a:hover {
-  background: var(--theme__color-secondary);
-}
-
-.pagination a:link,
-.pagination a:visited,
-.pagination a:active,
-.pagination a:hover {
-  /* type */
-  text-decoration: none;
-  color: var(--theme__text-contrast);
-  /* other */
-  box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
-}
-
-.pagination_pagetxt {
-  display: none;
-}
-
-/*------------------------------------*\
-  #UserCP - Global Styles
-\*------------------------------------*/
-
-#ucpmenu,
-#ucpcontent {
-  /* box model */
-  border: 1px solid var(--theme__color-secondary);
-
-  /* background */
-  background: var(--theme__background-contrast);
-}
-
-/****************************************
-   Alerts Area
-   /index.php?act=UserCP&CODE=alerts
-   NOTE: the only thing that breaks the alert screen is the hardcoded 300px width style
- *****************************************/
-
-#UserCP.code-alerts table.tableborder {
-  width: 100% !important;
-  max-width: 300px;
-}
-
-/*------------------------------------*\
-  #ModCP - Global Styles
-  starts from /index.php?act=modcp
-  NOTE: this styling can only be accomplished via a script because the modcp is a mess 
-  and there have been no updates to it to add targetable selectors. The script is included
-  as part of this skin and adds a span class of header-name to each item in the former table row
-  and wraps the tables in a class called .modcp-table (which is needed because there are MANY
-  nested tables in the modcp). If you aren't using the script you can get rid of this whole section
-\*------------------------------------*/
-
-/* we only want to show the new headers on mobile devices */
-#modcp span.header-name {
-  display: none;
-}
-
-/*------------------------------------*\
-  #REGISTRATION
-\*------------------------------------*/
-
-/* TODO: move and combine with the rest */
-@media only screen and (max-width: 750px) {
-  #registration-form table {
-    display: block;
-  }
-
-  #registration-form .tablepad > table > tbody {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #registration-form tbody > tr {
-    display: contents;
-  }
-
-  #registration-form tbody > tr > td {
-    width: 100%;
-  }
-
-  /* registration form is a nightmare of nested tables, this is to target
-   * just the fieldsets */
-  #registration-form fieldset > table > tbody {
-    display: grid;
-  }
-
-  /* position the password and email input fields correctly */
-  #registration-form fieldset:nth-of-type(2) > table > tbody td[width='100%'],
-  #registration-form fieldset:nth-of-type(3) > table > tbody td[width='100%'] {
-    grid-row: 3;
-  }
-
-  /* recaptcha overflows on smallest screen size of 320px, this is the best
-   * that I can do to make the overflow be not so noticeable */
-  #registration-form fieldset:nth-of-type(4) {
-    padding: 0;
-  }
-}
-
-/*------------------------------------*\
-  #LOGIN
-\*------------------------------------*/
-
-/* TODO: move and combine with the rest */
-@media only screen and (max-width: 750px) {
-  #Login form[name='LOGIN'] tbody {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #Login form[name='LOGIN'] tbody > tr {
-    display: contents;
-  }
-}
-
-/****************************************
-   Viewing Online List
- *****************************************/
-
-#Online table tr:first-child th.titlemedium {
-  background: var(--theme__background-main);
-}
-
-#Online table tr:first-child th.titlemedium:last-child,
-#Online table tr td.row1:last-child {
-  display: none;
-}
-
-/****************************************
-  Redirect Screen 
-  (for login, registration, search, etc)
-*****************************************/
-
-#redirect-screen .tablefill {
-  border: 1px solid var(--theme__color-accent);
-  padding: 6px;
-}
-
-/*************************************
- * Copyright: Removal is against Terms
- *************************************/
-
-#copyright {
-  /* box model */
-  border: 1px solid var(--theme__color-primary);
-
-  /* background */
-  background: var(--theme__background-contrast);
-
-  /* type */
-  font-size: var(--textsize-body__secondary);
-  text-align: center;
-}
-
-#copyright .tableborder {
-  border: none;
-}
-
-#copyright a {
-  text-decoration: underline;
-}
-
 /*============================================================================================================
- * ░█▄█░█▀▀░█▀▄░▀█▀░█▀█░░░▄▀▄░█░█░█▀▀░█▀▄░▀█▀░█▀▀░█▀▀
- * ░█░█░█▀▀░█░█░░█░░█▀█░░░█\█░█░█░█▀▀░█▀▄░░█░░█▀▀░▀▀█
- * ░▀░▀░▀▀▀░▀▀░░▀▀▀░▀░▀░░░░▀\░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀
+ *  █▄█ █▀▀ █▀▄ ▀█▀ █▀█  ▄▀▄ █ █ █▀▀ █▀▄ ▀█▀ █▀▀ █▀▀
+ *  █ █ █▀▀ █ █  █  █▀█  █\█ █ █ █▀▀ █▀▄  █  █▀▀ ▀▀█
+ *  ▀ ▀ ▀▀▀ ▀▀  ▀▀▀ ▀ ▀   ▀\ ▀▀▀ ▀▀▀ ▀ ▀ ▀▀▀ ▀▀▀ ▀▀▀
  * --Media Queries-- 
  * On the pages we have HTML access to, the CSS is written in a mobile-first approach, so the media query is
  * for desktop (set to START at 750px). This is the opposite for pages we don't have HTML access to - the
@@ -2164,6 +2121,7 @@ span.report-macro {
     Mod Team Link
     /index.php?act=Stats&CODE=leaders
   \*------------------------------------*/
+
   /* have to scope it to the top level table because there are nested tables; 
    * removes the table headings, the 'moderates in' column, the location column, and the
    * post count column */
@@ -2178,10 +2136,6 @@ span.report-macro {
     #POST - Mobile Styles
     aka: New Topic, Add Reply, etc
   \*------------------------------------*/
-  /* this is a case where desktop is fine and can stay as is...
-   * so we reverse the media query and contain all styles within
-   * please note none of this stuff is NECESSARY, this is just to
-   * make it look better than the default tiling */
 
   /* needed to space the post icons correctly */
   table#posting-form tr#post-icon-options > td.pformleft {
@@ -2282,6 +2236,57 @@ span.report-macro {
   }
 
   /*------------------------------------*\
+    #REGISTRATION - Mobile Styles
+  \*------------------------------------*/
+  #registration-form table {
+    display: block;
+  }
+
+  #registration-form .tablepad > table > tbody {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #registration-form tbody > tr {
+    display: contents;
+  }
+
+  #registration-form tbody > tr > td {
+    width: 100%;
+  }
+
+  /* registration form is a nightmare of nested tables, this is to target
+   * just the fieldsets */
+  #registration-form fieldset > table > tbody {
+    display: grid;
+  }
+
+  /* position the password and email input fields correctly */
+  #registration-form fieldset:nth-of-type(2) > table > tbody td[width='100%'],
+  #registration-form fieldset:nth-of-type(3) > table > tbody td[width='100%'] {
+    grid-row: 3;
+  }
+
+  /* recaptcha overflows on smallest screen size of 320px, this is the best
+   * that I can do to make the overflow be not so noticeable */
+  #registration-form fieldset:nth-of-type(4) {
+    padding: 0;
+  }
+
+  /*------------------------------------*\
+    #LOGIN - Mobile Styles
+  \*------------------------------------*/
+
+  #Login form[name='LOGIN'] tbody {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Login form[name='LOGIN'] tbody > tr {
+    display: contents;
+  }
+
+  /*------------------------------------*\
     #SEARCH - Mobile Styles
     /index.php?act=Search
     NOTE: have to scope the body ID to the .code-00 body class because
@@ -2340,11 +2345,15 @@ span.report-macro {
     grid-row: 6;
   }
 
-  /* View All Posts results 
-  ** this has to come first in the CSS because the search results all share the same 
-  ** code-show -- but the topics has a search-topics id wrapped around it 
-  ** so if this one comes first, we can override as needed with a more specific selector for the
-  ** topics results */
+  /*------------------------------------------------*\
+    #SEARCH RESULTS - View All Posts - Mobile Styles
+    /index.php?act=Search&CODE=show&result_type=posts
+    NOTE: this HAS to come first in the CSS because the search results all share the same
+    code-show -- but the "View All Topics" has a search-topics id wrapped around it
+    so if this one comes first, we can override as needed with a more specific selector for the
+    "View All Topics" results
+  \*------------------------------------------------*/
+
   #Search.code-show .tableborder > table.tablebasic > tbody {
     display: flex;
     flex-direction: column;
@@ -2375,7 +2384,10 @@ span.report-macro {
     justify-content: space-around;
   }
 
-  /* View All Topics results */
+  /*--------------------------------------------------*\
+    #SEARCH RESULTS - View All Topics - Mobile Styles
+    /index.php?act=Search&CODE=show&result_type=topics
+  \*--------------------------------------------------*/
   #Search.code-show #search-topics table.tablebasic > tbody > tr {
     /* layout */
     display: grid;
@@ -2515,7 +2527,7 @@ span.report-macro {
   }
 
   /*------------------------------------*\
-    #SEARCH - Active Topics Area
+    #SEARCH - Active Topics Page
     /index.php?act=Search&CODE=getactive
   \*------------------------------------*/
   #Search.code-getactive form[name='dateline'] > div[align='right'] {
@@ -2664,7 +2676,9 @@ span.report-macro {
   /*------------------------------------*\
     #MESSENGER
     starts from /index.php?act=Msg&CODE=01
-    NOTE: the 'create' and 'reply' codes of the messenger use the same post PHP template as the create new thread/add reply codes
+    NOTE: the 'create' and 'reply' codes of the messenger use the same PHP template as the create new thread/add reply codes
+    so unless you scope it, if you style one you style all of them. We've already styled so this is cleanup just for Messenger
+    on Mobile
   \*------------------------------------*/
   /* target just the top level tables and not any of the nested tables */
   #Msg #innerwrapper > table > tbody > tr:first-child {
@@ -2749,11 +2763,13 @@ span.report-macro {
   /*------------------------------------*\
     #ModCP - Mobile Styles
     starts from /index.php?act=modcp
-    NOTE: this styling can only be accomplished via a script because the modcp is a mess 
+    NOTE: this styling can only be accomplished via a script because the modcp is a mess of tables and HTML
     and there have been no updates to it to add targetable selectors. The script is included
     as part of this skin and adds a span class of header-name to each item in the former table row
     and wraps the top level tables in a class called .modcp-table (which is needed because there are MANY
-    nested tables in the modcp). If you aren't using the script you can get rid of this whole section
+    nested tables in the modcp). 
+    
+    If you aren't using the script you can get rid of this whole section
   \*------------------------------------*/
   /* target just the top level table and not any of the nested tables */
   #modcp #innerwrapper > table > tbody > tr {
@@ -3067,4 +3083,22 @@ span.report-macro {
   .post__row--post-content {
     padding: 20px 75px 10px;
   }
+}
+
+/*************************************
+ * Copyright: Removal is against Terms
+ *************************************/
+
+#copyright {
+  /* type */
+  font-size: var(--textsize-body__secondary);
+  text-align: center;
+}
+
+#copyright .tableborder {
+  border: none;
+}
+
+#copyright a {
+  text-decoration: underline;
 }

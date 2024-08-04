@@ -8,15 +8,17 @@
 
     <link
       rel="icon"
-      href="https://jcink.com/favicon.png"
+      href="https://via.placeholder.com/16"
       type="image/png"
       sizes="16x16" />
+
     <!-- START CSS -->
     <% CSS %>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <!-- end CSS -->
+
     <!-- start JavaScript files -->
     <script src="https://files.jcink.net/html/jquery-3.7.1.min.js"></script>
     <script src="https://files.jcink.net/html/catcollapse.js" async></script>
@@ -31,7 +33,9 @@
     </script>
     <!-- end JavaScript files -->
   </head>
+
   <body id="<!-- |input_act| -->" class="code-<!-- |input_CODE| -->">
+    <!-- start site wrapper -->
     <div id="wrapper">
       <!-- start navigation bar -->
       <div id="navigation-wrapper">
@@ -230,6 +234,7 @@
       </div>
       <!-- end footer -->
     </div>
+    <!-- end site wrapper -->
 
     <!-- all of your scripts for the site, unless your install guide tells you otherwise, should go BELOW this comment -->
     <script>
@@ -337,6 +342,7 @@
                 function () {
                   copyBtn.text('✓ COPIED!');
 
+                  // highlight text inside the code block
                   if (window.getSelection) {
                     const selection = window.getSelection();
                     const range = document.createRange();
@@ -345,7 +351,7 @@
                     selection.addRange(range);
                   }
 
-                  // Revert button text back to "COPY" after 2 seconds
+                  // Revert button text back to "COPY" after 2.5 seconds
                   setTimeout(function () {
                     copyBtn.text('COPY');
                   }, 2500);

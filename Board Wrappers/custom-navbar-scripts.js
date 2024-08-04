@@ -9,10 +9,13 @@
 $(document).ready(function () {
   /* Toggle Dropdown Menu */
   $('.button-action').click(function () {
+    // sets the dropdown menu to be 10px below the navbar on all devices
+    // no matter the screen size
     const navbarHeight = $('#navigation-wrapper').outerHeight();
     const dropdownMenu = $('.dropdown-menu');
     dropdownMenu.css('top', `${navbarHeight + 10}px`);
 
+    // toggles the dropdown menu to appear on click
     $('#nav__userlinks').toggleClass('display-menu');
     $('.rotate').toggleClass('down');
   });
@@ -31,8 +34,8 @@ $(document).ready(function () {
   /* Light/Dark Mode Toggle, from CodePen
    * https://codepen.io/ananyaneogi/pen/zXZyMP
    * heavily modified by Luna */
-  $('a[title="Toggle Theme"]').click(function (e) {
-    e.preventDefault();
+  $('a[title="Toggle Theme"]').click(function (event) {
+    event.preventDefault();
     const theme = $('html').attr('data-theme') === 'dark' ? 'light' : 'dark';
 
     $('html').attr('data-theme', theme);
