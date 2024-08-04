@@ -76,7 +76,7 @@ How to Set Colors, Fonts, and Font Sizes for Your Site
  and in the script in the Board Wrappers, change the word from 'light' to 'dark' */
 :root {
   /**************************
-   Colors List
+   Variable Store
   ***************************/
 
   /* Black & White colors */
@@ -119,33 +119,35 @@ How to Set Colors, Fonts, and Font Sizes for Your Site
   --textsize-body__secondary: var(--size14px);
 
   /* Light Mode Images */
-  /* TODO: rehost; for testing only */
-  --theme__image__background-main: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
-  --theme__image__logo: url('https://via.placeholder.com/150');
+  --theme__image__background-main: url('https://files.jcink.net/uploads2/freecodes/shared/BaseSkin20/bg_lightmode.png');
+  --theme__image__logo: url('https://placehold.co/92?text=Logo');
 
   /* Light Mode Colors */
   --theme__background-main: var(--anti-flash-white);
   --theme__background-contrast: var(--platinum);
+
   --theme__color-primary: var(--maroon);
   --theme__color-secondary: var(--russian-violet);
   --theme__color-accent: var(--platinum);
+
   --theme__text-main: var(--eerie-black);
   --theme__text-contrast: var(--anti-flash-white);
 }
 
 [data-theme='dark'] {
   color-scheme: dark;
-  /* TODO: rehost; for testing only */
   /* Dark Mode Images */
-  --theme__image__background-main: url('https://www.transparenttextures.com/patterns/black-twill.png');
-  --theme__image__logo: url('https://via.placeholder.com/150');
+  --theme__image__background-main: url('https://files.jcink.net/uploads2/freecodes/shared/BaseSkin20/bg_darkmode.png');
+  --theme__image__logo: url('https://placehold.co/92?text=Logo');
 
   /* Dark Mode Colors */
   --theme__background-main: var(--eerie-black);
   --theme__background-contrast: var(--jet);
+
   --theme__color-primary: var(--rosy-brown);
   --theme__color-secondary: var(--rose-quartz);
   --theme__color-accent: var(--grey);
+
   --theme__text-main: var(--anti-flash-white);
   --theme__text-contrast: var(--eerie-black);
 }
@@ -225,8 +227,48 @@ Tread carefully. */
 }
 
 /*------------------------------------*\
+  LOGO
+*-------------------------------------*/
+#logo {
+  /* box model */
+  min-height: 60px;
+  margin-top: 5px;
+  padding: 20px 0px;
+
+  /* layout */
+  display: flex;
+  align-items: center;
+}
+
+#logo::before {
+  content: '';
+  /* box model */
+  width: 92px; /* Adjust based on your image size */
+  height: 92px; /* Adjust based on your image size */
+
+  /* background */
+  background-image: var(--theme__image__logo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* layout */
+  display: block;
+}
+
+#logo a,
+#logo a:hover {
+  /* box model */
+  margin-left: 10px; /* Adjust spacing between image and text */
+
+  /* type */
+  font-size: var(--textsize__title);
+  font-weight: bold;
+}
+
+/*------------------------------------*\
     Links
-\*------------------------------------*/
+*-------------------------------------*/
 
 a:link,
 a:visited,
@@ -246,7 +288,7 @@ a:not([name]):empty {
 
 /*------------------------------------*\
     Main Title
-\*------------------------------------*/
+*-------------------------------------*/
 .maintitle {
   /* box model */
   padding: 8px;
@@ -281,7 +323,7 @@ a:not([name]):empty {
 
 /****************************************
   QUOTE and CODE BBCode boxes
- *****************************************/
+ ****************************************/
 
 #QUOTE,
 #CODE {
@@ -306,7 +348,7 @@ a:not([name]):empty {
   font-family: var(--font-family__accent);
 }
 
-/* for use with custom clipboard script */
+/* for use with custom clipboard script, if you're not using that script you can remove this */
 .button-small.copy-button {
   /* box model */
   max-width: 100px;
@@ -463,7 +505,7 @@ a:not([name]):empty {
 
 /*------------------------------------*\
   GLOBAL - these apply for all devices
-\*------------------------------------*/
+*-------------------------------------*/
 
 input[type='submit'],
 input[type='button'],
@@ -529,7 +571,7 @@ input[name='helpbox'] {
 
 /*------------------------------------*\
   MOBILE - mobile devices ONLY
-\*------------------------------------*/
+*-------------------------------------*/
 
 @media only screen and (max-width: 750px) {
   /* UserCP */
@@ -577,7 +619,7 @@ input[name='helpbox'] {
 
 /*------------------------------------*\
   DESKTOP - over 750px screens ONLY
-\*------------------------------------*/
+*-------------------------------------*/
 
 @media only screen and (min-width: 750px) {
   /* form fields on posting pages */
@@ -606,9 +648,21 @@ input[name='helpbox'] {
  * was used to style the Mod CP, but everything else is 100% pure vanilla jcink.
  *============================================================================================================*/
 
+/****************************************
+  Default Header Area
+ ****************************************/
+
+/* most of the default header stuff we don't use in favor of the custom nav bar */
+#header > br,
+#logostrip,
+#submenu,
+#userlinks {
+  display: none;
+}
+
 /*------------------------------------*\
   #RECENT_TOPICS
-\*------------------------------------*/
+*-------------------------------------*/
 
 #recent-topics tr {
   /* box model */
@@ -625,33 +679,6 @@ input[name='helpbox'] {
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
-/****************************************
-   Default Header Area
- ****************************************/
-
-#header > br,
-#logostrip,
-#submenu,
-#userlinks {
-  display: none;
-}
-
-#logo {
-  /* box model */
-  min-height: 60px;
-  margin-top: 5px;
-  padding: 20px 0px 0px;
-
-  /* type */
-  text-align: left;
-}
-
-#logo a,
-#logo a:hover {
-  font-size: var(--textsize__title);
-  font-weight: bold;
 }
 
 /****************************************
@@ -701,7 +728,7 @@ input[name='helpbox'] {
 
 /*------------------------------------*\
   #UserCP - Global Styles
-\*------------------------------------*/
+*-------------------------------------*/
 
 #ucpmenu,
 #ucpcontent {
@@ -735,7 +762,7 @@ input[name='helpbox'] {
   there are MANY nested tables in the modcp). 
   
   If you aren't using the script you can get rid of this whole section
-\*-----------------------------------------------------------------------------------------*/
+*------------------------------------------------------------------------------------------*/
 
 /* we only want to show the new headers on mobile devices */
 #modcp span.header-name {
@@ -744,7 +771,7 @@ input[name='helpbox'] {
 
 /*------------------------------------*\
    Table Classes
-\*------------------------------------*/
+*-------------------------------------*/
 
 /* Topic Options dropdown on post view */
 #topic_open {
@@ -903,13 +930,15 @@ span.small {
  *  ▀▀▀ ▀▀▀ ▀▀▀  ▀  ▀▀▀ ▀ ▀  ▀ ▀ ▀ ▀  ▀   ▀▀  ▀ ▀ ▀ ▀
  * --Custom Navigation Bar-- 
  * This is a 100% custom navigation bar to replace all 
- * jcink defaults. For Desktop styles, search for
- * TODO: put search here
+ * jcink defaults. If you aren't using the custom nav bar
+ * you can get rid of this whole section (make sure to
+ * get rid of the script in the Board Wrappers and the
+ * extra CSS in the desktop media query too)
  *========================================================*/
 
 /*------------------------------------*\
    Wrapper
-\*------------------------------------*/
+*-------------------------------------*/
 #navigation-wrapper {
   /* box model */
   width: 100%;
@@ -942,7 +971,7 @@ span.small {
 
 /*------------------------------------*\
    Top Bar & Breadcrumbs
-\*------------------------------------*/
+*-------------------------------------*/
 .nav__icons--left,
 .nav__icons--right {
   /* layout */
@@ -1025,7 +1054,7 @@ span.small {
 
 /*------------------------------------*\
    Dropdown Menu
-\*------------------------------------*/
+*-------------------------------------*/
 
 #nav__userlinks {
   /* box model */
@@ -1206,123 +1235,14 @@ span.small {
  *  █▀█  █  █ █ █     █  █▀▀ █ █ █▀▀ █   █▀█  █  █▀▀ ▀▀█
  *  ▀ ▀  ▀  ▀ ▀ ▀▀▀   ▀  ▀▀▀ ▀ ▀ ▀   ▀▀▀ ▀ ▀  ▀  ▀▀▀ ▀▀▀
  * --Jcink HTML Templates-- 
+ * All of the Jcink HTML Templates we currently have.
+ * They are listed in the same order as in the HTML
+ * Templates List, which is alphabetical.
 \*========================================================*/
 
 /*------------------------------------*\
-  #CSS - CATEGORY_HEADERS
-\*------------------------------------*/
-.category > .maintitle {
-  /* layout */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/*------------------------------------*\
-  #CSS - SUBFORUM_HEADERS
-  Note: the only specific style for this is
-  the #subforum-list class, which you can find in
-  the global styles section
-\*------------------------------------*/
-
-/*------------------------------------*\
-  #CSS - FORUM_ROWS
-\*------------------------------------*/
-
-.forum__row {
-  /* box model */
-  padding: 5px;
-  border: 1px solid var(--theme__background-main);
-
-  /* layout */
-  display: grid;
-  align-items: center;
-  row-gap: 5px;
-  grid-template-areas:
-    'info       info       info'
-    'subforums  subforums  subforums'
-    'macro      topics     replies'
-    'lastpost   lastpost   lastpost';
-}
-
-.forum__row--macro,
-.forum__row--topics,
-.forum__row--replies {
-  text-align: center;
-}
-
-span.subforums > br {
-  display: none;
-}
-
-span.subforums > a {
-  text-decoration: underline;
-}
-
-/* Grid Set Up */
-.forum__row--macro {
-  grid-area: macro;
-}
-
-.forum__row--info {
-  grid-area: info;
-}
-
-.forum__row--subforums {
-  grid-area: subforums;
-}
-
-.forum__row--topics {
-  grid-area: topics;
-}
-
-.forum__row--replies {
-  grid-area: replies;
-}
-
-.forum__row--last-post-info {
-  grid-area: lastpost;
-}
-
-/*------------------------------------*\
-  #CSS - REDIRECT_ROWS
-\*------------------------------------*/
-
-.redirect__row {
-  /* box model */
-  padding: 5px;
-  border: 1px solid var(--theme__background-main);
-
-  /* layout */
-  display: grid;
-  align-items: center;
-  row-gap: 5px;
-  grid-template-areas:
-    'info   info'
-    'macro  hits';
-}
-
-/* Grid Set Up */
-.redirect__row--macro {
-  grid-area: macro;
-  text-align: center;
-}
-
-.redirect__row--info {
-  grid-area: info;
-}
-
-.redirect__row--subforums {
-  grid-area: subforums;
-}
-
-.redirect__row--hits {
-  grid-area: hits;
-}
-
-/*------------------------------------*\
   #BOARD_STATS
-\*------------------------------------*/
+*-------------------------------------*/
 
 #board-stats__grid {
   /* box model */
@@ -1414,385 +1334,77 @@ span.subforums > a {
 }
 
 /*------------------------------------*\
-  #TOPIC_LIST_HEADERS
-\*------------------------------------*/
-
-#topic-list {
-  /* box model */
-  border: 1px solid var(--theme__color-primary);
-
-  /* background */
-  background: var(--theme__background-contrast);
+  #CSS - CATEGORY_HEADERS
+*-------------------------------------*/
+.category > .maintitle {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.topic-row.maintitle {
-  /* box model */
-  margin: 5px;
-  /* type */
-  font-size: var(--textsize-body__primary);
-}
+/*------------------------------------*\
+  #CSS - FORUM_ROWS
+*-------------------------------------*/
 
-.topic__row {
+.forum__row {
   /* box model */
-  margin: 5px;
-  padding: 5px 0;
-  border-top: 2px solid var(--theme__background-main);
+  padding: 5px;
+  border: 1px solid var(--theme__background-main);
+
   /* layout */
   display: grid;
   align-items: center;
   row-gap: 5px;
   grid-template-areas:
-    'info      info      info      info      info'
-    'macro     posticon  replies   views     mod-checkbox'
-    'lastpost  lastpost  lastpost  lastpost  lastpost';
+    'info       info       info'
+    'subforums  subforums  subforums'
+    'macro      topics     replies'
+    'lastpost   lastpost   lastpost';
 }
 
-/* this makes it so there is only a border 
-between topic rows and nothing else */
-.topic__row:first-child,
-.maintitle + .topic__row {
-  border-top: none;
-}
-
-.topic__row--macro,
-.topic__row--posticon,
-.topic__row--replies,
-.topic__row--views,
-.topic__row--mod-checkbox {
+.forum__row--macro,
+.forum__row--topics,
+.forum__row--replies {
   text-align: center;
 }
 
-.topic__row--macro,
-.topic__row--posticon {
-  color: var(--theme__color-secondary);
+span.subforums > br {
+  display: none;
 }
 
-.topic__row--info > a {
-  font-weight: bold;
-}
-
-.forum-active {
-  border-top: 1px solid var(--theme__color-primary);
-}
-
-/* Topic Macros */
-
-.wrapmini {
-  margin: auto;
-}
-
-.new-post-macro {
-  color: var(--theme__color-primary);
+span.subforums > a {
+  text-decoration: underline;
 }
 
 /* Grid Set Up */
-.topic__row--macro {
+.forum__row--macro {
   grid-area: macro;
 }
 
-.topic__row--posticon {
-  grid-area: posticon;
-}
-
-.topic__row--info {
+.forum__row--info {
   grid-area: info;
 }
 
-.topic__row--replies {
+.forum__row--subforums {
+  grid-area: subforums;
+}
+
+.forum__row--topics {
+  grid-area: topics;
+}
+
+.forum__row--replies {
   grid-area: replies;
 }
 
-.topic__row--views {
-  grid-area: views;
-}
-
-.topic__row--lastpost {
+.forum__row--last-post-info {
   grid-area: lastpost;
-}
-
-.topic__row--mod-checkbox {
-  grid-area: mod-checkbox;
-}
-
-/*------------------------------------*\
-  #CSS - POST_ROW
-\*------------------------------------*/
-
-/* maintitle above the post row */
-.topic-title {
-  font-size: var(--textsize__title);
-}
-
-.topic-desc {
-  /* box model */
-  padding-left: 10px;
-
-  /* layout */
-  display: block;
-
-  /* type */
-  font-size: var(--textsize__subheading);
-}
-
-.post__row {
-  /* box model */
-  padding: 5px;
-  border-top: 1px solid var(--theme__background-main);
-
-  /* layout */
-  display: grid;
-  grid-template-areas:
-    'post-details'
-    'miniprofile'
-    'post-content'
-    'bottom-bar';
-}
-
-.post__row--post-details.maintitle,
-.post__row--bottombar.maintitle {
-  /* box model */
-  padding: 8px 15px;
-
-  /* type */
-  font-size: var(--textsize-body__secondary);
-}
-
-.post__row--miniprofile {
-  border-bottom: 2px solid var(--theme__color-primary);
-}
-
-.post__row--post-details {
-  /* layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  row-gap: 8px;
-}
-
-span.quote-macro,
-span.delete-macro,
-span.edit-macro,
-span.report-macro {
-  /* box model */
-  padding: 5px 7px;
-  border-radius: 5px;
-
-  /* background */
-  background: var(--theme__color-secondary);
-
-  /* type */
-  text-align: center;
-}
-
-.post-details--post-date {
-  /* box model */
-  padding: 5px 7px;
-  border-radius: 5px;
-
-  /* background */
-  background: var(--theme__color-secondary);
-}
-
-.post__row--post-content {
-  padding: 9px;
-}
-
-.post__row--bottombar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  column-gap: 5px;
-}
-
-.post__row--bottombar b > span.desc {
-  /* box model */
-  padding: 5px 7px;
-  border-radius: 5px;
-
-  /* background */
-  background: var(--theme__color-secondary);
-
-  /* type */
-  font-size: unset;
-}
-
-/* Grid Set Up */
-.post__row--post-details {
-  grid-area: post-details;
-}
-
-.post__row--miniprofile {
-  grid-area: miniprofile;
-}
-
-.post__row--post-content {
-  grid-area: post-content;
-}
-
-.post__row--bottombar {
-  grid-area: bottom-bar;
-}
-
-/* Target the add reply etc buttons to 
-** tile them with spacing on mobile
-** on both top and bottom of post row */
-#SF table > tbody > tr > td[align='right'],
-#ST table > tbody > tr > td[align='right'] {
-  /* box model */
-  width: 100%;
-
-  /* layout */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  row-gap: 5px;
-}
-
-/*------------------------------------*\
-  #CSS - MINI_PROFILE
-\*------------------------------------*/
-
-.miniprofile__row--wrapper {
-  /* box model */
-  padding: 9px;
-
-  /* layout */
-  display: grid;
-  align-content: center;
-  grid-template-columns: 0.2fr 1fr;
-  gap: 5px;
-  grid-template-areas:
-    'postnum  postnum'
-    'avatar   name'
-    'title    title'
-    'fields   fields'
-    'awards   awards';
-}
-
-.miniprofile__row.postnum {
-  /* box model */
-  padding: 5px 7px;
-  border-radius: 5px;
-
-  /* background */
-  background: var(--theme__color-secondary);
-
-  /* layout */
-  display: flex;
-  justify-content: space-between;
-
-  /* type */
-  color: var(--theme__text-contrast);
-}
-
-.miniprofile__row.avatar > img {
-  /* box model */
-  width: 31.25vw;
-  height: 31.25vw;
-  max-width: 250px;
-  max-height: 250px;
-  border: 1px solid var(--theme__color-primary);
-  border-radius: 3px;
-  vertical-align: baseline;
-}
-
-.miniprofile__row.title {
-  /* box model */
-  padding: 5px 0;
-
-  /* type */
-  font-family: var(--font-family__accent), system-ui;
-  font-style: italic;
-  text-align: center;
-}
-
-.miniprofile__row.name {
-  /* box model */
-  padding: 5px;
-
-  /* background */
-  background: var(--theme__background-main);
-
-  /* layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  /* type */
-  font-size: var(--textsize-body__secondary);
-  text-align: center;
-}
-
-.miniprofile__row.name > .span {
-  /* box model */
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--theme__color-secondary);
-
-  /* type */
-  font-size: var(--textsize__subheading);
-
-  /* other */
-  overflow-wrap: anywhere;
-}
-
-.mini-profile__row.fields {
-  /* box model */
-  padding: 5px 7px;
-  border-radius: 5px;
-
-  /* background */
-  background: var(--theme__color-secondary);
-
-  /* type */
-  text-align: center;
-  color: var(--theme__text-contrast);
-}
-
-.miniprofile__row.awards {
-  /* box model */
-  padding: 5px;
-  border-radius: 3px;
-
-  /* background */
-  background: var(--theme__background-main);
-}
-
-.miniprofile__row.awards > img {
-  /* box model */
-  width: 25px;
-  margin: 4px;
-}
-
-/* Grid Set Up */
-.miniprofile__row.avatar {
-  grid-area: avatar;
-}
-
-.miniprofile__row.name {
-  grid-area: name;
-}
-
-.miniprofile__row.postnum {
-  grid-area: postnum;
-}
-
-.miniprofile__row.awards {
-  grid-area: awards;
-}
-
-.miniprofile__row.title {
-  grid-area: title;
-}
-
-.mini-profile__row.fields {
-  grid-area: fields;
 }
 
 /*------------------------------------*\
   #CSS - MAIN_PROFILE
-\*------------------------------------*/
+*-------------------------------------*/
 
 .mainprofile__row.header > .maintitle {
   /* box model */
@@ -1984,7 +1596,7 @@ span.report-macro {
 
 /*------------------------------------*\
   #CSS - MEMBER_LIST_HEADERS
-\*------------------------------------*/
+*-------------------------------------*/
 
 .memberlist__search-inputs {
   /* box model */
@@ -2009,7 +1621,7 @@ span.report-macro {
 
 /*------------------------------------*\
   #CSS - MEMBER_LIST_ROW
-\*------------------------------------*/
+*-------------------------------------*/
 
 .memberlist__row {
   /* box model */
@@ -2099,6 +1711,426 @@ span.report-macro {
   grid-area: last-post-date;
 }
 
+/*------------------------------------*\
+  #CSS - MINI_PROFILE
+*-------------------------------------*/
+
+.miniprofile__row--wrapper {
+  /* box model */
+  padding: 9px;
+
+  /* layout */
+  display: grid;
+  align-content: center;
+  grid-template-columns: 0.2fr 1fr;
+  gap: 5px;
+  grid-template-areas:
+    'postnum  postnum'
+    'avatar   name'
+    'title    title'
+    'fields   fields'
+    'awards   awards';
+}
+
+.miniprofile__row.postnum {
+  /* box model */
+  padding: 5px 7px;
+  border-radius: 5px;
+
+  /* background */
+  background: var(--theme__color-secondary);
+
+  /* layout */
+  display: flex;
+  justify-content: space-between;
+
+  /* type */
+  color: var(--theme__text-contrast);
+}
+
+.miniprofile__row.avatar > img {
+  /* box model */
+  width: 31.25vw;
+  height: 31.25vw;
+  max-width: 250px;
+  max-height: 250px;
+  border: 1px solid var(--theme__color-primary);
+  border-radius: 3px;
+  vertical-align: baseline;
+}
+
+.miniprofile__row.title {
+  /* box model */
+  padding: 5px 0;
+
+  /* type */
+  font-family: var(--font-family__accent), system-ui;
+  font-style: italic;
+  text-align: center;
+}
+
+.miniprofile__row.name {
+  /* box model */
+  padding: 5px;
+
+  /* background */
+  background: var(--theme__background-main);
+
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* type */
+  font-size: var(--textsize-body__secondary);
+  text-align: center;
+}
+
+.miniprofile__row.name > .span {
+  /* box model */
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--theme__color-secondary);
+
+  /* type */
+  font-size: var(--textsize__subheading);
+
+  /* other */
+  overflow-wrap: anywhere;
+}
+
+.mini-profile__row.fields {
+  /* box model */
+  padding: 5px 7px;
+  border-radius: 5px;
+
+  /* background */
+  background: var(--theme__color-secondary);
+
+  /* type */
+  text-align: center;
+  color: var(--theme__text-contrast);
+}
+
+.miniprofile__row.awards {
+  /* box model */
+  padding: 5px;
+  border-radius: 3px;
+
+  /* background */
+  background: var(--theme__background-main);
+}
+
+.miniprofile__row.awards > img {
+  /* box model */
+  width: 25px;
+  margin: 4px;
+}
+
+/* Grid Set Up */
+.miniprofile__row.avatar {
+  grid-area: avatar;
+}
+
+.miniprofile__row.name {
+  grid-area: name;
+}
+
+.miniprofile__row.postnum {
+  grid-area: postnum;
+}
+
+.miniprofile__row.awards {
+  grid-area: awards;
+}
+
+.miniprofile__row.title {
+  grid-area: title;
+}
+
+.mini-profile__row.fields {
+  grid-area: fields;
+}
+
+/*------------------------------------*\
+  #CSS - POST_ROW
+*-------------------------------------*/
+
+/* maintitle above the post row */
+.topic-title {
+  font-size: var(--textsize__title);
+}
+
+.topic-desc {
+  /* box model */
+  padding-left: 10px;
+
+  /* layout */
+  display: block;
+
+  /* type */
+  font-size: var(--textsize__subheading);
+}
+
+.post__row {
+  /* box model */
+  padding: 5px;
+  border-top: 1px solid var(--theme__background-main);
+
+  /* layout */
+  display: grid;
+  grid-template-areas:
+    'post-details'
+    'miniprofile'
+    'post-content'
+    'bottom-bar';
+}
+
+.post__row--post-details.maintitle,
+.post__row--bottombar.maintitle {
+  /* box model */
+  padding: 8px 15px;
+
+  /* type */
+  font-size: var(--textsize-body__secondary);
+}
+
+.post__row--miniprofile {
+  border-bottom: 2px solid var(--theme__color-primary);
+}
+
+.post__row--post-details {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 8px;
+}
+
+span.quote-macro,
+span.delete-macro,
+span.edit-macro,
+span.report-macro {
+  /* box model */
+  padding: 5px 7px;
+  border-radius: 5px;
+
+  /* background */
+  background: var(--theme__color-secondary);
+
+  /* type */
+  text-align: center;
+}
+
+.post-details--post-date {
+  /* box model */
+  padding: 5px 7px;
+  border-radius: 5px;
+
+  /* background */
+  background: var(--theme__color-secondary);
+}
+
+.post__row--post-content {
+  padding: 9px;
+}
+
+.post__row--bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 5px;
+}
+
+.post__row--bottombar b > span.desc {
+  /* box model */
+  padding: 5px 7px;
+  border-radius: 5px;
+
+  /* background */
+  background: var(--theme__color-secondary);
+
+  /* type */
+  font-size: unset;
+}
+
+/* Grid Set Up */
+.post__row--post-details {
+  grid-area: post-details;
+}
+
+.post__row--miniprofile {
+  grid-area: miniprofile;
+}
+
+.post__row--post-content {
+  grid-area: post-content;
+}
+
+.post__row--bottombar {
+  grid-area: bottom-bar;
+}
+
+/* Target the add reply etc buttons to 
+** tile them with spacing on mobile
+** on both top and bottom of post row */
+#SF table > tbody > tr > td[align='right'],
+#ST table > tbody > tr > td[align='right'] {
+  /* box model */
+  width: 100%;
+
+  /* layout */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 5px;
+}
+
+/*------------------------------------*\
+  #CSS - REDIRECT_ROWS
+*-------------------------------------*/
+
+.redirect__row {
+  /* box model */
+  padding: 5px;
+  border: 1px solid var(--theme__background-main);
+
+  /* layout */
+  display: grid;
+  align-items: center;
+  row-gap: 5px;
+  grid-template-areas:
+    'info   info'
+    'macro  hits';
+}
+
+/* Grid Set Up */
+.redirect__row--macro {
+  grid-area: macro;
+  text-align: center;
+}
+
+.redirect__row--info {
+  grid-area: info;
+}
+
+.redirect__row--subforums {
+  grid-area: subforums;
+}
+
+.redirect__row--hits {
+  grid-area: hits;
+}
+
+/*------------------------------------*\
+  #CSS - SUBFORUM_HEADERS
+  Note: the only specific style for this is
+  the #subforum-list id, which you can find in
+  the global styles section
+*-------------------------------------*/
+
+/*------------------------------------*\
+  #TOPIC_LIST_HEADERS
+*-------------------------------------*/
+
+#topic-list {
+  /* box model */
+  border: 1px solid var(--theme__color-primary);
+
+  /* background */
+  background: var(--theme__background-contrast);
+}
+
+.topic-row.maintitle {
+  /* box model */
+  margin: 5px;
+  /* type */
+  font-size: var(--textsize-body__primary);
+}
+
+.topic__row {
+  /* box model */
+  margin: 5px;
+  padding: 5px 0;
+  border-top: 2px solid var(--theme__background-main);
+  /* layout */
+  display: grid;
+  align-items: center;
+  row-gap: 5px;
+  grid-template-areas:
+    'info      info      info      info      info'
+    'macro     posticon  replies   views     mod-checkbox'
+    'lastpost  lastpost  lastpost  lastpost  lastpost';
+}
+
+/* this makes it so there is only a border 
+between topic rows and nothing else */
+.topic__row:first-child,
+.maintitle + .topic__row {
+  border-top: none;
+}
+
+.topic__row--macro,
+.topic__row--posticon,
+.topic__row--replies,
+.topic__row--views,
+.topic__row--mod-checkbox {
+  text-align: center;
+}
+
+.topic__row--macro,
+.topic__row--posticon {
+  color: var(--theme__color-secondary);
+}
+
+.topic__row--info > a {
+  font-weight: bold;
+}
+
+.forum-active {
+  border-top: 1px solid var(--theme__color-primary);
+}
+
+/* Topic Macros */
+
+.wrapmini {
+  margin: auto;
+}
+
+.new-post-macro {
+  color: var(--theme__color-primary);
+}
+
+/* Grid Set Up */
+.topic__row--macro {
+  grid-area: macro;
+}
+
+.topic__row--posticon {
+  grid-area: posticon;
+}
+
+.topic__row--info {
+  grid-area: info;
+}
+
+.topic__row--replies {
+  grid-area: replies;
+}
+
+.topic__row--views {
+  grid-area: views;
+}
+
+.topic__row--lastpost {
+  grid-area: lastpost;
+}
+
+.topic__row--mod-checkbox {
+  grid-area: mod-checkbox;
+}
+
 /*============================================================================================================
  *  █▄█ █▀▀ █▀▄ ▀█▀ █▀█  ▄▀▄ █ █ █▀▀ █▀▄ ▀█▀ █▀▀ █▀▀
  *  █ █ █▀▀ █ █  █  █▀█  █\█ █ █ █▀▀ █▀▄  █  █▀▀ ▀▀█
@@ -2115,12 +2147,12 @@ span.report-macro {
 
 /*------------------------------------*\
     MOBILE - END at 750px
-\*------------------------------------*/
+*-------------------------------------*/
 @media only screen and (max-width: 750px) {
   /*------------------------------------*\
     Mod Team Link
     /index.php?act=Stats&CODE=leaders
-  \*------------------------------------*/
+  *-------------------------------------*/
 
   /* have to scope it to the top level table because there are nested tables; 
    * removes the table headings, the 'moderates in' column, the location column, and the
@@ -2135,7 +2167,7 @@ span.report-macro {
   /*------------------------------------*\
     #POST - Mobile Styles
     aka: New Topic, Add Reply, etc
-  \*------------------------------------*/
+  *-------------------------------------*/
 
   /* needed to space the post icons correctly */
   table#posting-form tr#post-icon-options > td.pformleft {
@@ -2237,7 +2269,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #REGISTRATION - Mobile Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   #registration-form table {
     display: block;
   }
@@ -2275,7 +2307,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #LOGIN - Mobile Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
 
   #Login form[name='LOGIN'] tbody {
     display: flex;
@@ -2291,7 +2323,7 @@ span.report-macro {
     /index.php?act=Search
     NOTE: have to scope the body ID to the .code-00 body class because
     things like active topic, search results, etc all share the same ID
-  \*------------------------------------*/
+  *-------------------------------------*/
   #Search.code-00 table > tbody {
     display: grid;
     grid-template-columns: 1fr;
@@ -2529,7 +2561,7 @@ span.report-macro {
   /*------------------------------------*\
     #SEARCH - Active Topics Page
     /index.php?act=Search&CODE=getactive
-  \*------------------------------------*/
+  *-------------------------------------*/
   #Search.code-getactive form[name='dateline'] > div[align='right'] {
     width: unset !important;
   }
@@ -2636,7 +2668,7 @@ span.report-macro {
   /*------------------------------------*\
     #UserCP - Mobile Styles
     starts from /index.php?act=UserCP&CODE=00
-  \*------------------------------------*/
+  *-------------------------------------*/
   /* target just the top level tables and not any of the nested tables */
   #UserCP #innerwrapper > table > tbody > tr:first-child {
     /* layout */
@@ -2679,7 +2711,7 @@ span.report-macro {
     NOTE: the 'create' and 'reply' codes of the messenger use the same PHP template as the create new thread/add reply codes
     so unless you scope it, if you style one you style all of them. We've already styled so this is cleanup just for Messenger
     on Mobile
-  \*------------------------------------*/
+  *-------------------------------------*/
   /* target just the top level tables and not any of the nested tables */
   #Msg #innerwrapper > table > tbody > tr:first-child {
     display: flex;
@@ -2770,7 +2802,7 @@ span.report-macro {
     nested tables in the modcp). 
     
     If you aren't using the script you can get rid of this whole section
-  \*------------------------------------*/
+  *-------------------------------------*/
   /* target just the top level table and not any of the nested tables */
   #modcp #innerwrapper > table > tbody > tr {
     display: flex;
@@ -2830,12 +2862,12 @@ span.report-macro {
 
 /*------------------------------------*\
     DESKTOP - START at 750px
-\*------------------------------------*/
+*-------------------------------------*/
 @media only screen and (min-width: 750px) {
   /*------------------------------------*\
     --Custom Navigation Bar--
     Dropdown Menu
-  \*------------------------------------*/
+  *-------------------------------------*/
   #nav__userlinks {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -2848,7 +2880,7 @@ span.report-macro {
 
   /*------------------------------------*\
     UserCP - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   #ucpmenu p {
     margin: 0px;
     padding: 2px 5px 6px 9px;
@@ -2857,14 +2889,14 @@ span.report-macro {
   /*------------------------------------*\
   #POST Styling - Desktop Styles
   aka: New Topic, Add Reply, etc
-\*------------------------------------*/
+*-------------------------------------*/
   .pformleft {
     width: 25%;
   }
 
   /*------------------------------------*\
     #CSS - FORUM_ROW - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   .forum__row {
     /* layout */
     grid-template-columns: 28px 55% 7% 7% 27%;
@@ -2876,7 +2908,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - REDIRECT_ROW - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   .redirect__row {
     grid-template-columns: 28px 55% 7% 7% 27%;
     grid-column-gap: 5px;
@@ -2887,7 +2919,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - TOPIC_ROW - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   .topic__row {
     grid-template-columns: 2% 2% 51% 7% 7% 27% 2%;
     grid-column-gap: 4px;
@@ -2901,7 +2933,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - POST_ROW - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   .post__row {
     grid-template-columns: 275px 1fr;
     grid-column-gap: 4px;
@@ -2925,7 +2957,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - MINI_PROFILE - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   .miniprofile__row--wrapper {
     /* box model */
     padding: 10px 10px 10px 15px;
@@ -2952,7 +2984,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - MAIN_PROFILE - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   .main-profile.wrapper {
     /* box model */
     padding: 10px 20px 10px 15px;
@@ -2992,7 +3024,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - RECENT TOPICS - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   #recent-topics tr {
     flex-direction: row;
   }
@@ -3003,7 +3035,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - BOARD_STATS - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   #board-stats__grid {
     /* box model */
     padding: 5px;
@@ -3035,7 +3067,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - MEMBERLIST_ROWS - Desktop Styles
-  \*------------------------------------*/
+  *-------------------------------------*/
   .memberlist__row {
     /* layout */
     justify-items: start;
@@ -3055,7 +3087,7 @@ span.report-macro {
   /*------------------------------------*\
     --Custom Navigation Bar--
     Dropdown Menu
-  \*------------------------------------*/
+  *-------------------------------------*/
   #nav__userlinks {
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -3079,7 +3111,7 @@ span.report-macro {
 
   /*------------------------------------*\
     #CSS - POST_ROW
-  \*------------------------------------*/
+  *-------------------------------------*/
   .post__row--post-content {
     padding: 20px 75px 10px;
   }

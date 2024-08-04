@@ -8,7 +8,7 @@
 
     <link
       rel="icon"
-      href="https://via.placeholder.com/16"
+      href="https://placehold.co/16?text=JS"
       type="image/png"
       sizes="16x16" />
 
@@ -20,8 +20,11 @@
     <!-- end CSS -->
 
     <!-- start JavaScript files -->
+    <!-- required by jcink DO NOT TOUCH -->
     <script src="https://files.jcink.net/html/jquery-3.7.1.min.js"></script>
     <script src="https://files.jcink.net/html/catcollapse.js" async></script>
+    <!-- end required -->
+
     <script>
       // set dark/light mode before page load
       if (localStorage.theme) {
@@ -213,7 +216,9 @@
       <!-- start header area -->
       <div id="header">
         <div id="logo">
-          <a href="index.php"><!-- |board_name| --></a>
+          <a href="index.php">
+            <!-- |board_name| -->
+          </a>
         </div>
         <% BOARD HEADER %>
       </div>
@@ -237,146 +242,13 @@
     <!-- end site wrapper -->
 
     <!-- all of your scripts for the site, unless your install guide tells you otherwise, should go BELOW this comment -->
-    <script>
-      $(document).ready(function () {
-        /* Toggle Dropdown Menu */
-        $('.button-action').click(function () {
-          const navbarHeight = $('#navigation-wrapper').outerHeight();
-          const dropdownMenu = $('.dropdown-menu');
-          dropdownMenu.css('top', `${navbarHeight + 10}px`);
 
-          $('#nav__userlinks').toggleClass('display-menu');
-          $('.rotate').toggleClass('down');
-        });
+    <!-- these scripts are for HTML/CSS pre-installed in the base skin, if you aren't using them you can safely remove -->
+    <script src="https://files.jcink.net/uploads2/freecodes/shared/custom_navbar_scripts.js"></script>
+    <script src="https://files.jcink.net/uploads2/freecodes/shared/modcp_styler.js"></script>
+    <script src="https://files.jcink.net/uploads2/freecodes/shared/clipboard_copy_button.js"></script>
+    <!-- end pre-installed scripts -->
 
-        /* Scroll to Top/Bottom Buttons */
-        $('#click-up').click(function (event) {
-          event.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        $('#click-down').click(function (event) {
-          event.preventDefault();
-          $('#copyright').get(0).scrollIntoView({ behavior: 'smooth' });
-        });
-
-        /* Light/Dark Mode Toggle, from CodePen
-         * https://codepen.io/ananyaneogi/pen/zXZyMP
-         * heavily modified by Luna */
-        $('a[title="Toggle Theme"]').click(function (e) {
-          e.preventDefault();
-          const theme =
-            $('html').attr('data-theme') === 'dark' ? 'light' : 'dark';
-
-          $('html').attr('data-theme', theme);
-          localStorage.theme = theme;
-        });
-      });
-
-      /* Add Stylable Classes to Mod CP Table & Table Elements
-       ** script by Luna of Free Codes */
-      $(document).ready(function () {
-        if (window.location.href.indexOf('modcp') > -1) {
-          $('#modcp-content .tableborder > table').each(function () {
-            const headers = [];
-            const trs = $(this).find('tr');
-
-            if (trs.length < 2) {
-              return;
-            }
-
-            $(this).addClass('modcp-table');
-
-            $(trs[1])
-              .find('td')
-              .each(function () {
-                if ($(this).attr('lol') === 'lol') {
-                  const headerText = $(this).text();
-                  headers.push(headerText);
-                }
-              });
-            for (var i = 2; i < trs.length; i++) {
-              const tds = $(trs[i]).find('td');
-              if (tds.length < 2) {
-                return;
-              }
-              $(tds).each(function (index) {
-                if (headers[index]) {
-                  const sanitizedHeader = headers[index]
-                    .replace(/[\s?:]+/g, '')
-                    .toLowerCase();
-                  $(this).addClass(sanitizedHeader);
-
-                  const originalHeaderText = headers[index];
-                  $(this).prepend(
-                    `<span class="header-name">${originalHeaderText}:</span>`,
-                  );
-                }
-              });
-            }
-          });
-        }
-      });
-    </script>
-    <script>
-      $(document).ready(function () {
-        $('[id="CODE-WRAP"]').each(function () {
-          const codeWrap = $(this);
-
-          //create copy button
-          const copyBtn = $('<button>')
-            .text('COPY')
-            .addClass('button-small copy-button');
-
-          //append to header
-          const codeBlockHeader = codeWrap.find('tbody > tr:first-child > td');
-          codeBlockHeader.append(copyBtn);
-
-          //grab codeblock
-          const codeBlock = codeWrap.find('#CODE');
-
-          copyBtn.on('click', function () {
-            // if Clipboard API is supported and codeBlock exists
-            if (navigator.clipboard && codeBlock) {
-              navigator.clipboard.writeText(codeBlock.text()).then(
-                function () {
-                  copyBtn.text('✓ COPIED!');
-
-                  // highlight text inside the code block
-                  if (window.getSelection) {
-                    const selection = window.getSelection();
-                    const range = document.createRange();
-                    range.selectNodeContents(codeBlock.get(0));
-                    selection.removeAllRanges();
-                    selection.addRange(range);
-                  }
-
-                  // Revert button text back to "COPY" after 2.5 seconds
-                  setTimeout(function () {
-                    copyBtn.text('COPY');
-                  }, 2500);
-                },
-                function (err) {
-                  alert('Error in copying text: ' + err);
-                },
-              );
-            } else {
-              // Fallback for older browsers
-              var textarea = $('<textarea>').val(codeBlock.text());
-              $('body').append(textarea);
-              textarea.select();
-              try {
-                document.execCommand('copy');
-                copyBtn.text('✓ COPIED!');
-              } catch (err) {
-                alert('Fallback: Oops, unable to copy ' + err);
-              }
-              textarea.remove();
-            }
-          });
-        });
-      });
-    </script>
     <!-- DO NOT ADD TO OR EDIT ANYTHING BELOW THIS LINE -->
   </body>
 </html>
