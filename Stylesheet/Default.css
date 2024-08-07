@@ -135,7 +135,7 @@
 
   /* Light Mode Images */
   --theme__image__background-main: url('https://files.jcink.net/uploads2/freecodes/shared/BaseSkin20/bg_lightmode.png');
-  --theme__image__logo: url('https://placehold.co/92?text=Logo');
+  --theme__image__logo: url('https://placehold.co/92.png?text=Logo');
 
   /* Light Mode Colors */
   --theme__background-main: var(--anti-flash-white);
@@ -168,7 +168,7 @@
 
   /* Dark Mode Images */
   --theme__image__background-main: url('https://files.jcink.net/uploads2/freecodes/shared/BaseSkin20/bg_darkmode.png');
-  --theme__image__logo: url('https://placehold.co/92?text=Logo');
+  --theme__image__logo: url('https://placehold.co/92.png?text=Logo');
 
   /* Dark Mode Colors */
   --theme__background-main: var(--eerie-black);
@@ -662,6 +662,10 @@ input[name='helpbox'] {
   textarea[name='PollAnswers'],
   textarea[name='Post'] {
     max-width: 80%;
+  }
+
+  .quick-edit textarea[name='Post'] {
+    max-width: 100%;
   }
 }
 
@@ -1434,6 +1438,17 @@ span.subforums > a {
   grid-area: lastpost;
 }
 
+/* jcink macro class */
+.no-topics-row {
+  /* box model */
+  margin: 5px;
+  padding: 10px 0;
+
+  /* type */
+  font-weight: bold;
+  text-align: center;
+}
+
 /*------------------------------------*\
   #TEMPLATES - MAIN_PROFILE
 *-------------------------------------*/
@@ -1513,6 +1528,9 @@ span.subforums > a {
   max-height: 250px;
   border: 1px solid var(--theme__color-primary);
   border-radius: 3px;
+
+  /* other */
+  object-fit: cover;
 }
 
 .mainprofile__row.fields,
