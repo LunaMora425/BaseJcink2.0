@@ -631,7 +631,20 @@ input[name='helpbox'] {
   #modcp input[name='member'],
   #modcp input[type='text'][name='name'],
   /* Topic Row 'Jump to Forum' box */
-  select[name='f'] {
+  select[name='f'],
+  /* Edit Poll */
+  input[name='poll_question'],
+  input[name='POLL_0'],
+  input[name='POLL_1'],
+  input[name='POLL_2'],
+  input[name='POLL_3'],
+  input[name='POLL_4'],
+  input[name='POLL_5'],
+  input[name='POLL_6'],
+  input[name='POLL_7'],
+  input[name='POLL_8'],
+  input[name='POLL_9'],
+  input[name='POLL_10'] {
     width: 100%;
     max-width: 80%;
     box-sizing: border-box;
@@ -928,10 +941,26 @@ td.darkrow2 {
 img {
   border: 0px;
   vertical-align: middle;
+  max-width: 100%;
 }
 img.attach {
   padding: 2px;
-  border: 2px outset var(--imgAttachBorderColor);
+  border: 2px outset var(--theme__color-accent);
+}
+
+/* for #Messenger, global style */
+#Msg .postdetails > img {
+  /* box model */
+  width: 31.25vw;
+  height: 31.25vw;
+  max-width: 250px;
+  max-height: 250px;
+  border: 1px solid var(--theme__color-primary);
+  border-radius: 3px;
+  vertical-align: baseline;
+
+  /* other */
+  object-fit: cover;
 }
 
 /* Forum Descriptions
@@ -1553,6 +1582,10 @@ span.subforums > a {
   justify-content: space-around;
 }
 
+.mainprofile__row.fields > div {
+  overflow-wrap: anywhere;
+}
+
 .mainprofile__row.subaccounts {
   /* layout */
   display: flex;
@@ -1807,6 +1840,9 @@ span.subforums > a {
   border: 1px solid var(--theme__color-primary);
   border-radius: 3px;
   vertical-align: baseline;
+
+  /* other */
+  object-fit: cover;
 }
 
 .miniprofile__row.title {
@@ -1860,6 +1896,11 @@ span.subforums > a {
   /* type */
   text-align: center;
   color: var(--theme__text-contrast);
+}
+
+.mini-profile__row.fields > span {
+  /* other */
+  overflow-wrap: anywhere;
 }
 
 .miniprofile__row.awards {
@@ -1980,6 +2021,9 @@ span.report-macro {
 
   /* background */
   background: var(--theme__color-secondary);
+
+  /* type */
+  font-weight: normal;
 }
 
 .post__row--post-content {
@@ -2228,7 +2272,9 @@ between topic rows and nothing else */
     width: 75%;
   }
 
-  table#posting-form > tbody {
+  table#posting-form > tbody,
+  /* Edit Poll specific styling */
+  #Mod.code-20 table > tbody {
     display: block;
   }
 
@@ -2238,7 +2284,9 @@ between topic rows and nothing else */
   table#posting-form tr#code-buttons,
   table#posting-form tr#enter-your-post,
   table#posting-form tr#upload-files,
-  table#posting-form tr#pform-poll-question {
+  table#posting-form tr#pform-poll-question,
+  /* Edit Poll specific styling */
+  #Mod.code-20 table > tbody > tr {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2291,6 +2339,11 @@ between topic rows and nothing else */
   /* center attachments as the mobile screen gets wider */
   table#posting-form tr#upload-files > td.pformright {
     text-align: center;
+  }
+
+  /* poll specific overflow */
+  table#poll-data {
+    overflow-wrap: anywhere;
   }
 
   /* Last 10 Posts in reverse order on Add Reply screen
@@ -2812,17 +2865,6 @@ between topic rows and nothing else */
   #Msg span.msg-normal td.miniprofile > .postdetails > br:nth-of-type(2),
   #Msg span.msg-normal td.miniprofile > .postdetails > br:nth-of-type(3) {
     display: none;
-  }
-
-  #Msg span.msg-normal td.miniprofile > .postdetails > img {
-    /* box model */
-    width: 31.25vw;
-    height: 31.25vw;
-    max-width: 250px;
-    max-height: 250px;
-    border: 1px solid var(--theme__color-primary);
-    border-radius: 3px;
-    vertical-align: baseline;
   }
 
   #Msg span.msg-normal td.post1[width='100%'] {
