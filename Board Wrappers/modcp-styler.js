@@ -52,16 +52,12 @@ $(document).ready(function () {
           // the index of the header array will always match the index of the <td> in the <tr>
           if (headers[index]) {
             // make a sanitized version of the header text to be used as a class
-            const sanitizedHeader = headers[index]
-              .replace(/[\s?:]+/g, '')
-              .toLowerCase();
+            const sanitizedHeader = headers[index].replace(/[\s?:]+/g, '').toLowerCase();
             // add the class to the <td>
             $(this).addClass(sanitizedHeader);
             // then add the header text to the <td> as a span
             const originalHeaderText = headers[index];
-            $(this).prepend(
-              `<span class="header-name">${originalHeaderText}:</span>`,
-            );
+            $(this).prepend(`<span class="header-name">${originalHeaderText}:</span>`);
           }
         });
       }

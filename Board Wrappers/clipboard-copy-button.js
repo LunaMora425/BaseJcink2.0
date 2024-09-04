@@ -11,9 +11,7 @@ $(document).ready(function () {
     const codeWrap = $(this);
 
     //create copy button
-    const copyBtn = $('<button>')
-      .text('COPY')
-      .addClass('button-small copy-button');
+    const copyBtn = $('<button>').text('COPY').addClass('button-small copy-button');
 
     //append to header
     const codeBlockHeader = codeWrap.find('tbody > tr:first-child > td');

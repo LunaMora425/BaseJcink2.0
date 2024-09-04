@@ -2,14 +2,14 @@
  *  ▀▀█ █▀▀ ▀█▀ █▀█ █ █  █▀▄ █▀█ █▀▀ █▀▀  █▀▀ █ █ ▀█▀ █▀█
  *    █ █    █  █ █ █▀▄  █▀▄ █▀█ ▀▀█ █▀▀  ▀▀█ █▀▄  █  █ █
  *  ▀▀  ▀▀▀ ▀▀▀ ▀ ▀ ▀ ▀  ▀▀  ▀ ▀ ▀▀▀ ▀▀▀  ▀▀▀ ▀ ▀ ▀▀▀ ▀ ▀
- *  -- Jcink Base Skin --
+ *  -- Free Codes Jcink Base Skin --
  * Built off the Jcink.com Forum Hosting Skin v1.0.2 (last modified February 2024)
  * Created By: Luna of Free Codes, https://freecodes.jcink.net
- * License: GNU General Public License v3.0
+ * License: GNU Affero General Public License v3.0, https://freecodes.jcink.net/index.php?showtopic=10
  * ===========================================================================================================
  * Version: 1.0.0
- * Initial Release: 2024-##-##
- * Last Updated: 2024-##-##
+ * Initial Release: 2024-09-03
+ * Last Updated: 2024-09-03
  * ===========================================================================================================
  * 	-- Design --
  * Designed for viewports 320px and up. Fully mobile responsive. !!NO JCINK MOBILE MODE!! so make sure to
@@ -23,8 +23,8 @@
  * 2.) To serve as a base for jcink coders to build their own custom skins
  * 
  * 	-- Usage --
- * This skin is licensed under the GNU GPL v3.0. This means you are free to use, modify, and distribute as you 
- * see fit. No credit is needed. You may remove and replace this header with your own if desired.
+ * This skin is licensed under the GNU AGPL v3.0. This means you are free to use, modify, and distribute as you 
+ * see fit. You may remove and replace this header with your own if desired, but make sure the license stays.
  * 
  * Notations and documentation have been provided throughout the CSS and HTML. Notations will always be on the
  * line above the relevant code. You can use the Table of Contents below to navigate the CSS file. Feel free 
@@ -777,6 +777,8 @@ input[name='helpbox'] {
 
 /*------------------------------------*\
   #UserCP - Global Styles
+  starts from
+  /index.php?act=UserCP&CODE=00
 *-------------------------------------*/
 
 #ucpmenu,
@@ -817,6 +819,8 @@ input[name='helpbox'] {
 #modcp span.header-name {
   display: none;
 }
+
+/* end Mod CP */
 
 /*------------------------------------*\
    Table Classes
@@ -1294,6 +1298,8 @@ span.small {
 .quicklinks-6 {
   grid-area: quicklink-6;
 }
+
+/* end custom nav */
 
 /*========================================================*\
  *  █ █ ▀█▀ █▄█ █    ▀█▀ █▀▀ █▄█ █▀█ █   █▀█ ▀█▀ █▀▀ █▀▀
@@ -2182,6 +2188,11 @@ between topic rows and nothing else */
   font-weight: bold;
 }
 
+span.info--starter,
+span.lastpost--desc {
+  overflow-wrap: anywhere;
+}
+
 .forum-active {
   border-top: 1px solid var(--theme__color-primary);
 }
@@ -2500,12 +2511,7 @@ between topic rows and nothing else */
 
   #Search.code-show .tableborder > table.tablebasic td.post1:first-child > img,
   #Search.code-show .tableborder > table.tablebasic td.post1:first-child > br,
-  #Search.code-show
-    .tableborder
-    > table.tablebasic
-    td.post1
-    span.postdetails
-    > br {
+  #Search.code-show .tableborder > table.tablebasic td.post1 span.postdetails > br {
     display: none;
   }
 
@@ -2540,31 +2546,17 @@ between topic rows and nothing else */
   }
 
   /* put a border between all topics except the last one, that doesn't need a bottom border */
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr:not(:last-child) {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr:not(:last-child) {
     border-bottom: 2px solid var(--theme__background-main);
   }
 
   /* Topic Title & topic description */
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(3) {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(3) {
     grid-column: span 3;
   }
 
   /* Forum Name & Link */
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(4) {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(4) {
     /* box model */
     width: 100%;
 
@@ -2575,22 +2567,12 @@ between topic rows and nothing else */
     flex-direction: column;
   }
 
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(4)::before {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(4)::before {
     content: 'In Forum:';
   }
 
   /* Started By Posted & Link */
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(5) {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(5) {
     /* layout */
     grid-row: 2;
     grid-column: 4 / 6;
@@ -2601,62 +2583,32 @@ between topic rows and nothing else */
     overflow-wrap: anywhere;
   }
 
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(5)::before {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(5)::before {
     content: 'Started By:';
   }
 
   /* Replies */
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(6) {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(6) {
     grid-row: 3;
     grid-column: 1 / 1;
   }
 
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(6)::after {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(6)::after {
     content: ' replies';
   }
 
   /* Views */
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(7) {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(7) {
     grid-row: 2;
     grid-column: 1 / 1;
   }
 
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(7)::after {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(7)::after {
     content: ' views';
   }
 
   /* Last Post by date & links */
-  #Search.code-show
-    #search-topics
-    table.tablebasic
-    > tbody
-    > tr
-    > td:nth-child(8) {
+  #Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(8) {
     grid-row: 3;
     grid-column: span 4;
   }
