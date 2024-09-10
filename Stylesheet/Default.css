@@ -9,7 +9,7 @@
  * ===========================================================================================================
  * Version: 1.0.0
  * Initial Release: 2024-09-03
- * Last Updated: 2024-09-03
+ * Last Updated: 2024-09-10
  * ===========================================================================================================
  * 	-- Design --
  * Designed for viewports 320px and up. Fully mobile responsive. !!NO JCINK MOBILE MODE!! so make sure to
@@ -2034,6 +2034,7 @@ span.report-macro {
 
 .post__row--post-content {
   padding: 9px;
+  overflow-wrap: anywhere;
 }
 
 .post__row--bottombar {
@@ -2901,6 +2902,31 @@ span.lastpost--desc {
   #modcp form[name='ibform'] > table > tbody > tr > td {
     width: 100%;
     text-align: center;
+  }
+
+  /*------------------------------------*\
+  #TEMPLATES - POST_ROW - Mobile ONLY Styles
+  *-------------------------------------*/
+
+  /* makes sure the go to last post link wraps to the next line */
+  #SF span.goto-firstunread,
+  #ST span.goto-firstunread {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* same with the bottom set of pagination */
+  #SF table:nth-of-type(2) td[nowrap='nowrap'],
+  #ST table:nth-of-type(2) td[nowrap='nowrap'] {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 10px;
+  }
+
+  #SF span.pagination,
+  #ST span.pagination {
+    margin-bottom: 10px;
   }
 }
 
