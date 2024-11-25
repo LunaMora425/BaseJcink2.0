@@ -7,9 +7,9 @@
  * Created By: Luna of Free Codes, https://freecodes.jcink.net
  * License: GNU Affero General Public License v3.0, https://freecodes.jcink.net/index.php?showtopic=10
  * ===========================================================================================================
- * Version: 1.0.0
+ * Version: 1.0.2
  * Initial Release: 2024-09-03
- * Last Updated: 2024-09-10
+ * Last Updated: 2024-11-25
  * ===========================================================================================================
  * 	-- Design --
  * Designed for viewports 320px and up. Fully mobile responsive. !!NO JCINK MOBILE MODE!! so make sure to
@@ -123,13 +123,13 @@
 
   /* Font Families */
   --font-family__title: var(--arial);
-  --font-family__subheading: var(--arial);
+  --font-family__subtitle: var(--arial);
   --font-family__body: var(--arial);
   --font-family__accent: var(--courier);
 
   /* Font Sizes */
   --textsize__title: var(--size35px);
-  --textsize__subheading: var(--size24px);
+  --textsize__subtitle: var(--size24px);
   --textsize-body__primary: var(--size16px);
   --textsize-body__secondary: var(--size14px);
 
@@ -292,6 +292,7 @@ Tread carefully. */
   margin-left: 10px; /* Adjust spacing between image and text */
 
   /* type */
+  font-family: var(--font-family__title);
   font-size: var(--textsize__title);
   font-weight: bold;
 }
@@ -303,6 +304,7 @@ Tread carefully. */
 a:link,
 a:visited,
 a:active {
+  font-family: var(--font-family__subtitle);
   text-decoration: none;
   color: var(--theme__color-primary);
 }
@@ -327,7 +329,8 @@ a:not([name]):empty {
   background: var(--theme__color-primary);
 
   /* type */
-  font-size: var(--textsize__subheading);
+  font-family: var(--font-family__title);
+  font-size: var(--textsize__subtitle);
   font-weight: bold;
   color: var(--theme__text-contrast);
 }
@@ -1063,7 +1066,7 @@ span.small {
   width: 30px;
 
   /* type */
-  font-size: var(--textsize__subheading);
+  font-size: var(--textsize__subtitle);
   text-align: center;
 }
 
@@ -1086,8 +1089,8 @@ span.small {
   justify-content: center;
 
   /* type */
-  font-family: var(--font-family__subheading);
-  font-size: var(--textsize__subheading);
+  font-family: var(--font-family__subtitle);
+  font-size: var(--textsize__subtitle);
   text-transform: uppercase;
   color: var(--theme__color-primary);
   cursor: pointer;
@@ -1187,7 +1190,7 @@ span.small {
 .nav__userlinks--users strong {
   /* type */
   font-family: var(--font-family__title);
-  font-size: var(--textsize__subheading);
+  font-size: var(--textsize__subtitle);
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
@@ -1756,7 +1759,7 @@ span.subforums > a {
 
 .memberlist__row--name {
   /* type */
-  font-size: var(--textsize__subheading);
+  font-size: var(--textsize__subtitle);
 
   /* other */
   overflow-wrap: anywhere;
@@ -1885,7 +1888,7 @@ span.subforums > a {
   border-bottom: 1px solid var(--theme__color-secondary);
 
   /* type */
-  font-size: var(--textsize__subheading);
+  font-size: var(--textsize__subtitle);
 
   /* other */
   overflow-wrap: anywhere;
@@ -1966,7 +1969,8 @@ span.subforums > a {
   display: block;
 
   /* type */
-  font-size: var(--textsize__subheading);
+  font-family: var(--font-family__subtitle);
+  font-size: var(--textsize__subtitle);
 }
 
 .post__row {
@@ -2793,7 +2797,7 @@ span.lastpost--desc {
   /* make sure the username doesn't break anything */
   #Msg span.msg-normal td.row4[valign='middle'] {
     /* type */
-    font-size: var(--textsize__subheading);
+    font-size: var(--textsize__subtitle);
     text-align: center;
 
     /* other */
