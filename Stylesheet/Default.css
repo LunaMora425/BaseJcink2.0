@@ -338,6 +338,7 @@ a:not([name]):empty {
 .maintitle a:link,
 .maintitle a:visited,
 .maintitle a:active {
+  font-family: var(--font-family__title);
   color: var(--theme__text-contrast);
 }
 
@@ -1443,6 +1444,12 @@ span.small {
   text-align: center;
 }
 
+.forum__row--info a:link,
+.forum__row--info a:visited,
+.forum__row--info a:active {
+  font-size: var(--textsize-body__primary);
+}
+
 span.subforums > br {
   display: none;
 }
@@ -2108,6 +2115,12 @@ span.report-macro {
   grid-template-areas:
     'info   info'
     'macro  hits';
+}
+
+.redirect__row--info a:link,
+.redirect__row--info a:visited,
+.redirect__row--info a:active {
+  font-size: var(--textsize-body__primary);
 }
 
 /* Grid Set Up */
